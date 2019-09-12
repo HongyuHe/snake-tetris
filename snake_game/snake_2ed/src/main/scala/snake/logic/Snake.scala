@@ -1,12 +1,13 @@
 package snake.logic
 
 import snake.game._
+import snake.logic.Snake._
 import scala.collection.mutable
 
-class Snake(growPerTime: Int, cutPerTime: Int) {
+class Snake {
   var growCounter = 0
   var droppedTail: Option[SnakeTrunk] = None  // drop tail if snake is not growing
-  val grow: () => Unit = () => growCounter += growPerTime
+  val grow: () => Unit = () => growCounter += GrowPerTime
   var body: mutable.Buffer[SnakeTrunk] = mutable.Buffer[SnakeTrunk]()
   lazy val isHeadBehindTail: Boolean = body.head inTheSamePositionAs droppedTail
 
@@ -48,7 +49,7 @@ class Snake(growPerTime: Int, cutPerTime: Int) {
 
   private[this] def cutTail(): Unit = {
     if (growCounter > 0) {
-      growCounter -= cutPerTime
+      growCounter -= CutPerTime
       droppedTail = None
     } else {
       val tail = body.last
@@ -62,7 +63,7 @@ object Snake {
   val CutPerTime  = 1
   val GrowPerTime = 3
 
-  def apply(): Snake = new Snake(GrowPerTime, CutPerTime) {
+  def apply(): Snake = new Snake() {
     body += SnakeTrunk(0, 2) += SnakeTrunk(0, 1) += SnakeTrunk()
     updateHeadAndBodyTypes()
   }

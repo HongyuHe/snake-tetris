@@ -113,12 +113,13 @@ source dependencies:
    src/main/scala/snake/logic/GameController.scala -> src/main/scala/snake/game/Direction.scala
    src/main/scala/snake/logic/GameController.scala -> src/main/scala/snake/game/GridType.scala
    src/main/scala/snake/logic/GameController.scala -> src/main/scala/snake/logic/Cell.scala
-   src/main/scala/snake/logic/GameController.scala -> src/main/scala/snake/logic/GameController.scala
    src/main/scala/snake/logic/GameController.scala -> src/main/scala/snake/logic/Grid.scala
    src/main/scala/snake/logic/GameController.scala -> src/main/scala/snake/logic/Snake.scala
+   src/main/scala/snake/logic/GameController.scala -> src/main/scala/snake/logic/SnakeTrunk.scala
+   src/main/scala/snake/logic/GameController.scala -> src/main/scala/snake/logic/Status.scala
    src/main/scala/snake/logic/Grid.scala -> src/main/scala/snake/game/GridType.scala
    src/main/scala/snake/logic/Grid.scala -> src/main/scala/snake/logic/Cell.scala
-   src/main/scala/snake/logic/Grid.scala -> src/main/scala/snake/logic/Snake.scala
+   src/main/scala/snake/logic/Grid.scala -> src/main/scala/snake/logic/SnakeTrunk.scala
    src/main/scala/snake/logic/Snake.scala -> src/main/scala/snake/game/Direction.scala
    src/main/scala/snake/logic/Snake.scala -> src/main/scala/snake/game/GridType.scala
    src/main/scala/snake/logic/Snake.scala -> src/main/scala/snake/logic/Cell.scala

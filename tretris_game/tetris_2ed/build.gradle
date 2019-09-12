@@ -1,0 +1,129 @@
+/** 
+ * To anyone adapting this:
+ * Build scripts are never pretty.
+ *
+ * You should thank your lucky stars we didn't use SBT.
+ * It would be even more unreadable AND slower! :P
+ */
+
+import org.gradle.api.tasks.testing.logging.TestExceptionFormat
+import org.gradle.api.tasks.testing.logging.TestLogEvent
+import groovy.swing.SwingBuilder
+
+plugins {
+    id 'scala'
+    id 'java'
+    id 'application'
+    id 'idea'
+    id 'eclipse'
+}
+
+group 'nl.vu'
+version '1.0'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+mainClassName = 'tetris.game.TetrisGame'
+
+ext {
+    scalaMajorVersion = '2.12'
+    scalaVersion = "${scalaMajorVersion}.8"
+}
+
+repositories {
+    flatDir {
+        dirs 'lib'
+    }
+
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.scala-lang:scala-library:${scalaVersion}"
+    compile fileTree(include: ['*.jar'], dir: 'lib')
+    testCompile 'junit:junit:4.12'
+    testCompile "org.scalatest:scalatest_${scalaMajorVersion}:3.0.8"
+}
+
+def vunetid = ''
+
+static Boolean isValidID(String id) {
+    id =~ /^[a-z]{3}[0-9]{3}$/
+}
+
+/**
+ * Using a GUI is actually a workaround, if you can believe it.
+ * Gradle daemon screws with the console for some reason. 
+ * Upstream fixes are said to be coming (for many years now :/)...
+ * Adapted from: https://www.timroes.de/using-password-prompts-with-gradle-build-files
+ */
+task getid {
+    doLast {
+        if (System.console() == null) {
+            (new SwingBuilder().edt {
+                dialog( modal: true,
+                        title: 'Enter VUnet ID',
+                        alwaysOnTop: true,
+                        resizable: false,
+                        locationRelativeTo: null,
+                        pack: true,
+                        show: true
+                ) {
+                    vbox {
+                        label(text: 'Please enter your VUnet ID:')
+                        input = textField()
+                        button(defaultButton: true, text: 'OK', actionPerformed: {
+                            vunetid = input.getText()
+                            if (isValidID(vunetid)) dispose()
+                        })
+                    }
+                }
+            })
+        } else {
+            while (!isValidID(vunetid)) {
+                vunetid = System.console().readLine('\nPlease enter your VUnet ID> ')
+                vunetid = new String(vunetid)
+            }
+        }
+
+        if (!isValidID(vunetid)) throw new GradleException("Invalid VUnet ID!")
+    }
+}
+
+task submit(type: Zip) {
+    group = "submission"
+    description = "Zip your code for submission to Canvas"
+
+    // To make sure you can always run this task
+    outputs.upToDateWhen { false }
+    dependsOn getid
+
+    doFirst {
+        archiveName = rootProject.name+'_'+vunetid+'.zip'
+    }
+
+    from fileTree(dir: 'src/main')
+    include '*/**'
+    destinationDir = file("$buildDir")
+}
+
+tasks.withType(Test) {
+    group = "verification"
+    testLogging {
+        events  TestLogEvent.FAILED,
+                TestLogEvent.PASSED,
+                TestLogEvent.STANDARD_OUT
+        exceptionFormat TestExceptionFormat.SHORT
+        showExceptions false
+        showCauses false
+        showStackTraces false
+    }
+}
+
+task test2(type: Test) {
+    description="Run tests for assignment 2 (tetris)"
+    filter {
+        includeTestsMatching "test.tetris.TetrisTestSuite"
+    }
+}
