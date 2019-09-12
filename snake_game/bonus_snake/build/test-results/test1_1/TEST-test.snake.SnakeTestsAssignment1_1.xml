@@ -1,0 +1,1924 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="test.snake.SnakeTestsAssignment1_1" tests="24" skipped="0" failures="0" errors="0" timestamp="2019-09-03T15:02:08" hostname="Ada" time="0.34">
+  <properties/>
+  <testcase name="testStartCorrectly" classname="test.snake.SnakeTestsAssignment1_1" time="0.046"/>
+  <testcase name="testApplePos3" classname="test.snake.SnakeTestsAssignment1_1" time="0.003"/>
+  <testcase name="testApplePos8" classname="test.snake.SnakeTestsAssignment1_1" time="0.002"/>
+  <testcase name="testNoRoomForApple" classname="test.snake.SnakeTestsAssignment1_1" time="0.005"/>
+  <testcase name="testMove" classname="test.snake.SnakeTestsAssignment1_1" time="0.003"/>
+  <testcase name="testIgnoreEatHead" classname="test.snake.SnakeTestsAssignment1_1" time="0.003"/>
+  <testcase name="testQuickSwitch" classname="test.snake.SnakeTestsAssignment1_1" time="0.003"/>
+  <testcase name="testChangeDirs" classname="test.snake.SnakeTestsAssignment1_1" time="0.014"/>
+  <testcase name="testWrapAroundEast" classname="test.snake.SnakeTestsAssignment1_1" time="0.006"/>
+  <testcase name="testWrapAroundWest" classname="test.snake.SnakeTestsAssignment1_1" time="0.008"/>
+  <testcase name="testWrapAroundNorth" classname="test.snake.SnakeTestsAssignment1_1" time="0.006"/>
+  <testcase name="testWrapAroundSouth" classname="test.snake.SnakeTestsAssignment1_1" time="0.013"/>
+  <testcase name="testGrow" classname="test.snake.SnakeTestsAssignment1_1" time="0.01"/>
+  <testcase name="testGrowTwice" classname="test.snake.SnakeTestsAssignment1_1" time="0.013"/>
+  <testcase name="testPreciselyDoesNotDie" classname="test.snake.SnakeTestsAssignment1_1" time="0.011"/>
+  <testcase name="testGameOver" classname="test.snake.SnakeTestsAssignment1_1" time="0.013"/>
+  <testcase name="testNoEscapeGameOver" classname="test.snake.SnakeTestsAssignment1_1" time="0.01"/>
+  <testcase name="testGame3x1" classname="test.snake.SnakeTestsAssignment1_1" time="0.006"/>
+  <testcase name="testGame6x6" classname="test.snake.SnakeTestsAssignment1_1" time="0.042"/>
+  <testcase name="testGame6x3" classname="test.snake.SnakeTestsAssignment1_1" time="0.014"/>
+  <testcase name="testGame10x7" classname="test.snake.SnakeTestsAssignment1_1" time="0.065"/>
+  <testcase name="TestNoReverseMode" classname="test.snake.SnakeTestsAssignment1_1" time="0.011"/>
+  <testcase name="testInterleave6x3and10x7" classname="test.snake.SnakeTestsAssignment1_1" time="0.006"/>
+  <testcase name="testInterleave6x6and10x7" classname="test.snake.SnakeTestsAssignment1_1" time="0.001"/>
+  <system-out><![CDATA[Passed 24/24 tests
+================================================
+Total Functionality Points : 4.00/4.00 [100.00%]
+================================================
+(Initial code style points: 5.00)
+============================================
+testStartCorrectly : [√] Pass : +0.17 Points
+This is what we got & expected:
+
+step=0, rand=0, actions=<>
+Want & Got
+----------
+OO>A..
+......
+
+=======================================
+testApplePos3 : [√] Pass : +0.17 Points
+This is what we got & expected:
+
+step=0, rand=3, actions=<>
+Want & Got
+----------
+OO>...
+A.....
+
+=======================================
+testApplePos8 : [√] Pass : +0.17 Points
+This is what we got & expected:
+
+step=0, rand=8, actions=<>
+Want & Got
+----------
+OO>...
+.....A
+
+============================================
+testNoRoomForApple : [√] Pass : +0.17 Points
+This is what we got & expected:
+
+step=0, rand=2, actions=<>
+Want & Got
+----------
+OO>..A
+
+step=1, rand=2, actions=<Step>
+Want & Got
+----------
+.OO>.A
+
+step=2, rand=2, actions=<Step>
+Want & Got
+----------
+..OO>A
+
+step=3, rand=2, actions=<Step>
+Want & Got
+----------
+..AOO>
+
+step=4, rand=2, actions=<Step>
+Want & Got
+----------
+>.AOOO
+
+step=5, rand=2, actions=<Step>
+Want & Got
+----------
+O>AOOO
+
+step=6, rand=2, actions=<Step>
+Want & Got
+----------
+OO>OOO
+
+step=7, rand=2, actions=<Step>
+Want & Got
+----------
+GameOverDisplay()
+
+==================================
+testMove : [√] Pass : +0.17 Points
+This is what we got & expected:
+
+step=0, rand=3, actions=<>
+Want & Got
+----------
+OO>...
+A.....
+
+step=1, rand=3, actions=<Step>
+Want & Got
+----------
+.OO>..
+A.....
+
+step=2, rand=3, actions=<Step>
+Want & Got
+----------
+..OO>.
+A.....
+
+===========================================
+testIgnoreEatHead : [√] Pass : +0.17 Points
+This is what we got & expected:
+
+step=0, rand=5, actions=<>
+Want & Got
+----------
+OO>...
+..A...
+
+step=1, rand=5, actions=<ChangeDir(West()), Step>
+Want & Got
+----------
+.OO>..
+..A...
+
+step=2, rand=5, actions=<ChangeDir(West()), Step>
+Want & Got
+----------
+..OO>.
+..A...
+
+=========================================
+testQuickSwitch : [√] Pass : +0.17 Points
+This is what we got & expected:
+
+step=0, rand=4, actions=<>
+Want & Got
+----------
+OO>.
+...A
+....
+
+step=1, rand=4, actions=<Step>
+Want & Got
+----------
+.OO>
+...A
+....
+
+step=2, rand=4, actions=<ChangeDir(North()), ChangeDir(West()), Step>
+Want & Got
+----------
+..OO
+...A
+...^
+
+========================================
+testChangeDirs : [√] Pass : +0.17 Points
+This is what we got & expected:
+
+step=0, rand=2, actions=<>
+Want & Got
+----------
+OO>.
+.A..
+....
+....
+
+step=1, rand=2, actions=<ChangeDir(South()), Step>
+Want & Got
+----------
+.OO.
+.Av.
+....
+....
+
+step=2, rand=2, actions=<Step>
+Want & Got
+----------
+..O.
+.AO.
+..v.
+....
+
+step=3, rand=2, actions=<ChangeDir(West()), Step>
+Want & Got
+----------
+....
+.AO.
+.<O.
+....
+
+step=4, rand=2, actions=<Step>
+Want & Got
+----------
+....
+.A..
+<OO.
+....
+
+step=5, rand=2, actions=<ChangeDir(North()), Step>
+Want & Got
+----------
+....
+^A..
+OO..
+....
+
+step=6, rand=2, actions=<Step>
+Want & Got
+----------
+^...
+OA..
+O...
+....
+
+step=7, rand=2, actions=<ChangeDir(East()), Step>
+Want & Got
+----------
+O>..
+OA..
+....
+....
+
+step=8, rand=2, actions=<Step>
+Want & Got
+----------
+OO>.
+.A..
+....
+....
+
+============================================
+testWrapAroundEast : [√] Pass : +0.17 Points
+This is what we got & expected:
+
+step=0, rand=6, actions=<>
+Want & Got
+----------
+OO>...
+...A..
+
+step=1, rand=6, actions=<Step>
+Want & Got
+----------
+.OO>..
+...A..
+
+step=2, rand=6, actions=<Step>
+Want & Got
+----------
+..OO>.
+...A..
+
+step=3, rand=6, actions=<Step>
+Want & Got
+----------
+...OO>
+...A..
+
+step=4, rand=6, actions=<Step>
+Want & Got
+----------
+>...OO
+...A..
+
+step=5, rand=6, actions=<Step>
+Want & Got
+----------
+O>...O
+...A..
+
+step=6, rand=6, actions=<Step>
+Want & Got
+----------
+OO>...
+...A..
+
+step=7, rand=6, actions=<Step>
+Want & Got
+----------
+.OO>..
+...A..
+
+============================================
+testWrapAroundWest : [√] Pass : +0.17 Points
+This is what we got & expected:
+
+step=0, rand=2, actions=<>
+Want & Got
+----------
+OO>.
+.A..
+....
+....
+
+step=1, rand=2, actions=<Step>
+Want & Got
+----------
+.OO>
+.A..
+....
+....
+
+step=2, rand=2, actions=<ChangeDir(South()), Step>
+Want & Got
+----------
+..OO
+.A.v
+....
+....
+
+step=3, rand=2, actions=<Step>
+Want & Got
+----------
+...O
+.A.O
+...v
+....
+
+step=4, rand=2, actions=<ChangeDir(West()), Step>
+Want & Got
+----------
+....
+.A.O
+..<O
+....
+
+step=5, rand=2, actions=<Step>
+Want & Got
+----------
+....
+.A..
+.<OO
+....
+
+step=6, rand=2, actions=<Step>
+Want & Got
+----------
+....
+.A..
+<OO.
+....
+
+step=7, rand=2, actions=<Step>
+Want & Got
+----------
+....
+.A..
+OO.<
+....
+
+step=8, rand=2, actions=<Step>
+Want & Got
+----------
+....
+.A..
+O.<O
+....
+
+=============================================
+testWrapAroundNorth : [√] Pass : +0.17 Points
+This is what we got & expected:
+
+step=0, rand=6, actions=<>
+Want & Got
+----------
+OO>.
+....
+.A..
+....
+
+step=1, rand=6, actions=<ChangeDir(North()), Step>
+Want & Got
+----------
+.OO.
+....
+.A..
+..^.
+
+step=2, rand=6, actions=<Step>
+Want & Got
+----------
+..O.
+....
+.A^.
+..O.
+
+step=3, rand=6, actions=<Step>
+Want & Got
+----------
+....
+..^.
+.AO.
+..O.
+
+step=4, rand=6, actions=<Step>
+Want & Got
+----------
+..^.
+..O.
+.AO.
+....
+
+=============================================
+testWrapAroundSouth : [√] Pass : +0.17 Points
+This is what we got & expected:
+
+step=0, rand=2, actions=<>
+Want & Got
+----------
+OO>.
+.A..
+....
+....
+
+step=1, rand=2, actions=<ChangeDir(South()), Step>
+Want & Got
+----------
+.OO.
+.Av.
+....
+....
+
+step=2, rand=2, actions=<Step>
+Want & Got
+----------
+..O.
+.AO.
+..v.
+....
+
+step=3, rand=2, actions=<Step>
+Want & Got
+----------
+....
+.AO.
+..O.
+..v.
+
+step=4, rand=2, actions=<Step>
+Want & Got
+----------
+..v.
+.A..
+..O.
+..O.
+
+step=5, rand=2, actions=<Step>
+Want & Got
+----------
+..O.
+.Av.
+....
+..O.
+
+step=6, rand=2, actions=<Step>
+Want & Got
+----------
+..O.
+.AO.
+..v.
+....
+
+==================================
+testGrow : [√] Pass : +0.17 Points
+This is what we got & expected:
+
+step=0, rand=1, actions=<>
+Want & Got
+----------
+OO>.A.....
+..........
+
+step=1, rand=1, actions=<Step>
+Want & Got
+----------
+.OO>A.....
+..........
+
+step=2, rand=10, actions=<Step>
+Want & Got
+----------
+..OO>.....
+...A......
+
+step=3, rand=10, actions=<Step>
+Want & Got
+----------
+..OOO>....
+...A......
+
+step=4, rand=10, actions=<Step>
+Want & Got
+----------
+..OOOO>...
+...A......
+
+step=5, rand=10, actions=<Step>
+Want & Got
+----------
+..OOOOO>..
+...A......
+
+step=6, rand=10, actions=<Step>
+Want & Got
+----------
+...OOOOO>.
+...A......
+
+step=7, rand=10, actions=<Step>
+Want & Got
+----------
+....OOOOO>
+...A......
+
+=======================================
+testGrowTwice : [√] Pass : +0.17 Points
+This is what we got & expected:
+
+step=0, rand=0, actions=<>
+Want & Got
+----------
+OO>A..........
+..............
+
+step=1, rand=2, actions=<Step>
+Want & Got
+----------
+.OO>.A........
+..............
+
+step=2, rand=2, actions=<Step>
+Want & Got
+----------
+.OOO>A........
+..............
+
+step=3, rand=10, actions=<Step>
+Want & Got
+----------
+.OOOO>........
+.A............
+
+step=4, rand=10, actions=<Step>
+Want & Got
+----------
+.OOOOO>.......
+.A............
+
+step=5, rand=10, actions=<Step>
+Want & Got
+----------
+.OOOOOO>......
+.A............
+
+step=6, rand=10, actions=<Step>
+Want & Got
+----------
+.OOOOOOO>.....
+.A............
+
+step=7, rand=10, actions=<Step>
+Want & Got
+----------
+.OOOOOOOO>....
+.A............
+
+step=8, rand=10, actions=<Step>
+Want & Got
+----------
+..OOOOOOOO>...
+.A............
+
+step=9, rand=10, actions=<Step>
+Want & Got
+----------
+...OOOOOOOO>..
+.A............
+
+step=10, rand=10, actions=<Step>
+Want & Got
+----------
+....OOOOOOOO>.
+.A............
+
+=================================================
+testPreciselyDoesNotDie : [√] Pass : +0.17 Points
+This is what we got & expected:
+
+step=0, rand=0, actions=<>
+Want & Got
+----------
+OO>A..
+......
+
+step=1, rand=3, actions=<Step>
+Want & Got
+----------
+.OO>..
+A.....
+
+step=2, rand=3, actions=<Step>
+Want & Got
+----------
+.OOO>.
+A.....
+
+step=3, rand=3, actions=<Step>
+Want & Got
+----------
+.OOOO>
+A.....
+
+step=4, rand=3, actions=<Step>
+Want & Got
+----------
+>OOOOO
+A.....
+
+step=5, rand=3, actions=<Step>
+Want & Got
+----------
+O>OOOO
+A.....
+
+step=6, rand=3, actions=<Step>
+Want & Got
+----------
+OO>OOO
+A.....
+
+step=7, rand=3, actions=<Step>
+Want & Got
+----------
+OOO>OO
+A.....
+
+step=8, rand=3, actions=<Step>
+Want & Got
+----------
+OOOO>O
+A.....
+
+step=9, rand=3, actions=<Step>
+Want & Got
+----------
+OOOOO>
+A.....
+
+======================================
+testGameOver : [√] Pass : +0.17 Points
+This is what we got & expected:
+
+step=0, rand=0, actions=<>
+Want & Got
+----------
+OO>A..
+......
+......
+
+step=1, rand=6, actions=<Step>
+Want & Got
+----------
+.OO>..
+...A..
+......
+
+step=2, rand=6, actions=<Step>
+Want & Got
+----------
+.OOO>.
+...A..
+......
+
+step=3, rand=6, actions=<Step>
+Want & Got
+----------
+.OOOO>
+...A..
+......
+
+step=4, rand=6, actions=<ChangeDir(South()), Step>
+Want & Got
+----------
+.OOOOO
+...A.v
+......
+
+step=5, rand=6, actions=<ChangeDir(West()), Step>
+Want & Got
+----------
+..OOOO
+...A<O
+......
+
+step=6, rand=6, actions=<ChangeDir(North()), Step>
+Want & Got
+----------
+GameOverDisplay()
+
+==============================================
+testNoEscapeGameOver : [√] Pass : +0.17 Points
+This is what we got & expected:
+
+step=0, rand=0, actions=<>
+Want & Got
+----------
+OO>A.
+.....
+.....
+.....
+
+step=1, rand=0, actions=<Step>
+Want & Got
+----------
+AOO>.
+.....
+.....
+.....
+
+step=2, rand=0, actions=<ChangeDir(South()), Step>
+Want & Got
+----------
+AOOO.
+...v.
+.....
+.....
+
+step=3, rand=0, actions=<ChangeDir(West()), Step>
+Want & Got
+----------
+AOOO.
+..<O.
+.....
+.....
+
+step=4, rand=0, actions=<ChangeDir(North()), Step>
+Want & Got
+----------
+GameOverDisplay()
+
+step=5, rand=0, actions=<Step>
+Want & Got
+----------
+GameOverDisplay()
+
+=====================================
+testGame3x1 : [√] Pass : +0.17 Points
+This is what we got & expected:
+
+step=0, rand=0, actions=<>
+Want & Got
+----------
+OO>
+
+step=1, rand=0, actions=<Step>
+Want & Got
+----------
+>OO
+
+step=2, rand=0, actions=<Step>
+Want & Got
+----------
+O>O
+
+step=3, rand=0, actions=<Step>
+Want & Got
+----------
+OO>
+
+step=4, rand=0, actions=<Step>
+Want & Got
+----------
+>OO
+
+step=5, rand=0, actions=<Step>
+Want & Got
+----------
+O>O
+
+step=6, rand=0, actions=<Step>
+Want & Got
+----------
+OO>
+
+=====================================
+testGame6x6 : [√] Pass : +0.17 Points
+This is what we got & expected:
+
+step=0, rand=2, actions=<>
+Want & Got
+----------
+OO>..A
+......
+......
+......
+......
+......
+
+step=1, rand=2, actions=<Step>
+Want & Got
+----------
+.OO>.A
+......
+......
+......
+......
+......
+
+step=2, rand=2, actions=<Step>
+Want & Got
+----------
+..OO>A
+......
+......
+......
+......
+......
+
+step=3, rand=2, actions=<Step>
+Want & Got
+----------
+..AOO>
+......
+......
+......
+......
+......
+
+step=4, rand=2, actions=<Step>
+Want & Got
+----------
+>.AOOO
+......
+......
+......
+......
+......
+
+step=5, rand=2, actions=<Step>
+Want & Got
+----------
+O>AOOO
+......
+......
+......
+......
+......
+
+step=6, rand=2, actions=<Step>
+Want & Got
+----------
+OO>OOO
+..A...
+......
+......
+......
+......
+
+step=7, rand=2, actions=<ChangeDir(South()), Step>
+Want & Got
+----------
+OOOOOO
+..vA..
+......
+......
+......
+......
+
+step=8, rand=2, actions=<Step>
+Want & Got
+----------
+OOOOOO
+..OA..
+..v...
+......
+......
+......
+
+step=9, rand=2, actions=<ChangeDir(West()), Step>
+Want & Got
+----------
+OOOOOO
+..OA..
+.<O...
+......
+......
+......
+
+step=10, rand=2, actions=<ChangeDir(North()), Step>
+Want & Got
+----------
+OOOOOO
+.^OA..
+.OO...
+......
+......
+......
+
+step=11, rand=2, actions=<ChangeDir(West()), Step>
+Want & Got
+----------
+OOOOOO
+<OOA..
+.OO...
+......
+......
+......
+
+step=12, rand=2, actions=<Step>
+Want & Got
+----------
+OOOOOO
+OOOA.<
+.OO...
+......
+......
+......
+
+step=13, rand=2, actions=<Step>
+Want & Got
+----------
+OOO.OO
+OOOA<O
+.OO...
+......
+......
+......
+
+step=14, rand=2, actions=<Step>
+Want & Got
+----------
+OOO..O
+OOO<OO
+AOO...
+......
+......
+......
+
+step=15, rand=2, actions=<ChangeDir(North()), Step>
+Want & Got
+----------
+OOO^.O
+OOOOOO
+AOO...
+......
+......
+......
+
+step=16, rand=2, actions=<Step>
+Want & Got
+----------
+OOOO.O
+OOOOOO
+AOO...
+......
+......
+...^..
+
+step=17, rand=2, actions=<Step>
+Want & Got
+----------
+OOOO.O
+OOOOOO
+AOO...
+......
+...^..
+...O..
+
+step=18, rand=2, actions=<ChangeDir(West()), Step>
+Want & Got
+----------
+OOOO..
+OOOOOO
+AOO...
+......
+..<O..
+...O..
+
+step=19, rand=2, actions=<Step>
+Want & Got
+----------
+.OOO..
+OOOOOO
+AOO...
+......
+.<OO..
+...O..
+
+step=20, rand=2, actions=<Step>
+Want & Got
+----------
+..OO..
+OOOOOO
+AOO...
+......
+<OOO..
+...O..
+
+step=21, rand=2, actions=<ChangeDir(North()), Step>
+Want & Got
+----------
+...O..
+OOOOOO
+AOO...
+^.....
+OOOO..
+...O..
+
+step=22, rand=2, actions=<Step>
+Want & Got
+----------
+..AO..
+OO.OOO
+^OO...
+O.....
+OOOO..
+...O..
+
+step=23, rand=2, actions=<ChangeDir(West()), Step>
+Want & Got
+----------
+..AO..
+OO.OOO
+OOO..<
+O.....
+OOOO..
+...O..
+
+step=24, rand=2, actions=<Step>
+Want & Got
+----------
+..AO..
+OO.OOO
+OOO.<O
+O.....
+OOOO..
+...O..
+
+step=25, rand=2, actions=<ChangeDir(South()), Step>
+Want & Got
+----------
+..AO..
+OO.OOO
+OOO.OO
+O...v.
+OOOO..
+...O..
+
+step=26, rand=2, actions=<ChangeDir(East()), Step>
+Want & Got
+----------
+..AO..
+OO.OOO
+OO..OO
+O...O>
+OOOO..
+...O..
+
+step=27, rand=2, actions=<Step>
+Want & Got
+----------
+GameOverDisplay()
+
+=====================================
+testGame6x3 : [√] Pass : +0.17 Points
+This is what we got & expected:
+
+step=0, rand=2, actions=<>
+Want & Got
+----------
+OO>..A
+......
+......
+
+step=1, rand=2, actions=<Step>
+Want & Got
+----------
+.OO>.A
+......
+......
+
+step=2, rand=2, actions=<Step>
+Want & Got
+----------
+..OO>A
+......
+......
+
+step=3, rand=2, actions=<Step>
+Want & Got
+----------
+..AOO>
+......
+......
+
+step=4, rand=2, actions=<Step>
+Want & Got
+----------
+>.AOOO
+......
+......
+
+step=5, rand=2, actions=<Step>
+Want & Got
+----------
+O>AOOO
+......
+......
+
+step=6, rand=2, actions=<Step>
+Want & Got
+----------
+OO>OOO
+..A...
+......
+
+step=7, rand=2, actions=<ChangeDir(North()), Step>
+Want & Got
+----------
+OOOOOO
+..A...
+..^...
+
+step=8, rand=2, actions=<Step>
+Want & Got
+----------
+OOOOOO
+..^A..
+..O...
+
+step=9, rand=2, actions=<ChangeDir(West()), Step>
+Want & Got
+----------
+OOOOOO
+.<OA..
+..O...
+
+step=10, rand=2, actions=<Step>
+Want & Got
+----------
+OOOOOO
+<OOA..
+..O...
+
+step=11, rand=2, actions=<Step>
+Want & Got
+----------
+OOOOOO
+OOOA.<
+..O...
+
+step=12, rand=2, actions=<Step>
+Want & Got
+----------
+OOOOOO
+OOOA<O
+..O...
+
+step=13, rand=2, actions=<Step>
+Want & Got
+----------
+OOO.OO
+OOO<OO
+.AO...
+
+step=14, rand=2, actions=<ChangeDir(South()), Step>
+Want & Got
+----------
+OOO.OO
+OOOOOO
+.AOv..
+
+step=15, rand=2, actions=<ChangeDir(East()), Step>
+Want & Got
+----------
+OOO.OO
+OOOOOO
+.AOO>.
+
+step=16, rand=2, actions=<Step>
+Want & Got
+----------
+OOO.OO
+OOOOOO
+.AOOO>
+
+step=17, rand=2, actions=<Step>
+Want & Got
+----------
+OOO..O
+OOOOOO
+>AOOOO
+
+step=18, rand=2, actions=<Step>
+Want & Got
+----------
+OOO..A
+OOOOOO
+O>OOOO
+
+step=19, rand=2, actions=<Step>
+Want & Got
+----------
+GameOverDisplay()
+
+======================================
+testGame10x7 : [√] Pass : +0.17 Points
+This is what we got & expected:
+
+step=0, rand=2, actions=<>
+Want & Got
+----------
+OO>..A....
+..........
+..........
+..........
+..........
+..........
+..........
+
+step=1, rand=2, actions=<Step>
+Want & Got
+----------
+.OO>.A....
+..........
+..........
+..........
+..........
+..........
+..........
+
+step=2, rand=2, actions=<Step>
+Want & Got
+----------
+..OO>A....
+..........
+..........
+..........
+..........
+..........
+..........
+
+step=3, rand=2, actions=<Step>
+Want & Got
+----------
+..AOO>....
+..........
+..........
+..........
+..........
+..........
+..........
+
+step=4, rand=2, actions=<Step>
+Want & Got
+----------
+..AOOO>...
+..........
+..........
+..........
+..........
+..........
+..........
+
+step=5, rand=2, actions=<Step>
+Want & Got
+----------
+..AOOOO>..
+..........
+..........
+..........
+..........
+..........
+..........
+
+step=6, rand=2, actions=<Step>
+Want & Got
+----------
+..AOOOOO>.
+..........
+..........
+..........
+..........
+..........
+..........
+
+step=7, rand=2, actions=<Step>
+Want & Got
+----------
+..A.OOOOO>
+..........
+..........
+..........
+..........
+..........
+..........
+
+step=8, rand=2, actions=<Step>
+Want & Got
+----------
+>.A..OOOOO
+..........
+..........
+..........
+..........
+..........
+..........
+
+step=9, rand=2, actions=<Step>
+Want & Got
+----------
+O>A...OOOO
+..........
+..........
+..........
+..........
+..........
+..........
+
+step=10, rand=2, actions=<Step>
+Want & Got
+----------
+OO>..A.OOO
+..........
+..........
+..........
+..........
+..........
+..........
+
+step=11, rand=2, actions=<Step>
+Want & Got
+----------
+OOO>.A.OOO
+..........
+..........
+..........
+..........
+..........
+..........
+
+step=12, rand=2, actions=<Step>
+Want & Got
+----------
+OOOO>A.OOO
+..........
+..........
+..........
+..........
+..........
+..........
+
+step=13, rand=2, actions=<Step>
+Want & Got
+----------
+OOOOO>.OOO
+.A........
+..........
+..........
+..........
+..........
+..........
+
+step=14, rand=2, actions=<Step>
+Want & Got
+----------
+OOOOOO>OOO
+.A........
+..........
+..........
+..........
+..........
+..........
+
+step=15, rand=2, actions=<ChangeDir(North()), Step>
+Want & Got
+----------
+OOOOOOOOOO
+.A........
+..........
+..........
+..........
+..........
+......^...
+
+step=16, rand=2, actions=<Step>
+Want & Got
+----------
+OOOOOOOOOO
+.A........
+..........
+..........
+..........
+......^...
+......O...
+
+step=17, rand=2, actions=<ChangeDir(East()), Step>
+Want & Got
+----------
+OOOOOOO.OO
+.A........
+..........
+..........
+..........
+......O>..
+......O...
+
+step=18, rand=2, actions=<Step>
+Want & Got
+----------
+OOOOOOO..O
+.A........
+..........
+..........
+..........
+......OO>.
+......O...
+
+step=19, rand=2, actions=<Step>
+Want & Got
+----------
+OOOOOOO...
+.A........
+..........
+..........
+..........
+......OOO>
+......O...
+
+step=20, rand=2, actions=<Step>
+Want & Got
+----------
+.OOOOOO...
+.A........
+..........
+..........
+..........
+>.....OOOO
+......O...
+
+step=21, rand=2, actions=<Step>
+Want & Got
+----------
+..OOOOO...
+.A........
+..........
+..........
+..........
+O>....OOOO
+......O...
+
+step=22, rand=2, actions=<Step>
+Want & Got
+----------
+...OOOO...
+.A........
+..........
+..........
+..........
+OO>...OOOO
+......O...
+
+step=23, rand=2, actions=<Step>
+Want & Got
+----------
+....OOO...
+.A........
+..........
+..........
+..........
+OOO>..OOOO
+......O...
+
+step=24, rand=2, actions=<Step>
+Want & Got
+----------
+.....OO...
+.A........
+..........
+..........
+..........
+OOOO>.OOOO
+......O...
+
+step=25, rand=2, actions=<ChangeDir(North()), Step>
+Want & Got
+----------
+......O...
+.A........
+..........
+..........
+....^.....
+OOOOO.OOOO
+......O...
+
+step=26, rand=2, actions=<Step>
+Want & Got
+----------
+..........
+.A........
+..........
+....^.....
+....O.....
+OOOOO.OOOO
+......O...
+
+step=27, rand=2, actions=<Step>
+Want & Got
+----------
+..........
+.A........
+....^.....
+....O.....
+....O.....
+OOOOO.OOOO
+..........
+
+step=28, rand=2, actions=<Step>
+Want & Got
+----------
+..........
+.A..^.....
+....O.....
+....O.....
+....O.....
+OOOOO..OOO
+..........
+
+step=29, rand=2, actions=<ChangeDir(West()), Step>
+Want & Got
+----------
+..........
+.A.<O.....
+....O.....
+....O.....
+....O.....
+OOOOO...OO
+..........
+
+step=30, rand=2, actions=<Step>
+Want & Got
+----------
+..........
+.A<OO.....
+....O.....
+....O.....
+....O.....
+OOOOO....O
+..........
+
+step=31, rand=2, actions=<Step>
+Want & Got
+----------
+..A.......
+.<OOO.....
+....O.....
+....O.....
+....O.....
+OOOOO.....
+..........
+
+step=32, rand=2, actions=<Step>
+Want & Got
+----------
+..A.......
+<OOOO.....
+....O.....
+....O.....
+....O.....
+OOOOO.....
+..........
+
+step=33, rand=2, actions=<Step>
+Want & Got
+----------
+..A.......
+OOOOO....<
+....O.....
+....O.....
+....O.....
+OOOOO.....
+..........
+
+step=34, rand=2, actions=<Step>
+Want & Got
+----------
+..A.......
+OOOOO...<O
+....O.....
+....O.....
+....O.....
+OOOOO.....
+..........
+
+step=35, rand=2, actions=<ChangeDir(South()), Step>
+Want & Got
+----------
+..A.......
+OOOOO...OO
+....O...v.
+....O.....
+....O.....
+.OOOO.....
+..........
+
+step=36, rand=2, actions=<Step>
+Want & Got
+----------
+..A.......
+OOOOO...OO
+....O...O.
+....O...v.
+....O.....
+..OOO.....
+..........
+
+step=37, rand=2, actions=<Step>
+Want & Got
+----------
+..A.......
+OOOOO...OO
+....O...O.
+....O...O.
+....O...v.
+...OO.....
+..........
+
+step=38, rand=2, actions=<Step>
+Want & Got
+----------
+..A.......
+OOOOO...OO
+....O...O.
+....O...O.
+....O...O.
+....O...v.
+..........
+
+step=39, rand=2, actions=<Step>
+Want & Got
+----------
+..A.......
+OOOOO...OO
+....O...O.
+....O...O.
+....O...O.
+........O.
+........v.
+
+step=40, rand=2, actions=<Step>
+Want & Got
+----------
+..A.....v.
+OOOOO...OO
+....O...O.
+....O...O.
+........O.
+........O.
+........O.
+
+step=41, rand=2, actions=<ChangeDir(West()), Step>
+Want & Got
+----------
+..A....<O.
+OOOOO...OO
+....O...O.
+........O.
+........O.
+........O.
+........O.
+
+step=42, rand=2, actions=<Step>
+Want & Got
+----------
+..A...<OO.
+OOOOO...OO
+........O.
+........O.
+........O.
+........O.
+........O.
+
+step=43, rand=2, actions=<Step>
+Want & Got
+----------
+..A..<OOO.
+OOOO....OO
+........O.
+........O.
+........O.
+........O.
+........O.
+
+step=44, rand=2, actions=<Step>
+Want & Got
+----------
+..A.<OOOO.
+OOO.....OO
+........O.
+........O.
+........O.
+........O.
+........O.
+
+step=45, rand=2, actions=<Step>
+Want & Got
+----------
+..A<OOOOO.
+OO......OO
+........O.
+........O.
+........O.
+........O.
+........O.
+
+step=46, rand=2, actions=<Step>
+Want & Got
+----------
+..<OOOOOOA
+O.......OO
+........O.
+........O.
+........O.
+........O.
+........O.
+
+step=47, rand=2, actions=<Step>
+Want & Got
+----------
+.<OOOOOOOA
+O.......OO
+........O.
+........O.
+........O.
+........O.
+........O.
+
+step=48, rand=2, actions=<ChangeDir(North()), Step>
+Want & Got
+----------
+.OOOOOOOOA
+O.......OO
+........O.
+........O.
+........O.
+........O.
+.^......O.
+
+step=49, rand=2, actions=<Step>
+Want & Got
+----------
+.OOOOOOOOA
+O.......OO
+........O.
+........O.
+........O.
+.^......O.
+.O......O.
+
+step=50, rand=2, actions=<Step>
+Want & Got
+----------
+.OOOOOOOOA
+........OO
+........O.
+........O.
+.^......O.
+.O......O.
+.O......O.
+
+step=51, rand=2, actions=<Step>
+Want & Got
+----------
+.OOOOOOOOA
+........O.
+........O.
+.^......O.
+.O......O.
+.O......O.
+.O......O.
+
+step=52, rand=2, actions=<Step>
+Want & Got
+----------
+.OOOOOOOOA
+..........
+.^......O.
+.O......O.
+.O......O.
+.O......O.
+.O......O.
+
+step=53, rand=2, actions=<Step>
+Want & Got
+----------
+.OOOOOOOOA
+.^........
+.O........
+.O......O.
+.O......O.
+.O......O.
+.O......O.
+
+step=54, rand=2, actions=<Step>
+Want & Got
+----------
+GameOverDisplay()
+
+===========================================
+TestNoReverseMode : [√] Pass : +0.17 Points
+This is what we got & expected:
+
+step=0, rand=2, actions=<>
+Want & Got
+----------
+OO>.
+.A..
+
+step=1, rand=2, actions=<Step>
+Want & Got
+----------
+.OO>
+.A..
+
+step=2, rand=2, actions=<Step>
+Want & Got
+----------
+>.OO
+.A..
+
+step=3, rand=2, actions=<Step>
+Want & Got
+----------
+O>.O
+.A..
+
+step=4, rand=2, actions=<ReverseGame(true), Step>
+Want & Got
+----------
+OO>.
+.A..
+
+step=5, rand=2, actions=<Step>
+Want & Got
+----------
+.OO>
+.A..
+
+step=6, rand=2, actions=<Step>
+Want & Got
+----------
+>.OO
+.A..
+
+step=7, rand=2, actions=<ReverseGame(false), Step>
+Want & Got
+----------
+O>.O
+.A..
+
+step=8, rand=2, actions=<Step>
+Want & Got
+----------
+OO>.
+.A..
+
+step=9, rand=2, actions=<Step>
+Want & Got
+----------
+.OO>
+.A..
+
+step=10, rand=2, actions=<ReverseGame(true), Step>
+Want & Got
+----------
+>.OO
+.A..
+
+step=11, rand=2, actions=<Step>
+Want & Got
+----------
+O>.O
+.A..
+
+step=12, rand=2, actions=<Step>
+Want & Got
+----------
+OO>.
+.A..
+
+step=13, rand=2, actions=<ReverseGame(false), Step>
+Want & Got
+----------
+.OO>
+.A..
+
+====================================================================
+Interleave Test: testGame6x3, testGame10x7 : [√] Pass : +0.17 Points
+====================================================================
+Interleave Test: testGame6x6, testGame10x7 : [√] Pass : +0.17 Points
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
