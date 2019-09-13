@@ -3,22 +3,23 @@ package snake.logic
 import engine.random.RandomGenerator
 import snake.game.{Apple, Direction, East, Empty, North, SnakeBody, SnakeHead, South, West}
 
-case class Status(var hasApple:       Boolean = false,
-                  var isGameOver:     Boolean = false,
-                  var isGridFull:     Boolean = false,
-                  var isAppleEaten:   Boolean = false,
-                  var isSnakeCrashed: Boolean = false,
-                  var isSnakeGrowing: Boolean = false)
-
 class GameController (val nrRows: Int,
                       val nrColumns: Int,
                       val randomGen: RandomGenerator) {
 
   val snake  = Snake()
-  var status = Status()
+  var status = GameStatus()
   var grid   = Grid(nrRows, nrColumns)
 
   private[this] var snakePreviousDirection: Direction = East()
+
+  def updateState(): Unit = {
+    placeApple()
+    moveSnake()
+    updateGameStatus()
+    drawSnake(snake.droppedTail)
+    checkAppleAndGrowSnake()
+  }
 
   def turnSnake(currentDirection: Direction): Unit =
     if (snakePreviousDirection.opposite != currentDirection)

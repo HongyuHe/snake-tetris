@@ -10,13 +10,7 @@ class SnakeLogic(val randomGen: RandomGenerator,
 
   def this() = this(new ScalaRandomGen(), DefaultColumns, DefaultRows)
 
-  def step(): Unit = {
-    gameController.placeApple()
-    gameController.moveSnake()
-    gameController.updateGameStatus()
-    gameController.drawSnake(gameController.snake.droppedTail)
-    gameController.checkAppleAndGrowSnake()
-  }
+  def step(): Unit = gameController.updateState()
   def setReverseTime(reverse: Boolean): Unit = ()
   def isGameOver: Boolean = gameController.status.isGameOver
   def changeDir(d: Direction): Unit = gameController.turnSnake(d)

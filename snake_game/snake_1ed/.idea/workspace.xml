@@ -1,7 +1,498 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="592bd84c-abbc-40ee-b7c8-b25b48b466f4" name="Default Changelist" comment="" />
+    <list default="true" id="592bd84c-abbc-40ee-b7c8-b25b48b466f4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../snake_2ed/src/main/scala/snake/logic/GameStatus.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/.gradle/4.10.2/fileChanges/last-build.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/.gradle/4.10.2/fileContent/annotation-processors.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/.gradle/4.10.2/fileContent/fileContent.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/.gradle/4.10.2/fileHashes/fileHashes.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/.gradle/4.10.2/fileHashes/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/.gradle/4.10.2/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/.gradle/4.10.2/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/.gradle/4.10.2/taskHistory/taskHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/.gradle/4.10.2/taskHistory/taskHistory.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/.gradle/vcs-1/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/.idea/$PRODUCT_WORKSPACE_FILE$" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/.idea/sbt.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/.idea/scala_compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/engine/GameBase$UpdateTimer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/engine/GameBase.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/engine/graphics/Color$.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/engine/graphics/Color.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/engine/graphics/Point$.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/engine/graphics/Point.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/engine/graphics/Rectangle$.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/engine/graphics/Rectangle.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/engine/graphics/Triangle$.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/engine/graphics/Triangle.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/engine/random/ListRandomGen.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/engine/random/RandomGenerator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/engine/random/ScalaRandomGen.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/snake/game/Apple$.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/snake/game/Apple.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/snake/game/Direction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/snake/game/East$.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/snake/game/East.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/snake/game/Empty$.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/snake/game/Empty.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/snake/game/GridType.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/snake/game/North$.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/snake/game/North.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/snake/game/SnakeBody$.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/snake/game/SnakeBody.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/snake/game/SnakeGame$.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/snake/game/SnakeGame.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/snake/game/SnakeHead$.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/snake/game/SnakeHead.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/snake/game/South$.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/snake/game/South.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/snake/game/West$.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/snake/game/West.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/snake/logic/Cell$.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/snake/logic/Cell.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/snake/logic/GameController$$anon$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/snake/logic/GameController$.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/snake/logic/GameController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/snake/logic/Grid$$anon$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/snake/logic/Grid$.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/snake/logic/Grid.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/snake/logic/Snake$$anon$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/snake/logic/Snake$.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/snake/logic/Snake.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/snake/logic/SnakeLogic$.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/snake/logic/SnakeLogic.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/snake/logic/SnakeTrunk$.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/snake/logic/SnakeTrunk.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/snake/logic/Status$.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/snake/logic/Status.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/test/test/GameLogicInterface.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/test/test/GenericRecord$FrameInput$.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/test/test/GenericRecord$FrameInput.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/test/test/GenericRecord$GameDisplay.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/test/test/GenericRecord$GameOverDisplay$.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/test/test/GenericRecord$GameOverDisplay.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/test/test/GenericRecord$GridDisplay$.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/test/test/GenericRecord$GridDisplay.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/test/test/GenericRecord$LogicFailed$.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/test/test/GenericRecord$LogicFailed.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/test/test/GenericRecord$Test$.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/test/test/GenericRecord$Test.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/test/test/GenericRecord$TestFrame$.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/test/test/GenericRecord$TestFrame.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/test/test/GenericRecord$TestSuite.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/test/test/GenericRecord.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/test/test/GridTypeInterface.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/test/test/snake/ChangeDir$.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/test/test/snake/ChangeDir.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/test/test/snake/ReverseGame$.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/test/test/snake/ReverseGame.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/test/test/snake/SnakeAction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/test/test/snake/SnakeGridTypeWrapper$.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/test/test/snake/SnakeGridTypeWrapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/test/test/snake/SnakeLogicWrapper$.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/test/test/snake/SnakeLogicWrapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/test/test/snake/SnakeRecord$.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/test/test/snake/SnakeRecord$SnakeTest$.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/test/test/snake/SnakeRecord.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/test/test/snake/SnakeTestSuite.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/test/test/snake/SnakeTests$.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/test/test/snake/SnakeTests.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/test/test/snake/SnakeTestsAssignment1_1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/test/test/snake/SnakeTestsAssignment1_3.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/test/test/snake/Step$.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/test/test/snake/Step.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/test/test/util/StringUtils$.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/test/test/util/StringUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/test/test/util/TestRandomGen.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/tmp/scala/compilerAnalysis/compileScala.analysis" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/tmp/scala/compilerAnalysis/compileScala.analysis.relations" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/tmp/scala/compilerAnalysis/compileScala.mapping" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/tmp/scala/compilerAnalysis/compileTestScala.analysis" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/build/tmp/scala/compilerAnalysis/compileTestScala.analysis.relations" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/gradle.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/lib/core.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/lib/gluegen-rt-natives-linux-aarch64.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/lib/gluegen-rt-natives-linux-amd64.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/lib/gluegen-rt-natives-linux-armv6hf.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/lib/gluegen-rt-natives-linux-i586.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/lib/gluegen-rt-natives-macosx-universal.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/lib/gluegen-rt-natives-windows-amd64.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/lib/gluegen-rt-natives-windows-i586.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/lib/gluegen-rt.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/lib/jogl-all-natives-linux-aarch64.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/lib/jogl-all-natives-linux-amd64.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/lib/jogl-all-natives-linux-armv6hf.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/lib/jogl-all-natives-linux-i586.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/lib/jogl-all-natives-macosx-universal.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/lib/jogl-all-natives-windows-amd64.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/lib/jogl-all-natives-windows-i586.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/lib/jogl-all.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/scalastyle_config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/src/main/scala/engine/GameBase.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/src/main/scala/engine/graphics/Color.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/src/main/scala/engine/graphics/Point.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/src/main/scala/engine/graphics/Rectangle.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/src/main/scala/engine/graphics/Triangle.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/src/main/scala/engine/random/ListRandomGen.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/src/main/scala/engine/random/RandomGenerator.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/src/main/scala/engine/random/ScalaRandomGen.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/src/main/scala/snake/game/Direction.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/src/main/scala/snake/game/GridType.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/src/main/scala/snake/game/SnakeGame.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/src/main/scala/snake/logic/Cell.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/src/main/scala/snake/logic/GameController.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/src/main/scala/snake/logic/GameStatus.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/src/main/scala/snake/logic/Grid.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/src/main/scala/snake/logic/Snake.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/src/main/scala/snake/logic/SnakeLogic.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/src/main/scala/snake/logic/SnakeTrunk.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/src/test/scala/test/GenericRecord.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/src/test/scala/test/snake/SnakeRecord.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/src/test/scala/test/snake/SnakeTestSuite.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/src/test/scala/test/snake/SnakeTests.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/src/test/scala/test/util/StringUtils.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_bonus/src/test/scala/test/util/TestRandomGen.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/.gradle/4.10.2/fileChanges/last-build.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/.gradle/4.10.2/fileContent/annotation-processors.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/.gradle/4.10.2/fileContent/fileContent.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/.gradle/4.10.2/fileHashes/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/.gradle/4.10.2/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/.gradle/4.10.2/fileHashes/resourceHashesCache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/.gradle/4.10.2/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/.gradle/4.10.2/taskHistory/taskHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/.gradle/4.10.2/taskHistory/taskHistory.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/.gradle/vcs-1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/.idea/libraries/Gradle__junit_junit_4_12.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/.idea/libraries/Gradle__org_scala_lang_modules_scala_xml_2_12_1_2_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/.idea/libraries/Gradle__org_scala_lang_scala_library_2_12_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/.idea/libraries/Gradle__org_scala_lang_scala_reflect_2_12_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/.idea/libraries/Gradle__org_scalactic_scalactic_2_12_3_0_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/.idea/libraries/Gradle__org_scalatest_scalatest_2_12_3_0_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/.idea/modules/snake.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/.idea/modules/snake.main.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/.idea/modules/snake.test.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/.idea/scala_compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/.idea/scalastyle_config.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/main/engine/GameBase$UpdateTimer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/main/engine/GameBase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/main/engine/graphics/Color$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/main/engine/graphics/Color.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/main/engine/graphics/Point$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/main/engine/graphics/Point.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/main/engine/graphics/Rectangle$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/main/engine/graphics/Rectangle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/main/engine/graphics/Triangle$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/main/engine/graphics/Triangle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/main/engine/random/ListRandomGen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/main/engine/random/RandomGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/main/engine/random/ScalaRandomGen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/main/snake/game/Apple$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/main/snake/game/Apple.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/main/snake/game/Direction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/main/snake/game/East$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/main/snake/game/East.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/main/snake/game/Empty$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/main/snake/game/Empty.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/main/snake/game/GridType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/main/snake/game/North$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/main/snake/game/North.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/main/snake/game/SnakeBody$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/main/snake/game/SnakeBody.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/main/snake/game/SnakeGame$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/main/snake/game/SnakeGame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/main/snake/game/SnakeHead$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/main/snake/game/SnakeHead.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/main/snake/game/South$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/main/snake/game/South.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/main/snake/game/West$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/main/snake/game/West.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/main/snake/logic/Cell$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/main/snake/logic/Cell.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/main/snake/logic/Coordinate$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/main/snake/logic/Coordinate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/main/snake/logic/Grid$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/main/snake/logic/Grid.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/main/snake/logic/Snake$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/main/snake/logic/Snake.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/main/snake/logic/SnakeLogic$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/main/snake/logic/SnakeLogic.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/main/snake/logic/Util$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/main/snake/logic/Util.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/test/test/GameLogicInterface.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/test/test/GenericRecord$FrameInput$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/test/test/GenericRecord$FrameInput.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/test/test/GenericRecord$GameDisplay.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/test/test/GenericRecord$GameOverDisplay$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/test/test/GenericRecord$GameOverDisplay.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/test/test/GenericRecord$GridDisplay$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/test/test/GenericRecord$GridDisplay.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/test/test/GenericRecord$Test$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/test/test/GenericRecord$Test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/test/test/GenericRecord$TestFrame$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/test/test/GenericRecord$TestFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/test/test/GenericRecord$TestSuite.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/test/test/GenericRecord.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/test/test/GridTypeInterface.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/test/test/snake/ChangeDir$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/test/test/snake/ChangeDir.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/test/test/snake/ReverseGame$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/test/test/snake/ReverseGame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/test/test/snake/SnakeAction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/test/test/snake/SnakeGridTypeWrapper$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/test/test/snake/SnakeGridTypeWrapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/test/test/snake/SnakeLogicWrapper$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/test/test/snake/SnakeLogicWrapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/test/test/snake/SnakeRecord$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/test/test/snake/SnakeRecord$SnakeTest$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/test/test/snake/SnakeRecord.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/test/test/snake/SnakeTestSuite.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/test/test/snake/SnakeTests$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/test/test/snake/SnakeTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/test/test/snake/SnakeTestsAssignment1_1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/test/test/snake/SnakeTestsAssignment1_3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/test/test/snake/Step$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/test/test/snake/Step.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/test/test/util/CryptoUtils$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/test/test/util/CryptoUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/test/test/util/StringUtils$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/test/test/util/StringUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/classes/scala/test/test/util/TestRandomGen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/reports/tests/test1_1/classes/test.snake.SnakeTestsAssignment1_1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/reports/tests/test1_1/css/base-style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/reports/tests/test1_1/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/reports/tests/test1_1/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/reports/tests/test1_1/js/report.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/reports/tests/test1_1/packages/test.snake.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/reports/tests/test1_3/classes/test.snake.SnakeTestsAssignment1_3.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/reports/tests/test1_3/css/base-style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/reports/tests/test1_3/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/reports/tests/test1_3/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/reports/tests/test1_3/js/report.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/reports/tests/test1_3/packages/test.snake.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/snake_hhe450.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/snake_sdf223.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/test-results/test1_1/TEST-test.snake.SnakeTestsAssignment1_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/test-results/test1_1/binary/output.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/test-results/test1_1/binary/output.bin.idx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/test-results/test1_1/binary/results.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/test-results/test1_3/TEST-test.snake.SnakeTestsAssignment1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/test-results/test1_3/binary/output.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/test-results/test1_3/binary/output.bin.idx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/test-results/test1_3/binary/results.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/tmp/scala/compilerAnalysis/compileScala.analysis" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/tmp/scala/compilerAnalysis/compileScala.analysis.relations" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/tmp/scala/compilerAnalysis/compileScala.mapping" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/tmp/scala/compilerAnalysis/compileTestScala.analysis" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/tmp/scala/compilerAnalysis/compileTestScala.analysis.relations" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/tmp/test1_1/jar_extract_1574444258189300396_tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/tmp/test1_1/jar_extract_1852344335064950665_tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/tmp/test1_1/jar_extract_1924555086170970525_tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/tmp/test1_1/jar_extract_2100983949284012012_tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/tmp/test1_1/jar_extract_2270754960849015407_tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/tmp/test1_1/jar_extract_2300961105136733027_tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/tmp/test1_1/jar_extract_2659558793568753169_tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/tmp/test1_1/jar_extract_3036660532505929496_tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/tmp/test1_1/jar_extract_3056653162212010511_tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/tmp/test1_1/jar_extract_3171977213876934868_tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/tmp/test1_1/jar_extract_3198267661010658071_tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/tmp/test1_1/jar_extract_3402267521661756505_tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/tmp/test1_1/jar_extract_3994337306801511716_tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/tmp/test1_1/jar_extract_4025040491240028213_tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/tmp/test1_1/jar_extract_4107618044837420924_tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/tmp/test1_1/jar_extract_4197499415579941670_tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/tmp/test1_1/jar_extract_4224807710387106703_tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/tmp/test1_1/jar_extract_4500276964682252601_tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/tmp/test1_1/jar_extract_4509155163246859214_tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/tmp/test1_1/jar_extract_5236798017873263891_tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/tmp/test1_1/jar_extract_5480292761506079397_tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/tmp/test1_1/jar_extract_564713903786817829_tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/tmp/test1_1/jar_extract_6010166568356306459_tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/tmp/test1_1/jar_extract_6281832650755726972_tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/tmp/test1_1/jar_extract_6402537791307445114_tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/tmp/test1_1/jar_extract_6423153724426857621_tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/tmp/test1_1/jar_extract_6980796981607447956_tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/tmp/test1_1/jar_extract_7507886306484583518_tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/tmp/test1_1/jar_extract_7743243209087671608_tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/tmp/test1_1/jar_extract_7871884450276811687_tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/tmp/test1_1/jar_extract_7967718290421276203_tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/tmp/test1_1/jar_extract_8207814995206358053_tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/tmp/test1_1/jar_extract_8409757209974531499_tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/tmp/test1_1/jar_extract_8524316318133687978_tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/tmp/test1_1/jar_extract_8734901472839532659_tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/tmp/test1_1/jar_extract_972822237029812123_tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/tmp/test1_3/jar_extract_1289247758680717640_tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/tmp/test1_3/jar_extract_2033238802343703894_tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/tmp/test1_3/jar_extract_349180298506424403_tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/tmp/test1_3/jar_extract_3662108570758364519_tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/tmp/test1_3/jar_extract_3690420480175980379_tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/tmp/test1_3/jar_extract_4888420376178507827_tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/tmp/test1_3/jar_extract_5253359899296412857_tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/tmp/test1_3/jar_extract_6299407673064739542_tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/tmp/test1_3/jar_extract_6780799203522402501_tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/tmp/test1_3/jar_extract_8267589444718356184_tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/tmp/test1_3/jar_extract_8464862336740161739_tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/build/tmp/test1_3/jar_extract_9044094490966372092_tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/lib/core.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/lib/gluegen-rt-natives-linux-aarch64.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/lib/gluegen-rt-natives-linux-amd64.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/lib/gluegen-rt-natives-linux-armv6hf.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/lib/gluegen-rt-natives-linux-i586.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/lib/gluegen-rt-natives-macosx-universal.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/lib/gluegen-rt-natives-windows-amd64.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/lib/gluegen-rt-natives-windows-i586.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/lib/gluegen-rt.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/lib/jogl-all-natives-linux-aarch64.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/lib/jogl-all-natives-linux-amd64.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/lib/jogl-all-natives-linux-armv6hf.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/lib/jogl-all-natives-linux-i586.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/lib/jogl-all-natives-macosx-universal.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/lib/jogl-all-natives-windows-amd64.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/lib/jogl-all-natives-windows-i586.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/lib/jogl-all.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/src/main/scala/engine/GameBase.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/src/main/scala/engine/graphics/Color.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/src/main/scala/engine/graphics/Point.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/src/main/scala/engine/graphics/Rectangle.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/src/main/scala/engine/graphics/Triangle.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/src/main/scala/engine/random/ListRandomGen.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/src/main/scala/engine/random/RandomGenerator.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/src/main/scala/engine/random/ScalaRandomGen.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/src/main/scala/snake/game/Direction.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/src/main/scala/snake/game/GridType.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/src/main/scala/snake/game/SnakeGame.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/src/main/scala/snake/logic/Grid.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/src/main/scala/snake/logic/Snake.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/src/main/scala/snake/logic/SnakeLogic.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/src/main/scala/snake/logic/Util.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/src/test/scala/test/GenericRecord.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/src/test/scala/test/snake/SnakeRecord.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/src/test/scala/test/snake/SnakeTestSuite.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/src/test/scala/test/snake/SnakeTests.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/src/test/scala/test/util/CryptoUtils.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/src/test/scala/test/util/StringUtils.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bonus_snake/src/test/scala/test/util/TestRandomGen.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.2/fileContent/fileContent.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.2/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.2/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.2/taskHistory/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.2/taskHistory/taskHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/scala/main/snake/logic/GameController$$anon$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/scala/main/snake/logic/GameController$$anon$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/scala/main/snake/logic/GameController$.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/scala/main/snake/logic/GameController$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/scala/main/snake/logic/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/scala/main/snake/logic/GameController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/scala/main/snake/logic/Snake$$anon$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/scala/main/snake/logic/Snake$$anon$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/scala/main/snake/logic/Snake$.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/scala/main/snake/logic/Snake$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/scala/main/snake/logic/Snake.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/scala/main/snake/logic/Snake.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/scala/main/snake/logic/SnakeLogic$.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/scala/main/snake/logic/SnakeLogic$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/scala/main/snake/logic/SnakeLogic.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/scala/main/snake/logic/SnakeLogic.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/scala/main/snake/logic/SnakeTrunk$.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/scala/main/snake/logic/SnakeTrunk$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/scala/main/snake/logic/SnakeTrunk.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/scala/main/snake/logic/SnakeTrunk.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/scala/main/snake/logic/Status$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/scala/main/snake/logic/Status.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/scala/compilerAnalysis/compileScala.analysis" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/scala/compilerAnalysis/compileScala.analysis" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/scala/compilerAnalysis/compileScala.analysis.relations" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/scala/compilerAnalysis/compileScala.analysis.relations" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/scala/compilerAnalysis/compileScala.mapping" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/scala/compilerAnalysis/compileScala.mapping" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/scala/compilerAnalysis/compileTestScala.analysis" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/scala/compilerAnalysis/compileTestScala.analysis" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/scala/compilerAnalysis/compileTestScala.analysis.relations" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/scala/compilerAnalysis/compileTestScala.analysis.relations" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/snake/logic/GameController.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/snake/logic/GameController.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/snake/logic/Snake.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/snake/logic/Snake.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/snake/logic/SnakeLogic.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/snake/logic/SnakeLogic.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snake_2ed/build/classes/scala/main/engine/GameBase$UpdateTimer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snake_2ed/build/classes/scala/main/engine/GameBase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snake_2ed/build/classes/scala/main/engine/graphics/Color$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snake_2ed/build/classes/scala/main/engine/graphics/Color.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snake_2ed/build/classes/scala/main/engine/graphics/Point$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snake_2ed/build/classes/scala/main/engine/graphics/Point.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snake_2ed/build/classes/scala/main/engine/graphics/Rectangle$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snake_2ed/build/classes/scala/main/engine/graphics/Rectangle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snake_2ed/build/classes/scala/main/engine/graphics/Triangle$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snake_2ed/build/classes/scala/main/engine/graphics/Triangle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snake_2ed/build/classes/scala/main/engine/random/ListRandomGen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snake_2ed/build/classes/scala/main/engine/random/RandomGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snake_2ed/build/classes/scala/main/engine/random/ScalaRandomGen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snake_2ed/build/classes/scala/main/snake/game/Apple$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snake_2ed/build/classes/scala/main/snake/game/Apple.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snake_2ed/build/classes/scala/main/snake/game/Direction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snake_2ed/build/classes/scala/main/snake/game/East$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snake_2ed/build/classes/scala/main/snake/game/East.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snake_2ed/build/classes/scala/main/snake/game/Empty$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snake_2ed/build/classes/scala/main/snake/game/Empty.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snake_2ed/build/classes/scala/main/snake/game/GridType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snake_2ed/build/classes/scala/main/snake/game/North$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snake_2ed/build/classes/scala/main/snake/game/North.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snake_2ed/build/classes/scala/main/snake/game/SnakeBody$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snake_2ed/build/classes/scala/main/snake/game/SnakeBody.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snake_2ed/build/classes/scala/main/snake/game/SnakeGame$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snake_2ed/build/classes/scala/main/snake/game/SnakeGame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snake_2ed/build/classes/scala/main/snake/game/SnakeHead$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snake_2ed/build/classes/scala/main/snake/game/SnakeHead.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snake_2ed/build/classes/scala/main/snake/game/South$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snake_2ed/build/classes/scala/main/snake/game/South.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snake_2ed/build/classes/scala/main/snake/game/West$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snake_2ed/build/classes/scala/main/snake/game/West.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snake_2ed/build/classes/scala/main/snake/logic/Cell$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snake_2ed/build/classes/scala/main/snake/logic/Cell.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snake_2ed/build/classes/scala/main/snake/logic/GameController$$anon$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snake_2ed/build/classes/scala/main/snake/logic/GameController$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snake_2ed/build/classes/scala/main/snake/logic/GameController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snake_2ed/build/classes/scala/main/snake/logic/Grid$$anon$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snake_2ed/build/classes/scala/main/snake/logic/Grid$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snake_2ed/build/classes/scala/main/snake/logic/Grid.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snake_2ed/build/classes/scala/main/snake/logic/Snake$$anon$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snake_2ed/build/classes/scala/main/snake/logic/Snake$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snake_2ed/build/classes/scala/main/snake/logic/Snake.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snake_2ed/build/classes/scala/main/snake/logic/SnakeLogic$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snake_2ed/build/classes/scala/main/snake/logic/SnakeLogic.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snake_2ed/build/classes/scala/main/snake/logic/SnakeTrunk$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snake_2ed/build/classes/scala/main/snake/logic/SnakeTrunk.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snake_2ed/build/classes/scala/main/snake/logic/Status$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snake_2ed/build/classes/scala/main/snake/logic/Status.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snake_2ed/src/main/scala/snake/logic/GameController.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../snake_2ed/src/main/scala/snake/logic/GameController.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snake_2ed/src/main/scala/snake/logic/SnakeLogic.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../snake_2ed/src/main/scala/snake/logic/SnakeLogic.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snake_2ed/src/main/scala/snake/logic/Status.scala" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,9 +524,10 @@
     <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1Qe1RgWEOrZDYY4BxTRnNgfwFFL" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="external.system.task.project.file.to.start" value="$PROJECT_DIR$" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../snake_2ed" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunDashboard">
@@ -127,5 +619,16 @@
       <updated>1568116240208</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
