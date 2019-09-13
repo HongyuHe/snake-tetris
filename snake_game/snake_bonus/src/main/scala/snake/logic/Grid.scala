@@ -1,7 +1,7 @@
 package snake.logic
 
 import scala.collection.mutable
-import snake.game.{Empty, GridType}
+import snake.game.{Cell, Empty, GridType, SnakeTrunk}
 
 class Grid(nrRows: Int, nrColumns: Int) {
   var nrFreeSpots = 0

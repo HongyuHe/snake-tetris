@@ -37,6 +37,8 @@ products:
    src/main/scala/snake/logic/GameController.scala -> build/classes/scala/main/snake/logic/GameController$$anon$1.class
    src/main/scala/snake/logic/GameController.scala -> build/classes/scala/main/snake/logic/GameController$.class
    src/main/scala/snake/logic/GameController.scala -> build/classes/scala/main/snake/logic/GameController.class
+   src/main/scala/snake/logic/GameStatus.scala -> build/classes/scala/main/snake/logic/GameStatus$.class
+   src/main/scala/snake/logic/GameStatus.scala -> build/classes/scala/main/snake/logic/GameStatus.class
    src/main/scala/snake/logic/Grid.scala -> build/classes/scala/main/snake/logic/Grid$$anon$1.class
    src/main/scala/snake/logic/Grid.scala -> build/classes/scala/main/snake/logic/Grid$.class
    src/main/scala/snake/logic/Grid.scala -> build/classes/scala/main/snake/logic/Grid.class
@@ -47,8 +49,6 @@ products:
    src/main/scala/snake/logic/SnakeLogic.scala -> build/classes/scala/main/snake/logic/SnakeLogic.class
    src/main/scala/snake/logic/SnakeTrunk.scala -> build/classes/scala/main/snake/logic/SnakeTrunk$.class
    src/main/scala/snake/logic/SnakeTrunk.scala -> build/classes/scala/main/snake/logic/SnakeTrunk.class
-   src/main/scala/snake/logic/Status.scala -> build/classes/scala/main/snake/logic/Status$.class
-   src/main/scala/snake/logic/Status.scala -> build/classes/scala/main/snake/logic/Status.class
 binary dependencies:
    src/main/scala/engine/GameBase.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.12.8/36b234834d8f842cdde963c8591efae6cf413e3f/scala-library-2.12.8.jar
    src/main/scala/engine/GameBase.scala -> lib/core.jar
@@ -78,6 +78,8 @@ binary dependencies:
    src/main/scala/snake/logic/Cell.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/rt.jar
    src/main/scala/snake/logic/GameController.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.12.8/36b234834d8f842cdde963c8591efae6cf413e3f/scala-library-2.12.8.jar
    src/main/scala/snake/logic/GameController.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/rt.jar
+   src/main/scala/snake/logic/GameStatus.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.12.8/36b234834d8f842cdde963c8591efae6cf413e3f/scala-library-2.12.8.jar
+   src/main/scala/snake/logic/GameStatus.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/rt.jar
    src/main/scala/snake/logic/Grid.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.12.8/36b234834d8f842cdde963c8591efae6cf413e3f/scala-library-2.12.8.jar
    src/main/scala/snake/logic/Grid.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/rt.jar
    src/main/scala/snake/logic/Snake.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.12.8/36b234834d8f842cdde963c8591efae6cf413e3f/scala-library-2.12.8.jar
@@ -86,8 +88,6 @@ binary dependencies:
    src/main/scala/snake/logic/SnakeLogic.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/rt.jar
    src/main/scala/snake/logic/SnakeTrunk.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.12.8/36b234834d8f842cdde963c8591efae6cf413e3f/scala-library-2.12.8.jar
    src/main/scala/snake/logic/SnakeTrunk.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/rt.jar
-   src/main/scala/snake/logic/Status.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.12.8/36b234834d8f842cdde963c8591efae6cf413e3f/scala-library-2.12.8.jar
-   src/main/scala/snake/logic/Status.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/rt.jar
 source dependencies:
    src/main/scala/engine/GameBase.scala -> src/main/scala/engine/graphics/Color.scala
    src/main/scala/engine/GameBase.scala -> src/main/scala/engine/graphics/Point.scala
@@ -113,10 +113,10 @@ source dependencies:
    src/main/scala/snake/logic/GameController.scala -> src/main/scala/snake/game/Direction.scala
    src/main/scala/snake/logic/GameController.scala -> src/main/scala/snake/game/GridType.scala
    src/main/scala/snake/logic/GameController.scala -> src/main/scala/snake/logic/Cell.scala
+   src/main/scala/snake/logic/GameController.scala -> src/main/scala/snake/logic/GameStatus.scala
    src/main/scala/snake/logic/GameController.scala -> src/main/scala/snake/logic/Grid.scala
    src/main/scala/snake/logic/GameController.scala -> src/main/scala/snake/logic/Snake.scala
    src/main/scala/snake/logic/GameController.scala -> src/main/scala/snake/logic/SnakeTrunk.scala
-   src/main/scala/snake/logic/GameController.scala -> src/main/scala/snake/logic/Status.scala
    src/main/scala/snake/logic/Grid.scala -> src/main/scala/snake/game/GridType.scala
    src/main/scala/snake/logic/Grid.scala -> src/main/scala/snake/logic/Cell.scala
    src/main/scala/snake/logic/Grid.scala -> src/main/scala/snake/logic/SnakeTrunk.scala
@@ -129,6 +129,7 @@ source dependencies:
    src/main/scala/snake/logic/SnakeLogic.scala -> src/main/scala/snake/game/Direction.scala
    src/main/scala/snake/logic/SnakeLogic.scala -> src/main/scala/snake/game/GridType.scala
    src/main/scala/snake/logic/SnakeLogic.scala -> src/main/scala/snake/logic/GameController.scala
+   src/main/scala/snake/logic/SnakeLogic.scala -> src/main/scala/snake/logic/GameStatus.scala
    src/main/scala/snake/logic/SnakeLogic.scala -> src/main/scala/snake/logic/Grid.scala
    src/main/scala/snake/logic/SnakeTrunk.scala -> src/main/scala/snake/game/GridType.scala
    src/main/scala/snake/logic/SnakeTrunk.scala -> src/main/scala/snake/logic/Cell.scala
@@ -172,6 +173,8 @@ class names:
    src/main/scala/snake/logic/GameController.scala -> snake.logic.GameController
    src/main/scala/snake/logic/GameController.scala -> snake.logic.GameController$
    src/main/scala/snake/logic/GameController.scala -> snake.logic.GameController$$anon$1
+   src/main/scala/snake/logic/GameStatus.scala -> snake.logic.GameStatus
+   src/main/scala/snake/logic/GameStatus.scala -> snake.logic.GameStatus$
    src/main/scala/snake/logic/Grid.scala -> snake.logic.Grid
    src/main/scala/snake/logic/Grid.scala -> snake.logic.Grid$
    src/main/scala/snake/logic/Grid.scala -> snake.logic.Grid$$anon$1
@@ -182,5 +185,3 @@ class names:
    src/main/scala/snake/logic/SnakeLogic.scala -> snake.logic.SnakeLogic$
    src/main/scala/snake/logic/SnakeTrunk.scala -> snake.logic.SnakeTrunk
    src/main/scala/snake/logic/SnakeTrunk.scala -> snake.logic.SnakeTrunk$
-   src/main/scala/snake/logic/Status.scala -> snake.logic.Status
-   src/main/scala/snake/logic/Status.scala -> snake.logic.Status$

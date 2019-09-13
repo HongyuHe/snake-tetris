@@ -17,6 +17,7 @@ class GameController (val nrRows: Int,
     placeApple()
     moveSnake()
     updateGameStatus()
+    checkGameOver()
     drawSnake(snake.droppedTail)
     checkAppleAndGrowSnake()
   }
@@ -46,18 +47,16 @@ class GameController (val nrRows: Int,
   def placeApple(): Unit = {
     val canPlaceApple = !status.hasApple && !status.isGridFull
     def generateNewApple(): Unit = {
-      val index: Int = randomGen.randomInt(grid.nrFreeSpots)
-      val cell = grid.getFreeCell(index)
-      grid.setCellType(cell, Apple())
-      status.hasApple = true
-    }
-
-    if (canPlaceApple) {
       grid.updateTableOfFreeCells()
       if (grid.nrFreeSpots == 0) status.isGridFull = true
-      else generateNewApple()
+      else {
+        val index: Int = randomGen.randomInt(grid.nrFreeSpots)
+        val cell = grid.getFreeCell(index)
+        grid.setCellType(cell, Apple())
+        status.hasApple = true
+      }
     }
-    else checkGameOver()
+    if (canPlaceApple) generateNewApple()
   }
 
   def updateGameStatus(): Unit = {
@@ -75,7 +74,7 @@ class GameController (val nrRows: Int,
       status.hasApple = false
       snake.grow()
       placeApple()
-    } else checkGameOver()
+    }
   }
 
   private[this] def getSnakeHeadDirection: Direction = snake.body.head.cellType.asInstanceOf[SnakeHead].direction

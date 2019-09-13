@@ -75,8 +75,6 @@ binary dependencies:
    src/main/scala/snake/game/SnakeGame.scala -> lib/core.jar
    src/main/scala/snake/game/SnakeGame.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/rt.jar
    src/main/scala/snake/logic/GameController.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.12.8/36b234834d8f842cdde963c8591efae6cf413e3f/scala-library-2.12.8.jar
-   src/main/scala/snake/logic/GameController.scala -> build/classes/scala/main/snake/logic/GameStatus$.class
-   src/main/scala/snake/logic/GameController.scala -> build/classes/scala/main/snake/logic/GameStatus.class
    src/main/scala/snake/logic/GameController.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/rt.jar
    src/main/scala/snake/logic/GameStatus.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.12.8/36b234834d8f842cdde963c8591efae6cf413e3f/scala-library-2.12.8.jar
    src/main/scala/snake/logic/GameStatus.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/rt.jar
@@ -85,7 +83,6 @@ binary dependencies:
    src/main/scala/snake/logic/Snake.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.12.8/36b234834d8f842cdde963c8591efae6cf413e3f/scala-library-2.12.8.jar
    src/main/scala/snake/logic/Snake.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/rt.jar
    src/main/scala/snake/logic/SnakeLogic.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.12.8/36b234834d8f842cdde963c8591efae6cf413e3f/scala-library-2.12.8.jar
-   src/main/scala/snake/logic/SnakeLogic.scala -> build/classes/scala/main/snake/logic/GameStatus.class
    src/main/scala/snake/logic/SnakeLogic.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/rt.jar
    src/main/scala/snake/logic/SnakeTrunk.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.12.8/36b234834d8f842cdde963c8591efae6cf413e3f/scala-library-2.12.8.jar
    src/main/scala/snake/logic/SnakeTrunk.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/rt.jar
@@ -111,6 +108,7 @@ source dependencies:
    src/main/scala/snake/logic/GameController.scala -> src/main/scala/engine/random/RandomGenerator.scala
    src/main/scala/snake/logic/GameController.scala -> src/main/scala/snake/game/Direction.scala
    src/main/scala/snake/logic/GameController.scala -> src/main/scala/snake/game/GridType.scala
+   src/main/scala/snake/logic/GameController.scala -> src/main/scala/snake/logic/GameStatus.scala
    src/main/scala/snake/logic/GameController.scala -> src/main/scala/snake/logic/Grid.scala
    src/main/scala/snake/logic/GameController.scala -> src/main/scala/snake/logic/Snake.scala
    src/main/scala/snake/logic/GameController.scala -> src/main/scala/snake/logic/SnakeTrunk.scala
@@ -125,6 +123,7 @@ source dependencies:
    src/main/scala/snake/logic/SnakeLogic.scala -> src/main/scala/snake/game/Direction.scala
    src/main/scala/snake/logic/SnakeLogic.scala -> src/main/scala/snake/game/GridType.scala
    src/main/scala/snake/logic/SnakeLogic.scala -> src/main/scala/snake/logic/GameController.scala
+   src/main/scala/snake/logic/SnakeLogic.scala -> src/main/scala/snake/logic/GameStatus.scala
    src/main/scala/snake/logic/SnakeLogic.scala -> src/main/scala/snake/logic/Grid.scala
    src/main/scala/snake/logic/SnakeTrunk.scala -> src/main/scala/snake/game/GridType.scala
    src/main/scala/snake/logic/SnakeTrunk.scala -> src/main/scala/snake/logic/Grid.scala

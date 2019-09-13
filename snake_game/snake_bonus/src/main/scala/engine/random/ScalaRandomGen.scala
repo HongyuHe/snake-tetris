@@ -1,7 +1,8 @@
-// DO NOT MODIFY FOR BASIC SUBMISSION
 // scalastyle:off
 
 package engine.random
+
+import scala.util.Random
 
 /** Random number generator used during actual gameplay.
   *
@@ -17,4 +18,8 @@ class ScalaRandomGen(sRandom: scala.util.Random) extends RandomGenerator {
     last = sRandom.nextInt(upTo) ; last
   }
 
+}
+
+object ScalaRandomGen {
+  def apply(): ScalaRandomGen = new ScalaRandomGen(scala.util.Random)
 }

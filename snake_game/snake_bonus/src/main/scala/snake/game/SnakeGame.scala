@@ -5,7 +5,8 @@ package snake.game
 
 import java.awt.event
 
-import processing.core.{PApplet, PConstants}
+//import processing.core.{PApplet, PConstants}
+import processing.core._
 import processing.event.KeyEvent
 import java.awt.event.KeyEvent._
 
@@ -67,6 +68,9 @@ class SnakeGame extends GameBase {
         case Apple()  =>
           setFillColor(Color.Red)
           drawEllipse(area)
+        case Brick() =>
+          setFillColor(Color.Yellow)
+          drawRectangle(area)
         case Empty() => ()
       }
     }
@@ -92,15 +96,14 @@ class SnakeGame extends GameBase {
     def changeDir(dir: Direction): Unit =
       gameLogic.changeDir(dir)
 
-    event.getKeyCode match {
-      case VK_UP    => changeDir(North())
-      case VK_DOWN  => changeDir(South())
-      case VK_LEFT  => changeDir(West())
-      case VK_RIGHT => changeDir(East())
-      case VK_R     => gameLogic.setReverseTime(true)
-      case _        => ()
-    }
-
+      event.getKeyCode match {
+        case VK_UP    => changeDir(North())
+        case VK_DOWN  => changeDir(South())
+        case VK_LEFT  => changeDir(West())
+        case VK_RIGHT => changeDir(East())
+        case VK_R     => gameLogic.setReverseTime(true)
+        case _        => ()
+      }
   }
 
   override def keyReleased(event: KeyEvent): Unit = {
@@ -112,7 +115,7 @@ class SnakeGame extends GameBase {
 
   override def settings(): Unit = {
     pixelDensity(displayDensity())
-    size(widthInPixels, heightInPixels, PConstants.P2D)
+    size(widthInPixels, heightInPixels, PConstants.P3D)
   }
 
   override def setup(): Unit = {

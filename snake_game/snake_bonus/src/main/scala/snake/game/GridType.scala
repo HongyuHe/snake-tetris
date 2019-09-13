@@ -1,4 +1,3 @@
-// DO NOT MODIFY FOR BASIC SUBMISSION
 // scalastyle:off
 
 package snake.game
@@ -13,3 +12,5 @@ case class SnakeBody(distanceToHead: Float = 0f) extends GridType
 case class Empty() extends GridType
 
 case class Apple() extends GridType
+
+case class Brick() extends GridType

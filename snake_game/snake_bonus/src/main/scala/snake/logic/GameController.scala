@@ -1,22 +1,54 @@
 package snake.logic
 
-import engine.random.RandomGenerator
-import snake.game.{Apple, Direction, East, Empty, North, SnakeBody, SnakeHead, South, West}
+import engine.random.{RandomGenerator, ScalaRandomGen}
+import snake.game._
 
-class GameController (val nrRows: Int,
-                      val nrColumns: Int,
-                      val randomGen: RandomGenerator) {
+class GameController(val nrRows: Int,
+                     val nrColumns: Int,
+                     val randomGen: RandomGenerator) {
 
-  var grid   = Grid(nrRows, nrColumns)
+  var grid = Grid(nrRows, nrColumns)
   var status = GameStatus()
+  var setting = GameSetting()
 
   private val snake = Snake()
   private var snakePreviousDirection: Direction = East()
 
+  def init(): Unit = {
+    def setLevel(): Unit = {
+      for (i <- 0 until setting.level) {
+        placeWall("vertical",   setting.level)
+        placeWall("horizontal", setting.level)
+      }
+    }
+    drawSnake()
+    placeApple()
+    setLevel()
+  }
+  private[this] def placeWall(wType: String, nrBricks: Int = 0): Unit = {
+    grid.updateTableOfFreeCells()
+    val index: Int = randomGen.randomInt(grid.nrFreeSpots)
+    val offset = wType match {
+      case "vertical"   => nrColumns
+      case "horizontal" => 1
+    }
+
+    for (i <- 0 until nrBricks*offset by offset) {
+      grid.setCellType(
+        grid.getFreeCell((index + i) % grid.nrFreeSpots),
+        Brick()
+      )
+    }
+  }
+
+  def isSnakeHitWall: Boolean = grid.getCellType(snake.body.head) == Brick()
+
+  //////////////////////////////////////////////////////////////////////
   def updateState(): Unit = {
     placeApple()
     moveSnake()
     updateGameStatus()
+    checkGameOver()
     drawSnake(snake.droppedTail)
     checkAppleAndGrowSnake()
   }
@@ -29,46 +61,47 @@ class GameController (val nrRows: Int,
   def moveSnake(): Unit = {
     val snakeHeadDir = getSnakeHeadDirection
     val moveSnakeTo: Direction => Unit = snakeHeadDir match {
-      case East()  | West()  => snake.move(nrColumns)
+      case East()  | West() => snake.move(nrColumns)
       case North() | South() => snake.move(nrRows)
     }
-    moveSnakeTo (snakeHeadDir)
+    moveSnakeTo(snakeHeadDir)
   }
 
   def drawSnake(snakeDroppedTail: Option[SnakeTrunk] = None): Unit = {
     val isSnakeHeadBehindsTail = grid.getCellType(snake.body.head) == SnakeBody(1)
+
     def eraseSnakeTail(): Unit = if (!isSnakeHeadBehindsTail) grid.setCellType(snakeDroppedTail.get, Empty())
 
-    snake.body.foreach ( trunk => grid.setCellType(trunk, trunk.cellType) )
-    if (snakeDroppedTail.isDefined) { eraseSnakeTail() }
+    snake.body.foreach(trunk => grid.setCellType(trunk, trunk.cellType))
+    if (snakeDroppedTail.isDefined) {
+      eraseSnakeTail()
+    }
     snakePreviousDirection = getSnakeHeadDirection
   }
 
   def placeApple(): Unit = {
     val canPlaceApple = !status.hasApple && !status.isGridFull
     def generateNewApple(): Unit = {
-      val index: Int = randomGen.randomInt(grid.nrFreeSpots)
-      val cell = grid.getFreeCell(index)
-      grid.setCellType(cell, Apple())
-      status.hasApple = true
-    }
-
-    if (canPlaceApple) {
       grid.updateTableOfFreeCells()
       if (grid.nrFreeSpots == 0) status.isGridFull = true
-      else generateNewApple()
+      else {
+        val index: Int = randomGen.randomInt(grid.nrFreeSpots)
+        val cell = grid.getFreeCell(index)
+        grid.setCellType(cell, Apple())
+        status.hasApple = true
+      }
     }
-    else checkGameOver()
+    if (canPlaceApple) generateNewApple()
   }
 
   def updateGameStatus(): Unit = {
     status.isSnakeGrowing = snake.growCounter > 0
-    status.isAppleEaten   = grid.getCellType(snake.body.head) == Apple()
+    status.isAppleEaten = grid.getCellType(snake.body.head) == Apple()
     status.isSnakeCrashed = grid.getCellType(snake.body.head) match {
-        case SnakeBody(1) => status.isSnakeGrowing
-        case SnakeBody(_) => true
-        case _            => false
-      }
+      case SnakeBody(1) => status.isSnakeGrowing
+      case SnakeBody(_) => true
+      case _ => false
+    }
   }
 
   def checkAppleAndGrowSnake(): Unit = {
@@ -76,7 +109,8 @@ class GameController (val nrRows: Int,
       status.hasApple = false
       snake.grow()
       placeApple()
-    } else checkGameOver()
+    }
+//    else checkGameOver()
   }
 
   def makeDeepCopy: GameController = {
@@ -84,20 +118,18 @@ class GameController (val nrRows: Int,
 
     that.status = this.status.copy()
     this.snake copyTo that.snake
-    this.grid  copyTo that.grid
+    this.grid copyTo that.grid
     that
   }
 
   private[this] def getSnakeHeadDirection: Direction = snake.body.head.cellType.asInstanceOf[SnakeHead].direction
+
   private[this] def checkGameOver(): Unit =
-    if ((!status.hasApple && status.isGridFull && status.isSnakeGrowing) || status.isSnakeCrashed)
+    if ((!status.hasApple && status.isGridFull && status.isSnakeGrowing) || status.isSnakeCrashed || isSnakeHitWall)
       status.isGameOver = true
 }
 
 object GameController {
   def apply(nrRows: Int, nrColumns: Int, randomGen: RandomGenerator): GameController =
-    new GameController(nrRows, nrColumns, randomGen) {
-      drawSnake()
-      placeApple()
-    }
+    new GameController(nrRows, nrColumns, randomGen) { init() }
 }

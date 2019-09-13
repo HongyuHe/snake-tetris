@@ -1,9 +1,9 @@
-package snake.logic
+package snake.game
 
-import snake.game.{Empty, GridType}
-
-case class SnakeTrunk(var x: Int = 0, var y: Int = 0,
-                      `type`: GridType = Empty().asInstanceOf[GridType] ) extends Cell(`type`) {
+case class SnakeTrunk(var x: Int = 0,
+                      var y: Int = 0,
+                      `type`: GridType = Empty().asInstanceOf[GridType] )
+  extends Cell(`type`) with Coordinates {
 
   override def toString: String = " [" + x + ", " + y + ", " + cellType.toString + "] "
   def inTheSamePositionAs(thatOrNone: Option[SnakeTrunk]): Boolean = {
