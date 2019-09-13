@@ -3,28 +3,26 @@ package snake.logic
 import engine.random.RandomGenerator
 import snake.game.{Apple, Direction, East, Empty, North, SnakeBody, SnakeHead, South, West}
 
+case class Status(var hasApple:       Boolean = false,
+                  var isGameOver:     Boolean = false,
+                  var isGridFull:     Boolean = false,
+                  var isAppleEaten:   Boolean = false,
+                  var isSnakeCrashed: Boolean = false,
+                  var isSnakeGrowing: Boolean = false)
+
 class GameController (val nrRows: Int,
                       val nrColumns: Int,
                       val randomGen: RandomGenerator) {
 
-  var grid   = Grid(nrRows, nrColumns)
+  val snake  = Snake()
   var status = Status()
+  var grid   = Grid(nrRows, nrColumns)
 
-  private val snake = Snake()
-  private var snakePreviousDirection: Direction = East()
+  private[this] var snakePreviousDirection: Direction = East()
 
-  def run(): Unit = {
-    placeApple()
-    moveSnake()
-    updateGameStatus()
-    drawSnake(snake.droppedTail)
-    checkAppleAndGrowSnake()
-  }
-
-  def turnSnake(currentDirection: Direction): Unit = {
+  def turnSnake(currentDirection: Direction): Unit =
     if (snakePreviousDirection.opposite != currentDirection)
       snake.updateHeadAndBodyTypes(headDir = currentDirection)
-  }
 
   def moveSnake(): Unit = {
     val snakeHeadDir = getSnakeHeadDirection
@@ -37,7 +35,7 @@ class GameController (val nrRows: Int,
 
   def drawSnake(snakeDroppedTail: Option[SnakeTrunk] = None): Unit = {
     val isSnakeHeadBehindsTail = grid.getCellType(snake.body.head) == SnakeBody(1)
-    def eraseSnakeTail(): Unit = if (!isSnakeHeadBehindsTail) grid.setCellType(snakeDroppedTail.get, Empty())
+    def eraseSnakeTail(): Unit = if (!isSnakeHeadBehindsTail) { grid.setCellType(snakeDroppedTail.get, Empty()) }
 
     snake.body.foreach ( trunk => grid.setCellType(trunk, trunk.cellType) )
     if (snakeDroppedTail.isDefined) { eraseSnakeTail() }
@@ -77,15 +75,6 @@ class GameController (val nrRows: Int,
       snake.grow()
       placeApple()
     } else checkGameOver()
-  }
-
-  def makeDeepCopy: GameController = {
-    val that = GameController(nrRows, nrColumns, randomGen)
-
-    that.status = this.status.copy()
-    this.snake copyTo that.snake
-    this.grid  copyTo that.grid
-    that
   }
 
   private[this] def getSnakeHeadDirection: Direction = snake.body.head.cellType.asInstanceOf[SnakeHead].direction

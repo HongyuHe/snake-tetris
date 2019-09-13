@@ -38,8 +38,6 @@ class Grid(nrRows: Int, nrColumns: Int) {
     for (index <- 0 to this.nrFreeSpots)
       that.hashTableOfFreeCell(index) = this.hashTableOfFreeCell(index).copy()
   }
-
-  override def toString: String = cells.toString()
 }
 
 object Grid {

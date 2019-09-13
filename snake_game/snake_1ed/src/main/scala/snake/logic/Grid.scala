@@ -3,6 +3,8 @@ package snake.logic
 import scala.collection.mutable
 import snake.game.{Empty, GridType}
 
+class Cell(var cellType: GridType = Empty().asInstanceOf[GridType])
+
 class Grid(nrRows: Int, nrColumns: Int) {
   var nrFreeSpots = 0
 
@@ -27,19 +29,6 @@ class Grid(nrRows: Int, nrColumns: Int) {
         } } }
     nrFreeSpots = cellIndex
   }
-
-  def copyTo(that: Grid): Unit = {
-    that.nrFreeSpots = this.nrFreeSpots
-
-    for (row <- this.cells.indices) {
-      that.cells(row).clear()
-      this.cells(row).foreach { cell => that.cells(row) += new Cell(cell.cellType) }
-    }
-    for (index <- 0 to this.nrFreeSpots)
-      that.hashTableOfFreeCell(index) = this.hashTableOfFreeCell(index).copy()
-  }
-
-  override def toString: String = cells.toString()
 }
 
 object Grid {

@@ -6,7 +6,7 @@ import scala.collection.mutable
 
 class Snake {
   var growCounter = 0
-  var droppedTail: Option[SnakeTrunk] = None  // drop tail if snake is not growing
+  var droppedTail: Option[SnakeTrunk] = None                                      // drop tail if snake is not growing
   val grow: () => Unit = () => growCounter += GrowPerTime
   var body: mutable.Buffer[SnakeTrunk] = mutable.Buffer[SnakeTrunk]()
   lazy val isHeadBehindTail: Boolean = body.head inTheSamePositionAs droppedTail
