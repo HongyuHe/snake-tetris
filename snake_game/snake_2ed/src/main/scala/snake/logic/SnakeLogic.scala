@@ -17,7 +17,7 @@ class SnakeLogic(val randomGen: RandomGenerator,
 
   def step(): Unit = {
     if (isReversing  && gameHistory.nonEmpty)  reverseGameHistory()
-    if (!isReversing && !gameController.status.isGameOver) { gameController.updateState(); saveGameHistory() }
+    if (!isReversing && !gameController.status.isGameOver) { gameController.update(); saveGameHistory() }
   }
 
   def setReverseTime(reverse: Boolean): Unit = {

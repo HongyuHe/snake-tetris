@@ -12,12 +12,13 @@ class SnakeLogic(val randomGen: RandomGenerator,
   def this() = this(new ScalaRandomGen(), DefaultColumns, DefaultRows)
 
   def isGameOver: Boolean = gameController.status.isGameOver
-  def changeDir(d: Direction): Unit = gameController.turnSnake(d)
+  def changeDir(d: Direction): Unit = gameController.turnSnake(gameController.snake, d)
+  def changeRivalDir(d: Direction): Unit = gameController.turnSnake(gameController.snakeRival, d)
   def getGridTypeAt(x: Int, y: Int): GridType = gameController.grid.getCellType(y, x)
 
   def step(): Unit = {
     if (isReversing  && gameHistory.nonEmpty)  reverseGameHistory()
-    if (!isReversing && !gameController.status.isGameOver) { gameController.updateState(); saveGameHistory() }
+    if (!isReversing && !gameController.status.isGameOver) { gameController.update(); saveGameHistory() }
   }
 
   def setReverseTime(reverse: Boolean): Unit = {

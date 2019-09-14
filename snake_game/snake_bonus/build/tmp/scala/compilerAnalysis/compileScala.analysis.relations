@@ -80,7 +80,6 @@ binary dependencies:
    src/main/scala/snake/game/GridType.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.12.8/36b234834d8f842cdde963c8591efae6cf413e3f/scala-library-2.12.8.jar
    src/main/scala/snake/game/GridType.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/rt.jar
    src/main/scala/snake/game/SnakeGame.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.12.8/36b234834d8f842cdde963c8591efae6cf413e3f/scala-library-2.12.8.jar
-   src/main/scala/snake/game/SnakeGame.scala -> build/classes/scala/main/snake/game/Brick.class
    src/main/scala/snake/game/SnakeGame.scala -> lib/core.jar
    src/main/scala/snake/game/SnakeGame.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/rt.jar
    src/main/scala/snake/game/SnakeTrunk.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.12.8/36b234834d8f842cdde963c8591efae6cf413e3f/scala-library-2.12.8.jar
@@ -96,7 +95,6 @@ binary dependencies:
    src/main/scala/snake/logic/Snake.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.12.8/36b234834d8f842cdde963c8591efae6cf413e3f/scala-library-2.12.8.jar
    src/main/scala/snake/logic/Snake.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/rt.jar
    src/main/scala/snake/logic/SnakeLogic.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.12.8/36b234834d8f842cdde963c8591efae6cf413e3f/scala-library-2.12.8.jar
-   src/main/scala/snake/logic/SnakeLogic.scala -> build/classes/scala/main/engine/random/ScalaRandomGen$.class
    src/main/scala/snake/logic/SnakeLogic.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/rt.jar
 source dependencies:
    src/main/scala/engine/GameBase.scala -> src/main/scala/engine/graphics/Color.scala
@@ -145,6 +143,7 @@ source dependencies:
    src/main/scala/snake/logic/SnakeLogic.scala -> src/main/scala/snake/logic/GameController.scala
    src/main/scala/snake/logic/SnakeLogic.scala -> src/main/scala/snake/logic/GameStatus.scala
    src/main/scala/snake/logic/SnakeLogic.scala -> src/main/scala/snake/logic/Grid.scala
+   src/main/scala/snake/logic/SnakeLogic.scala -> src/main/scala/snake/logic/Snake.scala
 external dependencies:
 class names:
    src/main/scala/engine/GameBase.scala -> engine.GameBase

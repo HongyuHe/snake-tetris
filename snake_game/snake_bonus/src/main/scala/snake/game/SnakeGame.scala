@@ -58,18 +58,25 @@ class SnakeGame extends GameBase {
 
     def drawCell(area: Rectangle, cell: GridType): Unit = {
       cell match {
-        case SnakeHead(direction) =>
+        case SnakeHead(id, direction) if id == "normal" =>
           setFillColor(Color.LawnGreen)
           drawTriangle(getTriangleForDirection(direction, area))
-        case SnakeBody(p) =>
+        case SnakeBody(id,p) if id == "normal" =>
           val color = Color.LawnGreen.interpolate(p,Color.DarkGreen)
+          setFillColor(color)
+          drawRectangle(area)
+        case SnakeHead(id, direction) if id == "rival" =>
+          setFillColor(Color.Yellow)
+          drawTriangle(getTriangleForDirection(direction, area))
+        case SnakeBody(id,p) if id == "rival" =>
+          val color = Color.Yellow.interpolate(p,Color.Orange)
           setFillColor(color)
           drawRectangle(area)
         case Apple()  =>
           setFillColor(Color.Red)
           drawEllipse(area)
         case Brick() =>
-          setFillColor(Color.Yellow)
+          setFillColor(Color.Gray)
           drawRectangle(area)
         case Empty() => ()
       }
@@ -93,15 +100,19 @@ class SnakeGame extends GameBase {
     */
   override def keyPressed(event: KeyEvent): Unit = {
 
-    def changeDir(dir: Direction): Unit =
-      gameLogic.changeDir(dir)
+    def changeDir(dir: Direction):      Unit = gameLogic.changeDir(dir)
+    def changeRivalDir(dir: Direction): Unit = gameLogic.changeRivalDir(dir)
 
       event.getKeyCode match {
+        case VK_R     => gameLogic.setReverseTime(true)
+        case VK_W     => changeRivalDir(North())
+        case VK_S     => changeRivalDir(South())
+        case VK_A     => changeRivalDir(West())
+        case VK_D     => changeRivalDir(East())
         case VK_UP    => changeDir(North())
         case VK_DOWN  => changeDir(South())
         case VK_LEFT  => changeDir(West())
         case VK_RIGHT => changeDir(East())
-        case VK_R     => gameLogic.setReverseTime(true)
         case _        => ()
       }
   }

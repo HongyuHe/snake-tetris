@@ -1,3 +1,4 @@
 package snake.logic
 
-case class GameSetting(var level: Int = 9)
+case class GameSetting(var level: Int = 2,
+                       var twoPlayerMode: Boolean = true)

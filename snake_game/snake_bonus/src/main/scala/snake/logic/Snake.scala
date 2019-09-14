@@ -5,7 +5,9 @@ import snake.logic.Snake._
 import scala.collection.mutable
 
 class Snake {
+  var id = "normal"
   var growCounter = 0
+  var preDir: Direction = East()
   var droppedTail: Option[SnakeTrunk] = None                                      // drop tail if snake is not growing
   val grow: () => Unit = () => growCounter += GrowPerTime
   var body: mutable.Buffer[SnakeTrunk] = mutable.Buffer[SnakeTrunk]()
@@ -32,10 +34,10 @@ class Snake {
     var distance = 0f
     body.tail.foreach { trunk =>
       distance += interval
-      trunk.cellType = SnakeBody(distance)
+      trunk.cellType = SnakeBody(id, distance)
     }
-    body.last.cellType = SnakeBody(1)
-    body.head.cellType = SnakeHead(headDir)
+    body.last.cellType = SnakeBody(id,1)
+    body.head.cellType = SnakeHead(id, headDir)
   }
 
   def copyTo(that: Snake): Unit = {
@@ -63,8 +65,12 @@ object Snake {
   val CutPerTime  = 1
   val GrowPerTime = 3
 
-  def apply(): Snake = new Snake() {
-    body += SnakeTrunk(0, 2) += SnakeTrunk(0, 1) += SnakeTrunk()
+  def apply(rivalMode: Boolean = false): Snake = new Snake() {
+    if (rivalMode) {
+      id = "rival"
+      body += SnakeTrunk(4, 2) += SnakeTrunk(4, 1) += SnakeTrunk(4, 0)
+    }
+    else body += SnakeTrunk(0, 2) += SnakeTrunk(0, 1) += SnakeTrunk()
     updateHeadAndBodyTypes()
   }
 }
