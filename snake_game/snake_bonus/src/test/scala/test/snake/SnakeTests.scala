@@ -3,7 +3,7 @@
 
 package test.snake
 
-import snake.game.{East, North, South, West}
+import snake.components.{East, North, South, West}
 import test.snake.SnakeRecord._
 
 object SnakeTests {

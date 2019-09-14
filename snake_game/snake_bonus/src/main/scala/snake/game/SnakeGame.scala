@@ -1,23 +1,23 @@
-// DO NOT MODIFY FOR BASIC SUBMISSION
 // scalastyle:off
 
 package snake.game
 
 import java.awt.event
 
+import snake.components._
+import snake.game.SnakeGame._
 //import processing.core.{PApplet, PConstants}
-import processing.core._
-import processing.event.KeyEvent
 import java.awt.event.KeyEvent._
 
 import engine.GameBase
-import engine.graphics.{Color, Point, Rectangle}
-import snake.game.SnakeGame._
 import engine.graphics.Color._
-import snake.logic.SnakeLogic
+import engine.graphics.{Color, Point, Rectangle}
+import processing.core._
+import processing.event.KeyEvent
 
 class SnakeGame extends GameBase {
 
+  var startFlag = false
   var gameLogic = new SnakeLogic()
   val updateTimer = new UpdateTimer(FramesPerSecond)
   val widthInPixels: Int = WidthCellInPixels * gameLogic.nrColumns
@@ -26,6 +26,12 @@ class SnakeGame extends GameBase {
 
   // this function is wrongly named draw by processing (is called on each update next to drawing)
   override def draw(): Unit = {
+//    if (!startFlag) {
+//      val solver = new Solver
+//      val ui = new StartUI(solver)
+//      ui.visible = true
+//      startFlag = true
+//    }
     updateState()
     drawGrid()
     if (gameLogic.isGameOver) drawGameOverScreen()
@@ -75,7 +81,7 @@ class SnakeGame extends GameBase {
         case Apple()  =>
           setFillColor(Color.Red)
           drawEllipse(area)
-        case Brick() =>
+        case Wall() =>
           setFillColor(Color.Gray)
           drawRectangle(area)
         case Empty() => ()
@@ -130,6 +136,7 @@ class SnakeGame extends GameBase {
   }
 
   override def setup(): Unit = {
+
     // Fonts are loaded lazily, so when we call text()
     // for the first time, there is significant lag.
     // This prevents it from happening during gameplay.
@@ -137,6 +144,7 @@ class SnakeGame extends GameBase {
     // This should be called last, since the game
     // clock is officially ticking at this point
     updateTimer.init()
+    noLoop() // stop draw() from the beginning
   }
 
 
@@ -157,6 +165,10 @@ object SnakeGame {
   val HeightCellInPixels: Int = WidthCellInPixels
 
   def main(args: Array[String]): Unit = {
+//    val solver = new Solver
+    val ui = new StartUI()
+    ui.visible = true
+//    startFlag = true
     // This is needed for Processing, using the name
     // of the class in a string is not very beautiful...
     PApplet.main("snake.game.SnakeGame")

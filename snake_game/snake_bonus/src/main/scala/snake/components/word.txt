@@ -1,0 +1,8 @@
+# Bonus
+## 1. Snake
+- manual
+- Snake levels: walls
+- Multiplayer
+- Bomb
+- Snake AI
+- blink snake

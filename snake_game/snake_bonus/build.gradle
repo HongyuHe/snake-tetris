@@ -44,6 +44,7 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'lib')
     testCompile 'junit:junit:4.12'
     testCompile "org.scalatest:scalatest_${scalaMajorVersion}:3.0.8"
+    compile group: 'org.scala-lang.modules', name: 'scala-swing_2.13', version: '2.1.1'
 }
 
 def vunetid = ''

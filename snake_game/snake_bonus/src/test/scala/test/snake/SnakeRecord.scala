@@ -4,8 +4,8 @@
 package test.snake
 
 import engine.random.RandomGenerator
-import snake.game._
-import snake.logic.SnakeLogic
+import snake.components._
+import snake.game.SnakeLogic
 import test.{GameLogicInterface, GenericRecord, GridTypeInterface}
 
 
