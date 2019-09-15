@@ -56,11 +56,19 @@ products:
    src/main/scala/snake/components/StartUI.scala -> build/classes/scala/main/snake/components/StartUI$$anon$8.class
    src/main/scala/snake/components/StartUI.scala -> build/classes/scala/main/snake/components/StartUI$$anonfun$1.class
    src/main/scala/snake/components/StartUI.scala -> build/classes/scala/main/snake/components/StartUI.class
+   src/main/scala/snake/components/UI.scala -> build/classes/scala/main/snake/components/UI$$anon$1$$anon$2$$anon$3$$anon$4.class
+   src/main/scala/snake/components/UI.scala -> build/classes/scala/main/snake/components/UI$$anon$1$$anon$2$$anon$3$$anon$5.class
+   src/main/scala/snake/components/UI.scala -> build/classes/scala/main/snake/components/UI$$anon$1$$anon$2$$anon$3.class
+   src/main/scala/snake/components/UI.scala -> build/classes/scala/main/snake/components/UI$$anon$1$$anon$2.class
+   src/main/scala/snake/components/UI.scala -> build/classes/scala/main/snake/components/UI$$anon$1.class
+   src/main/scala/snake/components/UI.scala -> build/classes/scala/main/snake/components/UI$delayedInit$body.class
+   src/main/scala/snake/components/UI.scala -> build/classes/scala/main/snake/components/UI.class
    src/main/scala/snake/game/GameController.scala -> build/classes/scala/main/snake/game/GameController$$anon$1.class
    src/main/scala/snake/game/GameController.scala -> build/classes/scala/main/snake/game/GameController$.class
    src/main/scala/snake/game/GameController.scala -> build/classes/scala/main/snake/game/GameController.class
    src/main/scala/snake/game/GameSetting.scala -> build/classes/scala/main/snake/game/GameSetting$.class
    src/main/scala/snake/game/GameSetting.scala -> build/classes/scala/main/snake/game/GameSetting.class
+   src/main/scala/snake/game/GameSetting.scala -> build/classes/scala/main/snake/game/Setting.class
    src/main/scala/snake/game/GameStatus.scala -> build/classes/scala/main/snake/game/GameStatus$.class
    src/main/scala/snake/game/GameStatus.scala -> build/classes/scala/main/snake/game/GameStatus.class
    src/main/scala/snake/game/SnakeGame.scala -> build/classes/scala/main/snake/game/SnakeGame$.class
@@ -100,14 +108,18 @@ binary dependencies:
    src/main/scala/snake/components/StartUI.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang.modules/scala-swing_2.13/2.1.1/1cf453825904aa90cb4b705a6ed485de6abea73e/scala-swing_2.13-2.1.1.jar
    src/main/scala/snake/components/StartUI.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.13.0/e988ea597113786768900f1c260c694a2ae32a42/scala-library-2.13.0.jar
    src/main/scala/snake/components/StartUI.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/rt.jar
+   src/main/scala/snake/components/UI.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.13.0/e988ea597113786768900f1c260c694a2ae32a42/scala-library-2.13.0.jar
+   src/main/scala/snake/components/UI.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scalafx/scalafx_2.13/12.0.2-R18/36ff91587f623098240ca785265d526f8b381a61/scalafx_2.13-12.0.2-R18.jar
+   src/main/scala/snake/components/UI.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/ext/jfxrt.jar
+   src/main/scala/snake/components/UI.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/rt.jar
    src/main/scala/snake/game/GameController.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.13.0/e988ea597113786768900f1c260c694a2ae32a42/scala-library-2.13.0.jar
    src/main/scala/snake/game/GameController.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/rt.jar
    src/main/scala/snake/game/GameSetting.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.13.0/e988ea597113786768900f1c260c694a2ae32a42/scala-library-2.13.0.jar
    src/main/scala/snake/game/GameSetting.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/rt.jar
    src/main/scala/snake/game/GameStatus.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.13.0/e988ea597113786768900f1c260c694a2ae32a42/scala-library-2.13.0.jar
    src/main/scala/snake/game/GameStatus.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/rt.jar
-   src/main/scala/snake/game/SnakeGame.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang.modules/scala-swing_2.13/2.1.1/1cf453825904aa90cb4b705a6ed485de6abea73e/scala-swing_2.13-2.1.1.jar
    src/main/scala/snake/game/SnakeGame.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.13.0/e988ea597113786768900f1c260c694a2ae32a42/scala-library-2.13.0.jar
+   src/main/scala/snake/game/SnakeGame.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scalafx/scalafx_2.13/12.0.2-R18/36ff91587f623098240ca785265d526f8b381a61/scalafx_2.13-12.0.2-R18.jar
    src/main/scala/snake/game/SnakeGame.scala -> lib/core.jar
    src/main/scala/snake/game/SnakeGame.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/rt.jar
    src/main/scala/snake/game/SnakeLogic.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.13.0/e988ea597113786768900f1c260c694a2ae32a42/scala-library-2.13.0.jar
@@ -134,6 +146,7 @@ source dependencies:
    src/main/scala/snake/components/Snake.scala -> src/main/scala/snake/components/SnakeTrunk.scala
    src/main/scala/snake/components/SnakeTrunk.scala -> src/main/scala/snake/components/Cell.scala
    src/main/scala/snake/components/SnakeTrunk.scala -> src/main/scala/snake/components/GridType.scala
+   src/main/scala/snake/components/UI.scala -> src/main/scala/snake/game/GameSetting.scala
    src/main/scala/snake/game/GameController.scala -> src/main/scala/engine/random/RandomGenerator.scala
    src/main/scala/snake/game/GameController.scala -> src/main/scala/engine/random/ScalaRandomGen.scala
    src/main/scala/snake/game/GameController.scala -> src/main/scala/snake/components/Cell.scala
@@ -151,7 +164,7 @@ source dependencies:
    src/main/scala/snake/game/SnakeGame.scala -> src/main/scala/engine/graphics/Triangle.scala
    src/main/scala/snake/game/SnakeGame.scala -> src/main/scala/snake/components/Direction.scala
    src/main/scala/snake/game/SnakeGame.scala -> src/main/scala/snake/components/GridType.scala
-   src/main/scala/snake/game/SnakeGame.scala -> src/main/scala/snake/components/StartUI.scala
+   src/main/scala/snake/game/SnakeGame.scala -> src/main/scala/snake/components/UI.scala
    src/main/scala/snake/game/SnakeGame.scala -> src/main/scala/snake/game/SnakeLogic.scala
    src/main/scala/snake/game/SnakeLogic.scala -> src/main/scala/engine/random/RandomGenerator.scala
    src/main/scala/snake/game/SnakeLogic.scala -> src/main/scala/engine/random/ScalaRandomGen.scala
@@ -220,11 +233,19 @@ class names:
    src/main/scala/snake/components/StartUI.scala -> snake.components.StartUI$$anon$8$$anon$10
    src/main/scala/snake/components/StartUI.scala -> snake.components.StartUI$$anon$8$$anon$9
    src/main/scala/snake/components/StartUI.scala -> snake.components.StartUI$$anonfun$1
+   src/main/scala/snake/components/UI.scala -> snake.components.UI
+   src/main/scala/snake/components/UI.scala -> snake.components.UI$$anon$1
+   src/main/scala/snake/components/UI.scala -> snake.components.UI$$anon$1$$anon$2
+   src/main/scala/snake/components/UI.scala -> snake.components.UI$$anon$1$$anon$2$$anon$3
+   src/main/scala/snake/components/UI.scala -> snake.components.UI$$anon$1$$anon$2$$anon$3$$anon$4
+   src/main/scala/snake/components/UI.scala -> snake.components.UI$$anon$1$$anon$2$$anon$3$$anon$5
+   src/main/scala/snake/components/UI.scala -> snake.components.UI$delayedInit$body
    src/main/scala/snake/game/GameController.scala -> snake.game.GameController
    src/main/scala/snake/game/GameController.scala -> snake.game.GameController$
    src/main/scala/snake/game/GameController.scala -> snake.game.GameController$$anon$1
    src/main/scala/snake/game/GameSetting.scala -> snake.game.GameSetting
    src/main/scala/snake/game/GameSetting.scala -> snake.game.GameSetting$
+   src/main/scala/snake/game/GameSetting.scala -> snake.game.Setting
    src/main/scala/snake/game/GameStatus.scala -> snake.game.GameStatus
    src/main/scala/snake/game/GameStatus.scala -> snake.game.GameStatus$
    src/main/scala/snake/game/SnakeGame.scala -> snake.game.SnakeGame

@@ -28,6 +28,7 @@ class GameController(val nrRows: Int,
     placeApple()
     setLevel()
   }
+
   private[this] def placeWall(wType: String, nrBricks: Int = setting.level*2): Unit = {
     grid.updateTableOfFreeCells()
     val index: Int = randomGen.randomInt(grid.nrFreeSpots)

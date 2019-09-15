@@ -4,6 +4,12 @@ package snake.game
 
 import java.awt.event
 
+import scalafx.application.JFXApp
+import scalafx.application.JFXApp.PrimaryStage
+import scalafx.geometry.Insets
+import scalafx.scene.Scene
+import scalafx.scene.control.Label
+import scalafx.scene.layout.BorderPane
 import snake.components._
 import snake.game.SnakeGame._
 //import processing.core.{PApplet, PConstants}
@@ -16,7 +22,6 @@ import processing.core._
 import processing.event.KeyEvent
 
 class SnakeGame extends GameBase {
-
   var startFlag = false
   var gameLogic = new SnakeLogic()
   val updateTimer = new UpdateTimer(FramesPerSecond)
@@ -26,12 +31,12 @@ class SnakeGame extends GameBase {
 
   // this function is wrongly named draw by processing (is called on each update next to drawing)
   override def draw(): Unit = {
-//    if (!startFlag) {
-//      val solver = new Solver
-//      val ui = new StartUI(solver)
-//      ui.visible = true
-//      startFlag = true
-//    }
+    //    if (!startFlag) {
+    //      val solver = new Solver
+    //      val ui = new StartUI(solver)
+    //      ui.visible = true
+    //      startFlag = true
+    //    }
     updateState()
     drawGrid()
     if (gameLogic.isGameOver) drawGameOverScreen()
@@ -55,10 +60,10 @@ class SnakeGame extends GameBase {
 
     def getTriangleForDirection(dir: Direction, area: Rectangle) = {
       dir match {
-        case West()   => area.trianglePointingLeft
-        case North()  => area.trianglePointingUp
-        case East()   => area.trianglePointingRight
-        case South()  => area.trianglePointingDown
+        case West() => area.trianglePointingLeft
+        case North() => area.trianglePointingUp
+        case East() => area.trianglePointingRight
+        case South() => area.trianglePointingDown
       }
     }
 
@@ -67,18 +72,18 @@ class SnakeGame extends GameBase {
         case SnakeHead(id, direction) if id == "normal" =>
           setFillColor(Color.LawnGreen)
           drawTriangle(getTriangleForDirection(direction, area))
-        case SnakeBody(id,p) if id == "normal" =>
-          val color = Color.LawnGreen.interpolate(p,Color.DarkGreen)
+        case SnakeBody(id, p) if id == "normal" =>
+          val color = Color.LawnGreen.interpolate(p, Color.DarkGreen)
           setFillColor(color)
           drawRectangle(area)
         case SnakeHead(id, direction) if id == "rival" =>
           setFillColor(Color.Yellow)
           drawTriangle(getTriangleForDirection(direction, area))
-        case SnakeBody(id,p) if id == "rival" =>
-          val color = Color.Yellow.interpolate(p,Color.Orange)
+        case SnakeBody(id, p) if id == "rival" =>
+          val color = Color.Yellow.interpolate(p, Color.Orange)
           setFillColor(color)
           drawRectangle(area)
-        case Apple()  =>
+        case Apple() =>
           setFillColor(Color.Red)
           drawEllipse(area)
         case Wall() =>
@@ -106,27 +111,28 @@ class SnakeGame extends GameBase {
     */
   override def keyPressed(event: KeyEvent): Unit = {
 
-    def changeDir(dir: Direction):      Unit = gameLogic.changeDir(dir)
+    def changeDir(dir: Direction): Unit = gameLogic.changeDir(dir)
+
     def changeRivalDir(dir: Direction): Unit = gameLogic.changeRivalDir(dir)
 
-      event.getKeyCode match {
-        case VK_R     => gameLogic.setReverseTime(true)
-        case VK_W     => changeRivalDir(North())
-        case VK_S     => changeRivalDir(South())
-        case VK_A     => changeRivalDir(West())
-        case VK_D     => changeRivalDir(East())
-        case VK_UP    => changeDir(North())
-        case VK_DOWN  => changeDir(South())
-        case VK_LEFT  => changeDir(West())
-        case VK_RIGHT => changeDir(East())
-        case _        => ()
-      }
+    event.getKeyCode match {
+      case VK_R => gameLogic.setReverseTime(true)
+      case VK_W => changeRivalDir(North())
+      case VK_S => changeRivalDir(South())
+      case VK_A => changeRivalDir(West())
+      case VK_D => changeRivalDir(East())
+      case VK_UP => changeDir(North())
+      case VK_DOWN => changeDir(South())
+      case VK_LEFT => changeDir(West())
+      case VK_RIGHT => changeDir(East())
+      case _ => ()
+    }
   }
 
   override def keyReleased(event: KeyEvent): Unit = {
     event.getKeyCode match {
       case VK_R => gameLogic.setReverseTime(false)
-      case _    => ()
+      case _ => ()
     }
   }
 
@@ -136,6 +142,7 @@ class SnakeGame extends GameBase {
   }
 
   override def setup(): Unit = {
+
 
     // Fonts are loaded lazily, so when we call text()
     // for the first time, there is significant lag.
@@ -159,19 +166,25 @@ class SnakeGame extends GameBase {
 
 
 object SnakeGame {
-
-  val FramesPerSecond: Int = 5               // -> this can change snake's speed
-  val WidthCellInPixels: Int = 15            // -> pixel size
+  val FramesPerSecond: Int = 5 // -> this can change snake's speed
+  val WidthCellInPixels: Int = 15 // -> pixel size
   val HeightCellInPixels: Int = WidthCellInPixels
 
   def main(args: Array[String]): Unit = {
-//    val solver = new Solver
-    val ui = new StartUI()
-    ui.visible = true
-//    startFlag = true
+    //    val solver = new Solver
+    //    val ui = new StartUI()
+    //    ui.visible = true
+    //    startFlag = true
+
+    var ui = new UI
+    ui.main(args)
+    println("Two player? " + ui.twoPlayerMode)
     // This is needed for Processing, using the name
     // of the class in a string is not very beautiful...
-    PApplet.main("snake.game.SnakeGame")
+//            PApplet.main("snake.game.FxUI")
+//    PApplet.main("snake.game.SnakeGame")
   }
 
 }
+
+
