@@ -25,6 +25,9 @@ class SnakeGame extends GameBase {
 
   var gameLogic = SnakeLogic(gameSetting)
   val updateTimer = new UpdateTimer(framesPerSecond)
+//  lazy val bgImage: PImage = loadImage("src/files/rsz_snake_bg (1).jpg")
+  lazy val bgImage: PImage = loadImage("src/files/bg_img.jpg")
+
   val widthInPixels: Int = WidthCellInPixels * gameLogic.nrColumns
   val heightInPixels: Int = HeightCellInPixels * gameLogic.nrRows
   val screenArea: Rectangle = Rectangle(Point(0, 0), widthInPixels, heightInPixels)
@@ -88,8 +91,9 @@ class SnakeGame extends GameBase {
       }
     }
 
-    setFillColor(White)
-    drawRectangle(screenArea)
+//    setFillColor(White)
+//    drawRectangle(screenArea)
+    background(bgImage)
 
     for (y <- 0 until gameLogic.nrRows;
          x <- 0 until gameLogic.nrColumns) {
@@ -133,12 +137,12 @@ class SnakeGame extends GameBase {
 
   override def settings(): Unit = {
     pixelDensity(displayDensity())
-    size(widthInPixels, heightInPixels, PConstants.P3D)
+    size(widthInPixels, heightInPixels, PConstants.P2D)
   }
 
   override def setup(): Unit = {
-
-
+//    bgImage = loadImage("src/files/snake_bg.jpg")
+//    bgImgae
     // Fonts are loaded lazily, so when we call text()
     // for the first time, there is significant lag.
     // This prevents it from happening during gameplay.
@@ -161,9 +165,9 @@ class SnakeGame extends GameBase {
 
 
 object SnakeGame {
-  val WidthCellInPixels: Int = 15 // -> pixel size
+  val WidthCellInPixels: Int = 20 // -> pixel size
   val HeightCellInPixels: Int = WidthCellInPixels
-
+//  lazy var bgImage = 0
   var framesPerSecond: Int = 5 // -> this can change snake's speed
   var gameSetting = GameSetting()
 

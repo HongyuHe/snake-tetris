@@ -40,8 +40,8 @@ class SnakeLogic(val randomGen: RandomGenerator,
 
 object SnakeLogic {
 
-  val DefaultColumns = 25
-  val DefaultRows = 25
+  val DefaultColumns = 40
+  val DefaultRows = 40
 
   def apply(setting: GameSetting): SnakeLogic = new SnakeLogic(new ScalaRandomGen(), setting,  DefaultColumns, DefaultRows) {
 //    this

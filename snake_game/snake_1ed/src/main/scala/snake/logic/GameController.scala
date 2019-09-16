@@ -18,7 +18,7 @@ class GameController (val nrRows: Int,
     moveSnake()
     updateGameStatus()
     checkGameOver()
-    drawSnake(snake.droppedTail)
+    drawSnake()
     checkAppleAndGrowSnake()
   }
 
@@ -35,12 +35,12 @@ class GameController (val nrRows: Int,
     moveSnakeTo (snakeHeadDir)
   }
 
-  def drawSnake(snakeDroppedTail: Option[SnakeTrunk] = None): Unit = {
+  def drawSnake(): Unit = {
     val isSnakeHeadBehindsTail = grid.getCellType(snake.body.head) == SnakeBody(1)
-    def eraseSnakeTail(): Unit = if (!isSnakeHeadBehindsTail) { grid.setCellType(snakeDroppedTail.get, Empty()) }
+    def eraseSnakeTail(): Unit = if (!isSnakeHeadBehindsTail) grid.setCellType(snake.droppedTail.get, Empty())
 
     snake.body.foreach ( trunk => grid.setCellType(trunk, trunk.cellType) )
-    if (snakeDroppedTail.isDefined) { eraseSnakeTail() }
+    if (snake.droppedTail.isDefined) { eraseSnakeTail() }
     snakePreviousDirection = getSnakeHeadDirection
   }
 

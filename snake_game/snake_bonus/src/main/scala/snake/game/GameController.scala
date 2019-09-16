@@ -51,9 +51,9 @@ class GameController(val nrRows: Int,
   def update(): Unit = {
     placeApple()
     moveSnake()
-    moveSnake(snakeRival)
+    if (setting.twoPlayerMode) moveSnake(snakeRival)
     updateGameStatus()
-    updateGameStatus(snakeRival)
+    if (setting.twoPlayerMode) updateGameStatus(snakeRival)
     checkGameOver()
     drawSnake()
     if (setting.twoPlayerMode) drawSnake(snakeRival)
