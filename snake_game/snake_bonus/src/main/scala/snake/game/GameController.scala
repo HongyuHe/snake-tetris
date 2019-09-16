@@ -5,11 +5,11 @@ import snake.components._
 
 class GameController(val nrRows: Int,
                      val nrColumns: Int,
-                     val randomGen: RandomGenerator) {
+                     val randomGen: RandomGenerator,
+                     var setting: GameSetting) {
 
   var grid = Grid(nrRows, nrColumns)
   var status = GameStatus()
-  var setting = GameSetting()
 
   val snake = Snake()
   val snakeRival = Snake(rivalMode = true)
@@ -131,9 +131,10 @@ class GameController(val nrRows: Int,
   }
 
   def makeDeepCopy: GameController = {
-    val that = GameController(nrRows, nrColumns, randomGen)
+    val that = GameController(nrRows, nrColumns, randomGen, setting)
 
     that.status = this.status.copy()
+    that.setting = this.setting.copy()
     this.grid copyTo that.grid
     this.snake copyTo that.snake
     this.snakeRival copyTo that.snakeRival
@@ -148,6 +149,6 @@ class GameController(val nrRows: Int,
 }
 
 object GameController {
-  def apply(nrRows: Int, nrColumns: Int, randomGen: RandomGenerator): GameController =
-    new GameController(nrRows, nrColumns, randomGen) { init() }
+  def apply(nrRows: Int, nrColumns: Int, randomGen: RandomGenerator, setting: GameSetting): GameController =
+    new GameController(nrRows, nrColumns, randomGen, setting) { init() }
 }

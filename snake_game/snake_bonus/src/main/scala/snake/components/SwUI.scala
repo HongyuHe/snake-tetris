@@ -33,7 +33,7 @@ import scala.swing.event._
 //  }
 //}
 
-class StartUI() extends MainFrame {
+class SwUI() extends MainFrame {
   private def restrictHeight(s: Component): Unit = {
     s.maximumSize = new Dimension(Short.MaxValue, s.preferredSize.height)
   }

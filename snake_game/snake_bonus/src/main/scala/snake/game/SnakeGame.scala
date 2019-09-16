@@ -22,21 +22,16 @@ import processing.core._
 import processing.event.KeyEvent
 
 class SnakeGame extends GameBase {
-  var startFlag = false
-  var gameLogic = new SnakeLogic()
-  val updateTimer = new UpdateTimer(FramesPerSecond)
+
+  var gameLogic = SnakeLogic(gameSetting)
+  val updateTimer = new UpdateTimer(framesPerSecond)
   val widthInPixels: Int = WidthCellInPixels * gameLogic.nrColumns
   val heightInPixels: Int = HeightCellInPixels * gameLogic.nrRows
   val screenArea: Rectangle = Rectangle(Point(0, 0), widthInPixels, heightInPixels)
 
   // this function is wrongly named draw by processing (is called on each update next to drawing)
   override def draw(): Unit = {
-    //    if (!startFlag) {
-    //      val solver = new Solver
-    //      val ui = new StartUI(solver)
-    //      ui.visible = true
-    //      startFlag = true
-    //    }
+
     updateState()
     drawGrid()
     if (gameLogic.isGameOver) drawGameOverScreen()
@@ -151,7 +146,7 @@ class SnakeGame extends GameBase {
     // This should be called last, since the game
     // clock is officially ticking at this point
     updateTimer.init()
-    noLoop() // stop draw() from the beginning
+//    noLoop() // stop draw() from the beginning
   }
 
 
@@ -166,23 +161,30 @@ class SnakeGame extends GameBase {
 
 
 object SnakeGame {
-  val FramesPerSecond: Int = 5 // -> this can change snake's speed
   val WidthCellInPixels: Int = 15 // -> pixel size
   val HeightCellInPixels: Int = WidthCellInPixels
 
+  var framesPerSecond: Int = 5 // -> this can change snake's speed
+  var gameSetting = GameSetting()
+
   def main(args: Array[String]): Unit = {
     //    val solver = new Solver
-    //    val ui = new StartUI()
-    //    ui.visible = true
+    //    val startPage = new StartUI()
+    //    startPage.visible = true
     //    startFlag = true
 
-    var ui = new UI
-    ui.main(args)
-    println("Two player? " + ui.twoPlayerMode)
+    var startPage = new StartPage
+    startPage.main(args)
+    println("Level: " + startPage.level)
+    println("Sake speed: " + startPage.snakeSpeed)
+    println("Two player? " + startPage.twoPlayerMode)
+
+    framesPerSecond = startPage.snakeSpeed
+    gameSetting = GameSetting(startPage.level, startPage.twoPlayerMode)
+
     // This is needed for Processing, using the name
     // of the class in a string is not very beautiful...
-//            PApplet.main("snake.game.FxUI")
-//    PApplet.main("snake.game.SnakeGame")
+    PApplet.main("snake.game.SnakeGame")
   }
 
 }
