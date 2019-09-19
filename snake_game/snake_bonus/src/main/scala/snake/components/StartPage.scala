@@ -5,7 +5,7 @@ import scalafx.application.JFXApp
 import scalafx.application.JFXApp.PrimaryStage
 import scalafx.geometry.Insets
 import scalafx.scene.Scene
-import scalafx.scene.control.{Button, CheckBox, Label, RadioButton, Slider, ToggleGroup}
+import scalafx.scene.control.{Button, CheckBox, Label, RadioButton, Slider, SplitPane, ToggleGroup}
 import scalafx.scene.layout.{BorderPane, HBox, VBox}
 import scalafx.application.JFXApp
 import scalafx.application.JFXApp.PrimaryStage
@@ -21,6 +21,8 @@ import snake.game.Setting
 
 class StartPage extends JFXApp with Setting {
   var gameLevel: Int = 0
+  var nrApples: Int = 1
+  var nrBombs: Int = 0
   var twoPlayerMode: Boolean = false
 
   stage = new PrimaryStage {
@@ -39,8 +41,13 @@ class StartPage extends JFXApp with Setting {
 
       val twoPlayerBox = new CheckBox("Two player mode")
 
+      val appleLabel = new Label("Number of apples:")
+      val appleSlider = new Slider(1, 5, 1)
+      val bombLabel = new Label("Number of Bombs:")
+      val bombSlider = new Slider(0, 10, 0)
       val speedLabel = new Label("Set snake speed:")
       val speedSlider = new Slider(1, 10, 5)
+
 
       val startButton = new Button("Start")
 
@@ -61,6 +68,8 @@ class StartPage extends JFXApp with Setting {
 
       startButton.onAction = { even =>
         gameSpeed = speedSlider.getValue.toInt
+        nrApples = appleSlider.getValue.toInt
+        nrBombs = bombSlider.getValue.toInt
         println("Start!!!")
         close()
       }
@@ -80,17 +89,27 @@ class StartPage extends JFXApp with Setting {
               hellButton,
             )
           },
-          new VBox {
-            prefHeight = 25
-          },
-          speedLabel,
-          speedSlider,
+
+          new SplitPane(),
           new VBox {
             prefHeight = 75
+            padding = Insets(10)
+            children = Seq(
+              appleLabel,
+              appleSlider,
+              bombLabel,
+              bombSlider,
+              speedLabel,
+              speedSlider,
+            )
           },
           twoPlayerBox,
           new VBox {
-            prefHeight = 30
+            prefHeight = 15
+          },
+          new SplitPane(),
+          new VBox {
+            prefHeight = 20
           },
           startButton
         )

@@ -6,5 +6,8 @@ case class GameStatus(var isGameOver: Boolean = false,
                       var isSnakeGrowing: Boolean = false,
                       var hasEnoughBombs: Boolean = false,
                       var hasEnoughApples: Boolean = false,
+                      var bombHitByRivalSnake: Boolean = false,
+                      var bombHitByNormalSnake: Boolean = false,
                       var appleEatenByRivalSnake: Boolean = false,
-                      var appleEatenByNormalSnake: Boolean = false)
+                      var appleEatenByNormalSnake: Boolean = false,
+                     )

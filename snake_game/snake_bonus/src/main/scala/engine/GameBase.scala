@@ -8,7 +8,6 @@ import engine.graphics.{Color, Point, Rectangle, Triangle}
 import processing.core.{PApplet, PConstants}
 
 class GameBase   extends PApplet {
-
   // inner class: can call current time of outer class
   class UpdateTimer(val framesPerSecond: Float) {
 

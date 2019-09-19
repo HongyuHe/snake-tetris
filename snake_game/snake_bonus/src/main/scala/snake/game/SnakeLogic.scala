@@ -1,8 +1,9 @@
 package snake.game
 
 import snake.game.SnakeLogic._
+
 import scala.collection.mutable
-import snake.components.{Direction, GridType}
+import snake.components.{Direction, GridType, SnakeID}
 import engine.random.{RandomGenerator, ScalaRandomGen}
 
 class SnakeLogic(val randomGen: RandomGenerator,
@@ -12,9 +13,10 @@ class SnakeLogic(val randomGen: RandomGenerator,
 
 //  def this() = this(new ScalaRandomGen(), setting,  DefaultColumns, DefaultRows)
 
+  def getLooser: SnakeID = gameController.looser
   def isGameOver: Boolean = gameController.status.isGameOver
-  def changeDir(d: Direction): Unit = gameController.turnSnake(gameController.snake, d)
-  def changeRivalDir(d: Direction): Unit = gameController.turnSnake(gameController.snakeRival, d)
+  def changeDir(d: Direction): Unit = gameController.turnSnake(gameController.hostSnake, d)
+  def changeRivalDir(d: Direction): Unit = gameController.turnSnake(gameController.rivalSnake, d)
   def getGridTypeAt(x: Int, y: Int): GridType = gameController.grid.getCellType(y, x)
 
   def step(): Unit = {

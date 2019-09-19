@@ -4,7 +4,7 @@ import snake.components.Snake._
 import scala.collection.mutable
 
 class Snake {
-  var id = "normal"
+  var id: SnakeID = HostSnake()
   var growCounter = 0
   var preDir: Direction = East()
   var droppedTail: Option[SnakeTrunk] = None                                      // drop tail if snake is not growing
@@ -48,7 +48,7 @@ class Snake {
     that.droppedTail = this.droppedTail
   }
 
-  private[this] def cutTail(): Unit = {
+ def cutTail(): Unit = {
     if (growCounter > 0) {
       growCounter -= CutPerTime
       droppedTail = None
@@ -66,7 +66,7 @@ object Snake {
 
   def apply(rivalMode: Boolean = false): Snake = new Snake() {
     if (rivalMode) {
-      id = "rival"
+      id = RivalSnake()
       body += SnakeTrunk(4, 2) += SnakeTrunk(4, 1) += SnakeTrunk(4, 0)
     }
     else body += SnakeTrunk(0, 2) += SnakeTrunk(0, 1) += SnakeTrunk()

@@ -1,3 +1,4 @@
+// scalastyle:off
 package snake.game
 
 import engine.random.{RandomGenerator, ScalaRandomGen}
@@ -11,8 +12,10 @@ class GameController(val nrRows: Int,
   var grid = Grid(nrRows, nrColumns)
   var status = GameStatus()
 
-  val snake = Snake()
-  val snakeRival = Snake(rivalMode = true)
+  val hostSnake = Snake()
+  val rivalSnake = Snake(rivalMode = true)
+
+  var looser: SnakeID = HostSnake()
 
   def init(): Unit = {
 
@@ -23,17 +26,19 @@ class GameController(val nrRows: Int,
       }
     }
 
-    if (setting.twoPlayerMode) drawSnake(snakeRival)
-    drawSnake()
-//    placeApple()
+    drawSnakes()
     updateItems()
     setLevel()
-    updateGameStatus()
+    updateGameStatusFor(hostSnake)
   }
 
   def updateItems(): Unit = {
     placeItems(Bomb(), setting.bombNumber)
     placeItems(Apple(), setting.appleNumber)
+  }
+  def drawSnakes(): Unit = {
+    drawSnake()
+    if (setting.twoPlayerMode) drawSnake(rivalSnake)
   }
 
   def placeItems(item: GridType, number: Int): Unit = {
@@ -72,28 +77,32 @@ class GameController(val nrRows: Int,
     }
   }
 
-  def isSnakeHitWall: Boolean = grid.getCellType(snake.body.head) == Wall() || grid.getCellType(snakeRival.body.head) == Wall()
+  def isSnakeBlowUp : Boolean = hostSnake.body.isEmpty || rivalSnake.body.isEmpty
 
+  def isSnakeHitWall: Boolean = grid.getCellType(hostSnake.body.head) == Wall() || grid.getCellType(rivalSnake.body.head) == Wall()
   //////////////////////////////////////////////////////////////////////
   def update(): Unit = {
 //    placeApple()
     updateItems()
+
     moveSnake()
-    if (setting.twoPlayerMode) moveSnake(snakeRival)
-    updateGameStatus()
-    if (setting.twoPlayerMode) updateGameStatus(snakeRival)
+    if (setting.twoPlayerMode) moveSnake(rivalSnake)
+
+    updateGameStatusFor(hostSnake)
+    if (setting.twoPlayerMode) updateGameStatusFor(rivalSnake)
+
     checkGameOver()
-    drawSnake()
-    if (setting.twoPlayerMode) drawSnake(snakeRival)
+    drawSnakes()
     checkAppleAndGrowSnake()
+    checkBombAndCutSnake()
   }
 
-  def turnSnake(snake: Snake = snake, currentDirection: Direction): Unit = {
+  def turnSnake(snake: Snake = hostSnake, currentDirection: Direction): Unit = {
     if (snake.preDir.opposite != currentDirection)
       snake.updateHeadAndBodyTypes(headDir = currentDirection)
   }
 
-  def moveSnake(snake: Snake = snake): Unit = {
+  def moveSnake(snake: Snake = hostSnake): Unit = {
     val snakeHeadDir = getSnakeHeadDirection(snake)
     val moveSnakeTo: Direction => Unit = snakeHeadDir match {
       case East()  | West() => snake.move(nrColumns)
@@ -102,7 +111,7 @@ class GameController(val nrRows: Int,
     moveSnakeTo(snakeHeadDir)
   }
 
-  def drawSnake(snake: Snake = snake): Unit = {
+  def drawSnake(snake: Snake = hostSnake): Unit = {
     val isSnakeHeadBehindsTail = grid.getCellType(snake.body.head) == SnakeBody(snake.id, 1)
     def eraseSnakeTail(): Unit = if (!isSnakeHeadBehindsTail) grid.setCellType(snake.droppedTail.get, Empty())
 
@@ -128,35 +137,57 @@ class GameController(val nrRows: Int,
     if (canPlaceApple) generateNewApple()
   }
 
-  def updateGameStatus(snake: Snake = snake): Unit = {
-    status.isSnakeGrowing = snake.growCounter > 0
+  def updateGameStatusFor(snake: Snake = hostSnake): Unit = {
+    val isBombHit = grid.getCellType(snake.body.head) == Bomb()
     val isAppleEaten = grid.getCellType(snake.body.head) == Apple()
-    snake.id match { // move to snake property later
-      case "rival"  => status.appleEatenByRivalSnake  = isAppleEaten
-      case "normal" => status.appleEatenByNormalSnake = isAppleEaten
+
+    status.isSnakeGrowing = snake.growCounter > 0
+    status.hasEnoughBombs  = grid.getItemAmount(Bomb())  == setting.bombNumber
+    status.hasEnoughApples = grid.getItemAmount(Apple()) == setting.appleNumber
+
+    snake.id match {
+      case RivalSnake()  =>
+        status.bombHitByRivalSnake = isBombHit
+        status.appleEatenByRivalSnake  = isAppleEaten
+      case HostSnake() =>
+        status.bombHitByNormalSnake = isBombHit
+        status.appleEatenByNormalSnake = isAppleEaten
     }
     status.isSnakeCrashed = grid.getCellType(snake.body.head) match {
       case SnakeBody(_, 1) => status.isSnakeGrowing
       case SnakeBody(_, _) => true
       case _ => false
     }
-    status.hasEnoughBombs  = grid.getItemAmount(Bomb())  == setting.bombNumber
-    status.hasEnoughApples = grid.getItemAmount(Apple()) == setting.appleNumber
+    if (status.isSnakeCrashed) { looser = snake.id }
   }
 
   def checkAppleAndGrowSnake(): Unit = {
     if (status.appleEatenByRivalSnake || status.appleEatenByNormalSnake) {
       status.hasEnoughApples = false
+
       if (status.appleEatenByNormalSnake) {
-        snake.grow()
-        status.appleEatenByNormalSnake = false
+        hostSnake.grow(); status.appleEatenByNormalSnake = false
       }
-      else if (status.appleEatenByRivalSnake) {
-        snakeRival.grow()
-        status.appleEatenByRivalSnake = false
+      if (status.appleEatenByRivalSnake) {
+        rivalSnake.grow(); status.appleEatenByRivalSnake = false
       }
-//      placeApple()
       updateItems()
+    }
+  }
+
+  def checkBombAndCutSnake(): Unit = {
+    if (status.bombHitByRivalSnake || status.bombHitByNormalSnake) {
+      status.hasEnoughBombs = false
+
+      if (status.bombHitByNormalSnake) {
+        hostSnake.cutTail();      status.bombHitByNormalSnake = false
+      }
+      if (status.bombHitByRivalSnake) {
+        rivalSnake.cutTail();  status.bombHitByRivalSnake = false
+      }
+      checkGameOver()
+      updateItems()
+      if (!status.isGameOver) drawSnakes()
     }
   }
 
@@ -166,16 +197,20 @@ class GameController(val nrRows: Int,
     that.status = this.status.copy()
     that.setting = this.setting.copy()
     this.grid copyTo that.grid
-    this.snake copyTo that.snake
-    this.snakeRival copyTo that.snakeRival
+    this.hostSnake copyTo that.hostSnake
+    this.rivalSnake copyTo that.rivalSnake
     that
   }
 
-  private[this] def getSnakeHeadDirection(snake: Snake = snake): Direction = snake.body.head.cellType.asInstanceOf[SnakeHead].direction
+  private[this] def getSnakeHeadDirection(snake: Snake = hostSnake): Direction = snake.body.head.cellType.asInstanceOf[SnakeHead].direction
 
   private[this] def checkGameOver(): Unit =
-    if ((!status.hasEnoughApples && status.isGridFull && status.isSnakeGrowing) || status.isSnakeCrashed || isSnakeHitWall)
+    if (isSnakeBlowUp || isSnakeHitWall || (!status.hasEnoughApples && status.isGridFull && status.isSnakeGrowing) || status.isSnakeCrashed) {
       status.isGameOver = true
+      if (hostSnake.body.isEmpty || grid.getCellType(hostSnake.body.head) == Wall())
+        looser = HostSnake()
+      else looser = RivalSnake()
+    }
 }
 
 object GameController {

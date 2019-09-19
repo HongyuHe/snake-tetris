@@ -3,13 +3,6 @@
 package snake.game
 
 import java.awt.event
-
-import scalafx.application.JFXApp
-import scalafx.application.JFXApp.PrimaryStage
-import scalafx.geometry.Insets
-import scalafx.scene.Scene
-import scalafx.scene.control.Label
-import scalafx.scene.layout.BorderPane
 import snake.components._
 import snake.game.SnakeGame._
 //import processing.core.{PApplet, PConstants}
@@ -25,24 +18,41 @@ class SnakeGame extends GameBase {
 
   var gameLogic = SnakeLogic(gameSetting)
   val updateTimer = new UpdateTimer(framesPerSecond)
-//  lazy val bgImage: PImage = loadImage("src/files/rsz_snake_bg (1).jpg")
   lazy val bgImage: PImage = loadImage("src/files/bg_img.jpg")
 
   val widthInPixels: Int = WidthCellInPixels * gameLogic.nrColumns
   val heightInPixels: Int = HeightCellInPixels * gameLogic.nrRows
   val screenArea: Rectangle = Rectangle(Point(0, 0), widthInPixels, heightInPixels)
 
-  // this function is wrongly named draw by processing (is called on each update next to drawing)
   override def draw(): Unit = {
-
+    loadPixels()
     updateState()
     drawGrid()
     if (gameLogic.isGameOver) drawGameOverScreen()
   }
 
   def drawGameOverScreen(): Unit = {
+    val winner = gameLogic.getLooser match {
+      case HostSnake()  => "Yellow snake"
+      case RivalSnake() => "Green snake"
+    }
+    bgImage.loadPixels()
+    for(x <- Range(0, width);
+        y <- Range(0, height)) {
+      val loc = x + y * width
+      val r = red(bgImage.pixels(loc))
+      val g = green(bgImage.pixels(loc))
+      val b = blue(bgImage.pixels(loc))
+      val distance = PApplet.dist(width/2, height/2, x, y)
+      val factor = PApplet.map(distance, 0, 200, 2, 0)
+      pixels(loc) = color(r*factor, g*factor, b*factor)
+    }
+    updatePixels()
     setFillColor(Red)
-    drawTextCentered("GAME OVER!", 20, screenArea.center)
+    if (gameSetting.twoPlayerMode)
+      drawTextCentered(s"$winner Win!", 50, screenArea.center)
+    else
+      drawTextCentered("Game Over !!!", 50, screenArea.center)
   }
 
   def drawGrid(): Unit = {
@@ -67,17 +77,17 @@ class SnakeGame extends GameBase {
 
     def drawCell(area: Rectangle, cell: GridType): Unit = {
       cell match {
-        case SnakeHead(id, direction) if id == "normal" =>
+        case SnakeHead(id, direction) if id == HostSnake() =>
           setFillColor(Color.LawnGreen)
           drawTriangle(getTriangleForDirection(direction, area))
-        case SnakeBody(id, p) if id == "normal" =>
+        case SnakeBody(id, p) if id == HostSnake() =>
           val color = Color.LawnGreen.interpolate(p, Color.DarkGreen)
           setFillColor(color)
           drawRectangle(area)
-        case SnakeHead(id, direction) if id == "rival" =>
+        case SnakeHead(id, direction) if id == RivalSnake() =>
           setFillColor(Color.Yellow)
           drawTriangle(getTriangleForDirection(direction, area))
-        case SnakeBody(id, p) if id == "rival" =>
+        case SnakeBody(id, p) if id == RivalSnake() =>
           val color = Color.Yellow.interpolate(p, Color.Orange)
           setFillColor(color)
           drawRectangle(area)
@@ -145,8 +155,6 @@ class SnakeGame extends GameBase {
   }
 
   override def setup(): Unit = {
-//    bgImage = loadImage("src/files/snake_bg.jpg")
-//    bgImgae
     // Fonts are loaded lazily, so when we call text()
     // for the first time, there is significant lag.
     // This prevents it from happening during gameplay.
@@ -176,10 +184,6 @@ object SnakeGame {
   var gameSetting = GameSetting()
 
   def main(args: Array[String]): Unit = {
-    //    val solver = new Solver
-    //    val startPage = new StartUI()
-    //    startPage.visible = true
-    //    startFlag = true
 
     var startPage = new StartPage
     startPage.main(args)
@@ -188,7 +192,10 @@ object SnakeGame {
     println("Two player? " + startPage.twoPlayerMode)
 
     framesPerSecond = startPage.gameSpeed
-    gameSetting = GameSetting(startPage.gameLevel,twoPlayerMode = startPage.twoPlayerMode)
+    gameSetting = GameSetting(startPage.gameLevel,
+                              startPage.nrBombs,
+                              startPage.nrApples,
+                              startPage.twoPlayerMode)
 
     // This is needed for Processing, using the name
     // of the class in a string is not very beautiful...
