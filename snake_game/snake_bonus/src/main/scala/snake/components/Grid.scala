@@ -27,6 +27,15 @@ class Grid(nrRows: Int, nrColumns: Int) {
     nrFreeSpots = cellIndex
   }
 
+  def getItemAmount(item: GridType): Int = {
+    var counter = 0
+    cells.foreach { rows => rows.foreach { cell =>
+      if (cell.cellType == item) {
+        counter += 1
+      } } }
+    counter
+  }
+
   def copyTo(that: Grid): Unit = {
     that.nrFreeSpots = this.nrFreeSpots
 

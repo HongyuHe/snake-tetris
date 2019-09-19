@@ -15,4 +15,6 @@ case class Empty() extends GridType
 
 case class Apple() extends GridType
 
-case class Wall()  extends GridType
+case class Wall() extends GridType
+
+case class Bomb() extends GridType

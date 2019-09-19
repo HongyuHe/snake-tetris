@@ -81,12 +81,16 @@ class SnakeGame extends GameBase {
           val color = Color.Yellow.interpolate(p, Color.Orange)
           setFillColor(color)
           drawRectangle(area)
+
         case Apple() =>
           setFillColor(Color.Red)
           drawEllipse(area)
         case Wall() =>
           setFillColor(Color.Gray)
           drawRectangle(area)
+        case Bomb() =>
+          setFillColor(Color.Black)
+          drawEllipse(area)
         case Empty() => ()
       }
     }
@@ -179,12 +183,12 @@ object SnakeGame {
 
     var startPage = new StartPage
     startPage.main(args)
-    println("Level: " + startPage.level)
-    println("Sake speed: " + startPage.snakeSpeed)
+    println("Level: " + startPage.gameLevel)
+    println("Sake speed: " + startPage.gameSpeed)
     println("Two player? " + startPage.twoPlayerMode)
 
-    framesPerSecond = startPage.snakeSpeed
-    gameSetting = GameSetting(startPage.level, startPage.twoPlayerMode)
+    framesPerSecond = startPage.gameSpeed
+    gameSetting = GameSetting(startPage.gameLevel,twoPlayerMode = startPage.twoPlayerMode)
 
     // This is needed for Processing, using the name
     // of the class in a string is not very beautiful...

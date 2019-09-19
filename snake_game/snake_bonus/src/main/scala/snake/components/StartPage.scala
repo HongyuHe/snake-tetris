@@ -20,7 +20,7 @@ import scalafx.scene.text.Text
 import snake.game.Setting
 
 class StartPage extends JFXApp with Setting {
-  var level: Int = 0
+  var gameLevel: Int = 0
   var twoPlayerMode: Boolean = false
 
   stage = new PrimaryStage {
@@ -46,13 +46,13 @@ class StartPage extends JFXApp with Setting {
 
       //-------------------------------- Action --------------------------------------//
       easyButton.onAction = { even =>
-        if (easyButton.selected.apply()) level = 1
+        if (easyButton.selected.apply()) gameLevel = 1
       }
       normalButton.onAction = { even =>
-        if (normalButton.selected.apply()) level = 3
+        if (normalButton.selected.apply()) gameLevel = 3
       }
       hellButton.onAction = { even =>
-        if (hellButton.selected.apply()) level = 5
+        if (hellButton.selected.apply()) gameLevel = 5
       }
 
       twoPlayerBox.onAction = { even =>
@@ -60,7 +60,7 @@ class StartPage extends JFXApp with Setting {
       }
 
       startButton.onAction = { even =>
-        snakeSpeed = speedSlider.getValue.toInt
+        gameSpeed = speedSlider.getValue.toInt
         println("Start!!!")
         close()
       }

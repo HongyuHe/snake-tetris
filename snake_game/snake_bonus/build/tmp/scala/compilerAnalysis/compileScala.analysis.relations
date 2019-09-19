@@ -30,6 +30,8 @@ products:
    src/main/scala/snake/components/Grid.scala -> build/classes/scala/main/snake/components/Grid.class
    src/main/scala/snake/components/GridType.scala -> build/classes/scala/main/snake/components/Apple$.class
    src/main/scala/snake/components/GridType.scala -> build/classes/scala/main/snake/components/Apple.class
+   src/main/scala/snake/components/GridType.scala -> build/classes/scala/main/snake/components/Bomb$.class
+   src/main/scala/snake/components/GridType.scala -> build/classes/scala/main/snake/components/Bomb.class
    src/main/scala/snake/components/GridType.scala -> build/classes/scala/main/snake/components/Empty$.class
    src/main/scala/snake/components/GridType.scala -> build/classes/scala/main/snake/components/Empty.class
    src/main/scala/snake/components/GridType.scala -> build/classes/scala/main/snake/components/GridType.class
@@ -124,6 +126,7 @@ binary dependencies:
    src/main/scala/snake/game/GameStatus.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/rt.jar
    src/main/scala/snake/game/SnakeGame.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.13.0/e988ea597113786768900f1c260c694a2ae32a42/scala-library-2.13.0.jar
    src/main/scala/snake/game/SnakeGame.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scalafx/scalafx_2.13/12.0.2-R18/36ff91587f623098240ca785265d526f8b381a61/scalafx_2.13-12.0.2-R18.jar
+   src/main/scala/snake/game/SnakeGame.scala -> build/classes/scala/main/snake/components/Bomb.class
    src/main/scala/snake/game/SnakeGame.scala -> lib/core.jar
    src/main/scala/snake/game/SnakeGame.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/rt.jar
    src/main/scala/snake/game/SnakeLogic.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.13.0/e988ea597113786768900f1c260c694a2ae32a42/scala-library-2.13.0.jar
@@ -213,6 +216,8 @@ class names:
    src/main/scala/snake/components/Grid.scala -> snake.components.Grid$$anon$1
    src/main/scala/snake/components/GridType.scala -> snake.components.Apple
    src/main/scala/snake/components/GridType.scala -> snake.components.Apple$
+   src/main/scala/snake/components/GridType.scala -> snake.components.Bomb
+   src/main/scala/snake/components/GridType.scala -> snake.components.Bomb$
    src/main/scala/snake/components/GridType.scala -> snake.components.Empty
    src/main/scala/snake/components/GridType.scala -> snake.components.Empty$
    src/main/scala/snake/components/GridType.scala -> snake.components.GridType

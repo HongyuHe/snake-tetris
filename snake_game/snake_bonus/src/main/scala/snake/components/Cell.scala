@@ -9,6 +9,7 @@ class Cell(var cellType: GridType = Empty().asInstanceOf[GridType]) {
       case Wall() => Wall()
       case Empty() => Empty()
       case Apple() => Apple()
+      case Bomb() => Bomb()
     }
   )
 }

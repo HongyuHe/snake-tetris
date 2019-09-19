@@ -17,19 +17,46 @@ class GameController(val nrRows: Int,
   def init(): Unit = {
 
     def setLevel(): Unit = {
-      for (i <- 0 until setting.level) {
-        placeWall("vertical")
-        placeWall("horizontal")
+      for (_ <- Range(0, setting.gameLevel)) {
+        buildWall("vertical")
+        buildWall("horizontal")
       }
     }
 
     if (setting.twoPlayerMode) drawSnake(snakeRival)
     drawSnake()
-    placeApple()
+//    placeApple()
+    updateItems()
     setLevel()
+    updateGameStatus()
   }
 
-  private[this] def placeWall(wType: String, nrBricks: Int = setting.level*2): Unit = {
+  def updateItems(): Unit = {
+    placeItems(Bomb(), setting.bombNumber)
+    placeItems(Apple(), setting.appleNumber)
+  }
+
+  def placeItems(item: GridType, number: Int): Unit = {
+    val needNewItems = item match {
+      case Bomb()  => !status.hasEnoughBombs  && !status.isGridFull
+      case Apple() => !status.hasEnoughApples && !status.isGridFull
+      case _       => false
+    }
+    def generateNewItems(): Unit = {
+      grid.updateTableOfFreeCells()
+      if (grid.nrFreeSpots < number) status.isGridFull = true
+      else {
+        for (_ <- Range(0, number-grid.getItemAmount(item))) {
+          val cell = grid.getFreeCell(randomGen.randomInt(grid.nrFreeSpots))
+          grid.setCellType(cell, item)
+        }
+        //        status.hasEnoughApples = true
+      }
+    }
+    if (needNewItems) { generateNewItems() }
+  }
+
+  private[this] def buildWall(wType: String, nrBricks: Int = setting.gameLevel*2): Unit = {
     grid.updateTableOfFreeCells()
     val index: Int = randomGen.randomInt(grid.nrFreeSpots)
     val offset = wType match {
@@ -49,7 +76,8 @@ class GameController(val nrRows: Int,
 
   //////////////////////////////////////////////////////////////////////
   def update(): Unit = {
-    placeApple()
+//    placeApple()
+    updateItems()
     moveSnake()
     if (setting.twoPlayerMode) moveSnake(snakeRival)
     updateGameStatus()
@@ -86,7 +114,7 @@ class GameController(val nrRows: Int,
   }
 
   def placeApple(): Unit = {
-    val canPlaceApple = !status.hasApple && !status.isGridFull
+    val canPlaceApple = !status.hasEnoughApples && !status.isGridFull
     def generateNewApple(): Unit = {
       grid.updateTableOfFreeCells()
       if (grid.nrFreeSpots == 0) status.isGridFull = true
@@ -94,7 +122,7 @@ class GameController(val nrRows: Int,
         val index: Int = randomGen.randomInt(grid.nrFreeSpots)
         val cell = grid.getFreeCell(index)
         grid.setCellType(cell, Apple())
-        status.hasApple = true
+        status.hasEnoughApples = true
       }
     }
     if (canPlaceApple) generateNewApple()
@@ -103,21 +131,22 @@ class GameController(val nrRows: Int,
   def updateGameStatus(snake: Snake = snake): Unit = {
     status.isSnakeGrowing = snake.growCounter > 0
     val isAppleEaten = grid.getCellType(snake.body.head) == Apple()
-    snake.id match {
+    snake.id match { // move to snake property later
       case "rival"  => status.appleEatenByRivalSnake  = isAppleEaten
       case "normal" => status.appleEatenByNormalSnake = isAppleEaten
     }
-
     status.isSnakeCrashed = grid.getCellType(snake.body.head) match {
-      case SnakeBody(_,1) => status.isSnakeGrowing
+      case SnakeBody(_, 1) => status.isSnakeGrowing
       case SnakeBody(_, _) => true
       case _ => false
     }
+    status.hasEnoughBombs  = grid.getItemAmount(Bomb())  == setting.bombNumber
+    status.hasEnoughApples = grid.getItemAmount(Apple()) == setting.appleNumber
   }
 
   def checkAppleAndGrowSnake(): Unit = {
     if (status.appleEatenByRivalSnake || status.appleEatenByNormalSnake) {
-      status.hasApple = false
+      status.hasEnoughApples = false
       if (status.appleEatenByNormalSnake) {
         snake.grow()
         status.appleEatenByNormalSnake = false
@@ -126,7 +155,8 @@ class GameController(val nrRows: Int,
         snakeRival.grow()
         status.appleEatenByRivalSnake = false
       }
-      placeApple()
+//      placeApple()
+      updateItems()
     }
   }
 
@@ -144,7 +174,7 @@ class GameController(val nrRows: Int,
   private[this] def getSnakeHeadDirection(snake: Snake = snake): Direction = snake.body.head.cellType.asInstanceOf[SnakeHead].direction
 
   private[this] def checkGameOver(): Unit =
-    if ((!status.hasApple && status.isGridFull && status.isSnakeGrowing) || status.isSnakeCrashed || isSnakeHitWall)
+    if ((!status.hasEnoughApples && status.isGridFull && status.isSnakeGrowing) || status.isSnakeCrashed || isSnakeHitWall)
       status.isGameOver = true
 }
 
