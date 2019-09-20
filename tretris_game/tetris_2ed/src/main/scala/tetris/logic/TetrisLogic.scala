@@ -17,11 +17,6 @@ class TetrisLogic(val randomGen: RandomGenerator,
   def this() =
     this(new ScalaRandomGen(), DefaultWidth, DefaultHeight, makeEmptyBoard(DefaultWidth, DefaultHeight))
 
-//  println("Same board or not? " + (gameDiver.board == initialBoard))
-//  println(initialBoard)
-//  def this() =
-//    this(new ScalaRandomGen(), DefaultWidth, DefaultHeight, makeEmptyBoard(5, 5))
-
   def rotateLeft():  Unit = gameDiver.rotateBlock("left")
 
   def rotateRight(): Unit = gameDiver.rotateBlock("right")
@@ -36,7 +31,6 @@ class TetrisLogic(val randomGen: RandomGenerator,
   def isGameOver: Boolean = gameDiver.isGameOver
 
   def getBlockAt(x: Int, y: Int): TetrisBlock = {
-//    gameDiver.drawBoard()
     gameDiver.board(y)(x)
   }
 }

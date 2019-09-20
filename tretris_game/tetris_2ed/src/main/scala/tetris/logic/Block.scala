@@ -14,7 +14,7 @@ case class Block (val center: Coordinates = Coordinates(),
   def shapeRightRotate(): Unit = blockShape = BlockShapes(indexWrapper({index += 1; index}))
   def shapeLeftRotate():  Unit = blockShape = BlockShapes(indexWrapper({index -= 1; index}))
 
-  def getBlockTiles: Seq[Coordinates] = {
+  def getTilesOfTheBlock: Seq[Coordinates] = {
     if (blockType != Empty) blockShape match {
       case shape @ LeftmostShape    => shape.getShapeCoors(blockType, center)
       case shape @ MiddleLeftShape  => shape.getShapeCoors(blockType, center)
