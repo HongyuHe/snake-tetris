@@ -56,6 +56,7 @@ class GameController (val nrRows: Int,
         status.hasApple = true
       }
     }
+
     if (canPlaceApple) generateNewApple()
   }
 

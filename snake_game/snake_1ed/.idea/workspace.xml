@@ -2,148 +2,66 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb3f7b8e-da60-431d-a96d-0fdb02581339" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../snake_bonus/src/files/bg_img.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../snake_bonus/src/files/rsz_snake_bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../snake_bonus/src/files/snake_bg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake1_2_Hongyu.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.2/fileContent/fileContent.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.2/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.2/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.2/taskHistory/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.2/taskHistory/taskHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/$PRODUCT_WORKSPACE_FILE$" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/$PRODUCT_WORKSPACE_FILE$" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/scala/main/snake/logic/GameController$$anon$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/scala/main/snake/logic/GameController$$anon$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/scala/main/snake/logic/GameController$.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/scala/main/snake/logic/GameController$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/scala/main/snake/logic/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/scala/main/snake/logic/GameController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/scala/test/test/GenericRecord$Test$.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/scala/test/test/GenericRecord$Test$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/scala/test/test/GenericRecord$Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/scala/test/test/GenericRecord$Test.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/scala/test/test/GenericRecord$TestFrame$.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/scala/test/test/GenericRecord$TestFrame$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/scala/test/test/GenericRecord$TestSuite.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/scala/test/test/GenericRecord$TestSuite.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/scala/test/test/GenericRecord.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/scala/test/test/GenericRecord.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/snake_hhe450.zip" beforeDir="false" afterPath="$PROJECT_DIR$/build/snake_hhe450.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/scala/compilerAnalysis/compileScala.analysis" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/scala/compilerAnalysis/compileScala.analysis" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/scala/compilerAnalysis/compileTestScala.analysis" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/scala/compilerAnalysis/compileTestScala.analysis" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/snake/logic/GameController.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/snake/logic/GameController.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/scala/test/GenericRecord.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/test/GenericRecord.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_bonus/.gradle/4.10.2/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../snake_bonus/.gradle/4.10.2/fileContent/fileContent.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_bonus/.gradle/4.10.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../snake_bonus/.gradle/4.10.2/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_bonus/.gradle/4.10.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../snake_bonus/.gradle/4.10.2/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_bonus/.gradle/4.10.2/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../snake_bonus/.gradle/4.10.2/taskHistory/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_bonus/.gradle/4.10.2/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../snake_bonus/.gradle/4.10.2/taskHistory/taskHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_bonus/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../snake_bonus/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/snake/game/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/snake/game/GameController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/snake/game/SnakeGame$.class" beforeDir="false" afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/snake/game/SnakeGame$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/snake/game/SnakeGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/snake/game/SnakeGame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/snake/game/SnakeLogic$.class" beforeDir="false" afterPath="$PROJECT_DIR$/../snake_bonus/build/classes/scala/main/snake/game/SnakeLogic$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_bonus/build/tmp/scala/compilerAnalysis/compileScala.analysis" beforeDir="false" afterPath="$PROJECT_DIR$/../snake_bonus/build/tmp/scala/compilerAnalysis/compileScala.analysis" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_bonus/src/main/scala/snake/game/GameController.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../snake_bonus/src/main/scala/snake/game/GameController.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_bonus/src/main/scala/snake/game/SnakeGame.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../snake_bonus/src/main/scala/snake/game/SnakeGame.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_bonus/src/main/scala/snake/game/SnakeLogic.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../snake_bonus/src/main/scala/snake/game/SnakeLogic.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_new/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_new/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_new/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_new/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_new/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_new/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_new/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_new/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_new/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_new/lib/core.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_new/lib/gluegen-rt-natives-linux-aarch64.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_new/lib/gluegen-rt-natives-linux-amd64.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_new/lib/gluegen-rt-natives-linux-armv6hf.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_new/lib/gluegen-rt-natives-linux-i586.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_new/lib/gluegen-rt-natives-macosx-universal.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_new/lib/gluegen-rt-natives-windows-amd64.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_new/lib/gluegen-rt-natives-windows-i586.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_new/lib/gluegen-rt.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_new/lib/jogl-all-natives-linux-aarch64.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_new/lib/jogl-all-natives-linux-amd64.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_new/lib/jogl-all-natives-linux-armv6hf.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_new/lib/jogl-all-natives-linux-i586.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_new/lib/jogl-all-natives-macosx-universal.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_new/lib/jogl-all-natives-windows-amd64.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_new/lib/jogl-all-natives-windows-i586.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_new/lib/jogl-all.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_new/scalastyle_config.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_new/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_new/src/main/scala/engine/GameBase.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_new/src/main/scala/engine/graphics/Color.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_new/src/main/scala/engine/graphics/Point.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_new/src/main/scala/engine/graphics/Rectangle.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_new/src/main/scala/engine/graphics/Triangle.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_new/src/main/scala/engine/random/ListRandomGen.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_new/src/main/scala/engine/random/RandomGenerator.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_new/src/main/scala/engine/random/ScalaRandomGen.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_new/src/main/scala/snake/game/Direction.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_new/src/main/scala/snake/game/GridType.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_new/src/main/scala/snake/game/SnakeGame.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_new/src/main/scala/snake/logic/Cell.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_new/src/main/scala/snake/logic/GameDriver.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_new/src/main/scala/snake/logic/Grid.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_new/src/main/scala/snake/logic/Snake.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_new/src/main/scala/snake/logic/SnakeLogic.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_new/src/main/scala/snake/logic/SnakeTrunk.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_new/src/main/scala/snake/logic/Status.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_new/src/test/scala/test/GenericRecord.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_new/src/test/scala/test/snake/SnakeRecord.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_new/src/test/scala/test/snake/SnakeTestSuite.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_new/src/test/scala/test/snake/SnakeTests.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_new/src/test/scala/test/util/StringUtils.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snake_new/src/test/scala/test/util/TestRandomGen.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snakeskeleton/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snakeskeleton/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snakeskeleton/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snakeskeleton/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snakeskeleton/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snakeskeleton/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snakeskeleton/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snakeskeleton/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snakeskeleton/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snakeskeleton/lib/core.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snakeskeleton/lib/gluegen-rt-natives-linux-aarch64.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snakeskeleton/lib/gluegen-rt-natives-linux-amd64.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snakeskeleton/lib/gluegen-rt-natives-linux-armv6hf.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snakeskeleton/lib/gluegen-rt-natives-linux-i586.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snakeskeleton/lib/gluegen-rt-natives-macosx-universal.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snakeskeleton/lib/gluegen-rt-natives-windows-amd64.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snakeskeleton/lib/gluegen-rt-natives-windows-i586.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snakeskeleton/lib/gluegen-rt.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snakeskeleton/lib/jogl-all-natives-linux-aarch64.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snakeskeleton/lib/jogl-all-natives-linux-amd64.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snakeskeleton/lib/jogl-all-natives-linux-armv6hf.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snakeskeleton/lib/jogl-all-natives-linux-i586.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snakeskeleton/lib/jogl-all-natives-macosx-universal.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snakeskeleton/lib/jogl-all-natives-windows-amd64.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snakeskeleton/lib/jogl-all-natives-windows-i586.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snakeskeleton/lib/jogl-all.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snakeskeleton/scalastyle_config.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snakeskeleton/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snakeskeleton/src/main/scala/engine/GameBase.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snakeskeleton/src/main/scala/engine/graphics/Color.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snakeskeleton/src/main/scala/engine/graphics/Point.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snakeskeleton/src/main/scala/engine/graphics/Rectangle.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snakeskeleton/src/main/scala/engine/graphics/Triangle.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snakeskeleton/src/main/scala/engine/random/ListRandomGen.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snakeskeleton/src/main/scala/engine/random/RandomGenerator.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snakeskeleton/src/main/scala/engine/random/ScalaRandomGen.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snakeskeleton/src/main/scala/snake/game/Direction.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snakeskeleton/src/main/scala/snake/game/GridType.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snakeskeleton/src/main/scala/snake/game/SnakeGame.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snakeskeleton/src/main/scala/snake/logic/SnakeLogic.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snakeskeleton/src/test/scala/test/GenericRecord.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snakeskeleton/src/test/scala/test/snake/SnakeRecord.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snakeskeleton/src/test/scala/test/snake/SnakeTestSuite.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snakeskeleton/src/test/scala/test/snake/SnakeTests.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snakeskeleton/src/test/scala/test/util/StringUtils.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../snakeskeleton/src/test/scala/test/util/TestRandomGen.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/.gradle/4.10.2/fileChanges/last-build.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/.gradle/4.10.2/fileHashes/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/.gradle/4.10.2/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/.gradle/4.10.2/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/.gradle/vcs-1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/.idea/$PRODUCT_WORKSPACE_FILE$" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/.idea/sbt.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/.idea/scala_compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/.idea/scalastyle_config.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/lib/core.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/lib/gluegen-rt-natives-linux-aarch64.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/lib/gluegen-rt-natives-linux-amd64.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/lib/gluegen-rt-natives-linux-armv6hf.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/lib/gluegen-rt-natives-linux-i586.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/lib/gluegen-rt-natives-macosx-universal.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/lib/gluegen-rt-natives-windows-amd64.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/lib/gluegen-rt-natives-windows-i586.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/lib/gluegen-rt.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/lib/jogl-all-natives-linux-aarch64.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/lib/jogl-all-natives-linux-amd64.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/lib/jogl-all-natives-linux-armv6hf.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/lib/jogl-all-natives-linux-i586.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/lib/jogl-all-natives-macosx-universal.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/lib/jogl-all-natives-windows-amd64.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/lib/jogl-all-natives-windows-i586.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/lib/jogl-all.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/src/main/scala/engine/GameBase.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/src/main/scala/engine/graphics/Color.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/src/main/scala/engine/graphics/Point.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/src/main/scala/engine/graphics/Rectangle.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/src/main/scala/engine/graphics/Triangle.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/src/main/scala/engine/random/ListRandomGen.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/src/main/scala/engine/random/RandomGenerator.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/src/main/scala/engine/random/ScalaRandomGen.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/src/main/scala/tetris/game/TetrisBlock.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/src/main/scala/tetris/game/TetrisGame.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/src/main/scala/tetris/logic/TetrisLogic.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/src/test/scala/test/GenericRecord.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/src/test/scala/test/tetris/TetrisRecord.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/src/test/scala/test/tetris/TetrisTestSuite.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/src/test/scala/test/tetris/TetrisTests.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/src/test/scala/test/util/CryptoUtils.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/src/test/scala/test/util/StringUtils.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tretris_game/tetrisskeleton/src/test/scala/test/util/TestRandomGen.scala" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
