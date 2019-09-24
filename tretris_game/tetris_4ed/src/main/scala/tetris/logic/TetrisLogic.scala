@@ -13,10 +13,12 @@ class TetrisLogic(val randomGen: RandomGenerator,
   var hasNewBlock = false
   var gameOverFlag = false
 
-  var board: Seq[Seq[TetrisBlock]] = initialBoard
   var block: Block = generateNewBlock
+  var board: Seq[Seq[TetrisBlock]] = initialBoard
+
   var oldBlock = Block()
   var oldBoard: Seq[Seq[TetrisBlock]] = initialBoard.transpose.transpose
+
   var baseLine: Set[Coordinates] = Set()
   var dockedTiles: Set[(Coordinates, TetrisBlock)] = Set()
 

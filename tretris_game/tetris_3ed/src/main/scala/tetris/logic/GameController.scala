@@ -14,28 +14,40 @@ class GameController(val randomGen: RandomGenerator,
   var isGameOver = false
   var hasNewBlock = false
 
-  var oldBlock = Block()
   var block: Block = generateNewBlock
-  var baseLine: Set[Coordinates] = Set()
-  var dockedTiles: Set[(Coordinates, TetrisBlock)] = Set()
+
+  var oldBlock = Block()
   var oldBoard: Seq[Seq[TetrisBlock]] = board.transpose.transpose
 
+  var baseLine: Set[Coordinates] = Set()
+  var dockedTiles: Set[(Coordinates, TetrisBlock)] = Set()
+
+  def saveBoard():     Unit = oldBoard = board.transpose.transpose
   def saveBlock():     Unit = oldBlock = Block makeDeepCopy block
+
   def retrieveBlock(): Unit = block = Block makeDeepCopy oldBlock
-  
+  def retrieveBoard(): Unit = board = oldBoard
+
+  def updateBoard (coordinates: Coordinates, tetrisBlock: TetrisBlock): Unit =
+    board = board.updated(coordinates.y, board(coordinates.y).updated(coordinates.x, tetrisBlock))
+
+  def drawBlock(block: Block, tetrisBlock: TetrisBlock): Unit = block.getTilesOfTheBlock.foreach { tile => updateBoard(tile, tetrisBlock) }
+  def drawTiles(tiles: Set[(Coordinates, TetrisBlock)]): Unit = tiles.foreach { tile => updateBoard(tile._1, tile._2)}
+  def drawTiles(tiles: Set[(Coordinates, TetrisBlock)], tetrisBlock: TetrisBlock): Unit = tiles.foreach { tile => updateBoard(tile._1, tetrisBlock)}
+
+  def checkGameOver(): Unit = if (isCrashedIntoDockedTails) { isGameOver = true }
+  def dockBlockAndNewBlock(): Unit = {
+    dockedTiles ++= block.getTilesOfTheBlock.map(tile => (tile, block.blockType))
+    block = generateNewBlock
+  }
+  def hardDropBlock(): Unit = {
+    while (!isCrashedIntoDockedTails) { block.center.y += 1 }
+    block.center.y -= 1
+    dockBlockAndNewBlock()
+    checkGameOver()
+  }
+
   def letBlock (action: BlockAction): Unit = {
-    def checkGameOver(): Unit = if (isCrashedIntoDockedTails) { isGameOver = true }
-    def dockBlockAndNewBlock(): Unit = {
-      dockedTiles ++= block.getTilesOfTheBlock.map(tile => (tile, block.blockType))
-      block = generateNewBlock
-    }
-    def hardDropBlock(): Unit = {
-      while (!isCrashedIntoDockedTails) { block.center.y += 1 }
-      block.center.y -= 1
-      dockBlockAndNewBlock()
-      checkGameOver()
-    }
-//-----------------------------------------------------------------------------------//
     saveBlock()
     action match {
       case MoveRight =>     block.center.x += 1
@@ -45,13 +57,11 @@ class GameController(val randomGen: RandomGenerator,
       case RotateLeft =>    block.shapeLeftRotate()
       case RotateRight =>   block.shapeRightRotate()
     }
-
     if (action == MoveDown && isCrashedIntoDockedTails) {
       retrieveBlock()
       dockBlockAndNewBlock()
       checkGameOver()
-    }
-    drawBoard()
+    };drawBoard()
   }
 
 
@@ -62,54 +72,38 @@ class GameController(val randomGen: RandomGenerator,
     false
   }
 
-  def drawBoard(): Unit = {
-    if (isGameOver) { return }
-    oldBoard = board.transpose.transpose
-    clearOldBlock()
-    clearLine()
-    dockedTiles.foreach { tile =>
-      board = board.updated(tile._1.y, board(tile._1.y).updated(tile._1.x, tile._2)) // duplicate
-    }
-
-    //draw current block
+  def checkValidationAndDrawCurrentBlock (): Unit = {
     val tiles = block.getTilesOfTheBlock
-    breakable {
-      for (i <- tiles.indices) {
-        if (isCoordinatesValid(tiles(i))) {
-          board = board.updated(tiles(i).y, board(tiles(i).y).updated(tiles(i).x, block.blockType)) // duplicate
-        } else {
-          board = oldBoard
-          retrieveBlock()
-          break
-        }
-      }
+    breakable { tiles.foreach { tile =>
+      if ( isCoordinatesValid(tile) ) { updateBoard(tile, block.blockType) }
+      else {
+        retrieveBoard()
+        retrieveBlock()
+        break
+      } }
     }
+  }
+
+  def drawBoard(): Unit = {
+    if (isGameOver) return
+    saveBoard()
+    drawBlock(oldBlock, Empty)
+    clearLine()
+    drawTiles(dockedTiles)
+    checkValidationAndDrawCurrentBlock()
   }
 
 
   def generateNewBlock: Block = {
     hasNewBlock = true
-    Block(
-      center = newBlockCenterCoor,
-      blockType = BlockTypes(randomGen.randomInt(BlockTypes.length)),
-    )
+    Block(center = newBlockCenterCoor,
+          blockType = BlockTypes(randomGen.randomInt(BlockTypes.length)) )
   }
 
   def clearBoard(): Unit = board = Seq.fill(nrRows, nrColumns)(Empty)
 
-  def clearOldBlock(): Unit = {
-    oldBlock.getTilesOfTheBlock.foreach { tile =>
-      board = board.updated(tile.y, board(tile.y).updated(tile.x, Empty)) // duplicate
-    }
-  }
-
   def clearLine(): Unit = {
-    dockedTiles.foreach { tile => // clear docked tiles
-      board = board.updated(
-        tile._1.y,
-        board(tile._1.y)
-          .updated(tile._1.x, Empty)) // duplicate
-    }
+    drawTiles(dockedTiles, Empty)
     var fullRows = List[Int]()
     for (row <- 0 until nrRows) {
       if (dockedTiles.count(_._1.y == row) == nrColumns) {
