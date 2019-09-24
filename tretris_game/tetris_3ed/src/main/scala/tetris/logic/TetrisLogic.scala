@@ -9,24 +9,20 @@ class TetrisLogic(val randomGen: RandomGenerator,
                   val nrRows: Int,
                   val initialBoard: Seq[Seq[TetrisBlock]]) {
 
-  private val gameController = GameController(randomGen, nrColumns, nrRows, initialBoard)
+  def this(random: RandomGenerator, nrColumns: Int, nrRows: Int) = this(random, nrColumns, nrRows, makeEmptyBoard(nrColumns, nrRows))
+  def this() = this(new ScalaRandomGen(), DefaultWidth, DefaultHeight, makeEmptyBoard(DefaultWidth, DefaultHeight))
 
-  def this(random: RandomGenerator, nrColumns: Int, nrRows: Int) =
-    this(random, nrColumns, nrRows, makeEmptyBoard(nrColumns, nrRows))
+  def rotateLeft():   Unit = controller letBlock RotateLeft
+  def rotateRight():  Unit = controller letBlock RotateRight
+  def moveLeft():     Unit = controller letBlock MoveLeft
+  def moveRight():    Unit = controller letBlock MoveRight
+  def moveDown():     Unit = controller letBlock MoveDown
+  def doHardDrop():   Unit = controller letBlock HardDrop
 
-  def this() =
-    this(new ScalaRandomGen(), DefaultWidth, DefaultHeight, makeEmptyBoard(DefaultWidth, DefaultHeight))
+  def isGameOver:  Boolean = controller isGameOver
+  def getBlockAt(x: Int, y: Int): TetrisBlock = controller.board(y)(x)
 
-  def rotateLeft():   Unit = gameController letBlock RotateLeft
-  def rotateRight():  Unit = gameController letBlock RotateRight
-  def moveLeft():     Unit = gameController letBlock MoveLeft
-  def moveRight():    Unit = gameController letBlock MoveRight
-  def moveDown():     Unit = gameController letBlock MoveDown
-  def doHardDrop():   Unit = gameController letBlock HardDrop
-  def isGameOver:  Boolean = gameController isGameOver
-
-  def getBlockAt(x: Int, y: Int): TetrisBlock = gameController.board(y)(x)
-
+  private[this] val controller = GameController(randomGen, nrColumns, nrRows, initialBoard)
 }
 
 object TetrisLogic {
@@ -39,10 +35,8 @@ object TetrisLogic {
   val DefaultWidth: Int = 10
   val DefaultHeight: Int = 20
 
-
   def apply() = new TetrisLogic(new ScalaRandomGen(),
                                 DefaultWidth,
                                 DefaultHeight,
                                 makeEmptyBoard(DefaultWidth, DefaultHeight))
-
 }

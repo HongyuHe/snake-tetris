@@ -5,7 +5,7 @@ trait BlockShape {
   def getShapeCoors(tetrisBlock: TetrisBlock, center: Coordinates): Seq[Coordinates]
 }
 
-case object LeftmostShape     extends BlockShape {
+case object LeftmostShape extends BlockShape {
   def getShapeCoors(tetrisBlock: TetrisBlock, center: Coordinates): Seq[Coordinates] = {
     tetrisBlock match {
       case IBlock => Seq(center, Coordinates(center.y, center.x+1), Coordinates(center.y, center.x+2), Coordinates(center.y,   center.x-1))
@@ -18,7 +18,7 @@ case object LeftmostShape     extends BlockShape {
     }
   }
 }
-case object MiddleLeftShape   extends BlockShape {
+case object MiddleLeftShape extends BlockShape {
   def getShapeCoors(tetrisBlock: TetrisBlock, center: Coordinates): Seq[Coordinates] = {
     tetrisBlock match {
       case IBlock => Seq(Coordinates(center.y, center.x+1), Coordinates(center.y+1, center.x+1), Coordinates(center.y+2, center.x+1), Coordinates(center.y-1, center.x+1))
@@ -31,7 +31,7 @@ case object MiddleLeftShape   extends BlockShape {
     }
   }
 }
-case object MiddleRightShape  extends BlockShape {
+case object MiddleRightShape extends BlockShape {
   def getShapeCoors(tetrisBlock: TetrisBlock, center: Coordinates): Seq[Coordinates] = {
     tetrisBlock match {
       case IBlock => Seq(Coordinates(center.y+1, center.x), Coordinates(center.y+1, center.x+1), Coordinates(center.y+1, center.x+2), Coordinates(center.y+1, center.x-1))
@@ -44,7 +44,7 @@ case object MiddleRightShape  extends BlockShape {
     }
   }
 }
-case object RightmostShape    extends BlockShape {
+case object RightmostShape extends BlockShape {
   def getShapeCoors(tetrisBlock: TetrisBlock, center: Coordinates): Seq[Coordinates] = {
     tetrisBlock match {
       case IBlock => Seq(center, Coordinates(center.y+1, center.x), Coordinates(center.y+2, center.x), Coordinates(center.y-1, center.x))
