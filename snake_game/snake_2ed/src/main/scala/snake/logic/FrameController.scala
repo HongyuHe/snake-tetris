@@ -3,7 +3,7 @@ package snake.logic
 import engine.random.RandomGenerator
 import snake.game.{Apple, Direction, East, Empty, North, SnakeBody, SnakeHead, South, West}
 
-class GameController (val nrRows: Int,
+class FrameController(val nrRows: Int,
                       val nrColumns: Int,
                       val randomGen: RandomGenerator) {
 
@@ -78,8 +78,8 @@ class GameController (val nrRows: Int,
     }
   }
 
-  def makeDeepCopy: GameController = {
-    val that = GameController(nrRows, nrColumns, randomGen)
+  def makeDeepCopy: FrameController = {
+    val that = FrameController(nrRows, nrColumns, randomGen)
 
     that.status = this.status.copy()
     this.snake copyTo that.snake
@@ -93,10 +93,7 @@ class GameController (val nrRows: Int,
       status.isGameOver = true
 }
 
-object GameController {
-  def apply(nrRows: Int, nrColumns: Int, randomGen: RandomGenerator): GameController =
-    new GameController(nrRows, nrColumns, randomGen) {
-      drawSnake()
-      placeApple()
-    }
+object FrameController {
+  def apply(nrRows: Int, nrColumns: Int, randomGen: RandomGenerator): FrameController =
+    new FrameController(nrRows, nrColumns, randomGen) { drawSnake(); placeApple() }
 }

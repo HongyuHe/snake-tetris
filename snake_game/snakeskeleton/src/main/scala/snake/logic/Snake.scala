@@ -1,15 +1,16 @@
 package snake.logic
 
-import snake.game._
-import snake.logic.Snake._
 import scala.collection.mutable
+import snake.logic.Snake._
+import snake.game.{Direction, East, Empty, GridType, North, SnakeBody, SnakeHead, South, West}
 
 class Snake {
+
   var growCounter = 0
-  var droppedTail: Option[SnakeTrunk] = None                                      // drop tail if snake is not growing
+  var droppedTail: Option[SnakeTrunk] = None                                        // drop tail if snake is not growing
   val grow: () => Unit = () => growCounter += GrowPerTime
   var body: mutable.Buffer[SnakeTrunk] = mutable.Buffer[SnakeTrunk]()
-  lazy val isHeadBehindTail: Boolean = body.head isInTheSamePositionAs droppedTail
+  lazy val isHeadBehindTail: Boolean = body.head inTheSamePositionAs droppedTail
 
   def move(gridBoundaryOfCurrentDir: Int) (dir: Direction): Unit = {
     val moveToEast : Int => Unit = (boundary: Int) => body = SnakeTrunk(body.head.x, (body.head.y + 1) % boundary) +: body

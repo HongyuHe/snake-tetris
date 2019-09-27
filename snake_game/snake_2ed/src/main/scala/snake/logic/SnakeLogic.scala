@@ -11,34 +11,32 @@ class SnakeLogic(val randomGen: RandomGenerator,
 
   def this() = this(new ScalaRandomGen(), DefaultColumns, DefaultRows)
 
-  def isGameOver: Boolean = gameController.status.isGameOver
-  def changeDir(d: Direction): Unit = gameController.turnSnake(d)
-  def getGridTypeAt(x: Int, y: Int): GridType = gameController.grid.getCellType(y, x)
+  def isGameOver: Boolean = frameController.status.isGameOver
+  def changeDir(d: Direction): Unit = frameController.turnSnake(d)
+  def getGridTypeAt(x: Int, y: Int): GridType = frameController.grid.getCellType(y, x)
 
   def step(): Unit = {
-    if (isReversing  && gameHistory.nonEmpty)  reverseGameHistory()
-    if (!isReversing && !gameController.status.isGameOver) { gameController.update(); saveGameHistory() }
+    if (isReversing  && frameHistory.nonEmpty)  retrieveFrame()
+    if (!isReversing && !frameController.status.isGameOver) { frameController.update(); saveFrame() }
   }
 
   def setReverseTime(reverse: Boolean): Unit = {
-    if (!reverse && isReversing)          saveGameHistory()
-    if (reverse  && gameHistory.nonEmpty) reverseGameHistory()
+    if (!reverse && isReversing)          saveFrame()
+    if (reverse  && frameHistory.nonEmpty) retrieveFrame()
     isReversing = reverse
   }
 
   private[this] var isReversing = false
-  private[this] val gameHistory = mutable.Stack[GameController]()
-  private[this] var gameController = GameController(nrRows, nrColumns, randomGen)
+  private[this] val frameHistory = mutable.Stack[FrameController]()
+  private[this] var frameController = FrameController(nrRows, nrColumns, randomGen)
 
-  private[this] def saveGameHistory()():    Unit = gameHistory.push(gameController.makeDeepCopy)
-  private[this] def reverseGameHistory():   Unit = gameController = gameHistory.pop()
+  private[this] def saveFrame()():    Unit = frameHistory.push(frameController.makeDeepCopy)
+  private[this] def retrieveFrame():  Unit = frameController = frameHistory.pop()
 
-  saveGameHistory() // save game history before game starts
+  saveFrame() // save game the first frame before game starts
 }
 
 object SnakeLogic {
-
   val DefaultColumns = 25
   val DefaultRows = 25
-
 }
