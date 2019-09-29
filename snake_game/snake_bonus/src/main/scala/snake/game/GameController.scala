@@ -4,6 +4,7 @@ package snake.game
 import engine.random.{RandomGenerator, ScalaRandomGen}
 import snake.components._
 
+
 class GameController(val nrRows: Int,
                      val nrColumns: Int,
                      val randomGen: RandomGenerator,
@@ -16,6 +17,7 @@ class GameController(val nrRows: Int,
   val rivalSnake = Snake(rivalMode = true)
 
   var looser: SnakeID = HostSnake()
+//  var applePositionSet: Set[Cell]= Set()
 
   def init(): Unit = {
 
@@ -55,10 +57,10 @@ class GameController(val nrRows: Int,
           val cell = grid.getFreeCell(randomGen.randomInt(grid.nrFreeSpots))
           grid.setCellType(cell, item)
         }
-        //        status.hasEnoughApples = true
       }
     }
-    if (needNewItems) { generateNewItems() }
+
+    if (needNewItems) { generateNewItems(); grid.updateApplePositions()}
   }
 
   private[this] def buildWall(wType: String, nrBricks: Int = setting.gameLevel*2): Unit = {
@@ -137,9 +139,11 @@ class GameController(val nrRows: Int,
     if (canPlaceApple) generateNewApple()
   }
 
-  def updateGameStatusFor(snake: Snake = hostSnake): Unit = {
-    val isBombHit = grid.getCellType(snake.body.head) == Bomb()
-    val isAppleEaten = grid.getCellType(snake.body.head) == Apple()
+  def updateGameStatusFor(snake: Snake): Unit = {
+    val typeOfCurrentPosition = grid.getCellType(snake.body.head)
+    val isBombHit = typeOfCurrentPosition == Bomb()
+    val isAppleEaten = typeOfCurrentPosition == Apple()
+    lazy val isMyBody = typeOfCurrentPosition.asInstanceOf[SnakeBody].id == snake.id
 
     status.isSnakeGrowing = snake.growCounter > 0
     status.hasEnoughBombs  = grid.getItemAmount(Bomb())  == setting.bombNumber
@@ -153,9 +157,10 @@ class GameController(val nrRows: Int,
         status.bombHitByNormalSnake = isBombHit
         status.appleEatenByNormalSnake = isAppleEaten
     }
-    status.isSnakeCrashed = grid.getCellType(snake.body.head) match {
+    status.isSnakeCrashed = typeOfCurrentPosition match {
       case SnakeBody(_, 1) => status.isSnakeGrowing
-      case SnakeBody(_, _) => true
+      case SnakeBody(_, _) if isMyBody => true // cannot collide with anothe snake
+      // BUG: green snake can collide with its self!
       case _ => false
     }
     if (status.isSnakeCrashed) { looser = snake.id }
@@ -211,6 +216,7 @@ class GameController(val nrRows: Int,
         looser = HostSnake()
       else looser = RivalSnake()
     }
+
 }
 
 object GameController {

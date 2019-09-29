@@ -3,7 +3,10 @@ package snake.components
 import scala.collection.mutable
 
 class Grid(nrRows: Int, nrColumns: Int) {
+  case class Position(row: Int = 0, col: Int = 0)
+
   var nrFreeSpots = 0
+  var applePositionSet: Set[Position] = Set()
 
   private val hashTableOfFreeCell: mutable.Map[Int, Cell] = mutable.Map[Int, Cell]()
   private val cells: mutable.Buffer[mutable.Buffer[Cell]] = mutable.Buffer.fill(nrRows, nrColumns)(new Cell())
@@ -27,6 +30,15 @@ class Grid(nrRows: Int, nrColumns: Int) {
     nrFreeSpots = cellIndex
   }
 
+  def updateApplePositions(): Unit = {
+    for (row <- cells.indices; col <- cells(0).indices) {
+      if (cells(row)(col).cellType == Apple()) {
+        applePositionSet = applePositionSet + Position(row, col)
+      }
+    }
+    println(applePositionSet.toString())
+  }
+
   def getItemAmount(item: GridType): Int = {
     var counter = 0
     cells.foreach { rows => rows.foreach { cell =>
@@ -39,12 +51,11 @@ class Grid(nrRows: Int, nrColumns: Int) {
   def copyTo(that: Grid): Unit = {
     that.nrFreeSpots = this.nrFreeSpots
 
-    for (row <- this.cells.indices) {
+    for (row <- this.cells.indices; index <- 0 to this.nrFreeSpots) {
       that.cells(row).clear()
+      that.hashTableOfFreeCell(index) = this.hashTableOfFreeCell(index).copy()
       this.cells(row).foreach { cell => that.cells(row) += new Cell(cell.cellType) }
     }
-    for (index <- 0 to this.nrFreeSpots)
-      that.hashTableOfFreeCell(index) = this.hashTableOfFreeCell(index).copy()
   }
 }
 
