@@ -91,6 +91,13 @@ class SnakeGame extends GameBase {
           val color = Color.Yellow.interpolate(p, Color.Orange)
           setFillColor(color)
           drawRectangle(area)
+        case SnakeHead(id, direction) if id == AiSnake() =>
+          setFillColor(Color.Purple)
+          drawTriangle(getTriangleForDirection(direction, area))
+        case SnakeBody(id, p) if id == AiSnake() =>
+          val color = Color.Purple.interpolate(p, Color.DarkGreen)
+          setFillColor(color)
+          drawRectangle(area)
 
         case Apple() =>
           setFillColor(Color.Red)

@@ -2,14 +2,14 @@ package snake.components
 
 import scala.collection.mutable
 
-class Grid(nrRows: Int, nrColumns: Int) {
-  case class Position(row: Int = 0, col: Int = 0)
+case class ApplePosition(var x: Int = 0, var y: Int = 0) extends Coordinates
 
+class Grid(nrRows: Int, nrColumns: Int) {
   var nrFreeSpots = 0
-  var applePositionSet: Set[Position] = Set()
+  var applePositionsSet: Set[ApplePosition] = Set()
 
   private val hashTableOfFreeCell: mutable.Map[Int, Cell] = mutable.Map[Int, Cell]()
-  private val cells: mutable.Buffer[mutable.Buffer[Cell]] = mutable.Buffer.fill(nrRows, nrColumns)(new Cell())
+  val cells: mutable.Buffer[mutable.Buffer[Cell]] = mutable.Buffer.fill(nrRows, nrColumns)(new Cell())
 
   def getFreeCell(cellIndex: Int): Cell = hashTableOfFreeCell(cellIndex)
 
@@ -26,17 +26,28 @@ class Grid(nrRows: Int, nrColumns: Int) {
         if (cell.cellType == Empty()) {
           hashTableOfFreeCell(cellIndex) = cell
           cellIndex += 1
-        } } }
+        }
+    } }
     nrFreeSpots = cellIndex
   }
 
   def updateApplePositions(): Unit = {
-    for (row <- cells.indices; col <- cells(0).indices) {
-      if (cells(row)(col).cellType == Apple()) {
-        applePositionSet = applePositionSet + Position(row, col)
+    applePositionsSet = Set()
+    for (x <- 0 until nrRows; y <- 0 until nrColumns) {
+      if (cells(x)(y).cellType == Apple()) {
+        applePositionsSet = applePositionsSet + ApplePosition(x, y)
       }
     }
-    println(applePositionSet.toString())
+    println("Apple Positions: " + applePositionsSet.toString())
+  }
+
+  def printGridWithApple (): Unit = {
+    for (row <- 0 until nrRows; col <- 0 until nrColumns) {
+      if (col == nrColumns-1) print("\n")
+      if (cells(row)(col).cellType == Apple()) print(" A")
+      else print(" _")
+    }
+    println("$" * 100)
   }
 
   def getItemAmount(item: GridType): Int = {

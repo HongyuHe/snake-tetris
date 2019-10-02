@@ -10,17 +10,26 @@ class GameController(val nrRows: Int,
                      val randomGen: RandomGenerator,
                      var setting: GameSetting) {
 
-  var grid = Grid(nrRows, nrColumns)
+  val grid = Grid(nrRows, nrColumns)
   var status = GameStatus()
 
-  val hostSnake = Snake()
+//  val hostSnake = Snake()
+  val hostSnake = SnakeAI()
   val rivalSnake = Snake(rivalMode = true)
 
   var looser: SnakeID = HostSnake()
 //  var applePositionSet: Set[Cell]= Set()
 
-  def init(): Unit = {
+  def printGridWithApple (): Unit = {
+    for (row <- 0 until nrRows; col <- 0 until nrColumns) {
+      if (col == nrColumns-1) print("\n")
+      if (grid.cells(row)(col).cellType == Apple()) print(" A")
+      else print(" _")
+    }
+    println("$" * 100)
+  }
 
+  def init(): Unit = {
     def setLevel(): Unit = {
       for (_ <- Range(0, setting.gameLevel)) {
         buildWall("vertical")
@@ -60,7 +69,7 @@ class GameController(val nrRows: Int,
       }
     }
 
-    if (needNewItems) { generateNewItems(); grid.updateApplePositions()}
+    if (needNewItems) { generateNewItems() }
   }
 
   private[this] def buildWall(wType: String, nrBricks: Int = setting.gameLevel*2): Unit = {
@@ -84,7 +93,9 @@ class GameController(val nrRows: Int,
   def isSnakeHitWall: Boolean = grid.getCellType(hostSnake.body.head) == Wall() || grid.getCellType(rivalSnake.body.head) == Wall()
   //////////////////////////////////////////////////////////////////////
   def update(): Unit = {
-//    placeApple()
+//    printGridWithApple()
+//    println("Grid Hashcode: " + grid.hashCode())
+
     updateItems()
 
     moveSnake()
@@ -97,6 +108,9 @@ class GameController(val nrRows: Int,
     drawSnakes()
     checkAppleAndGrowSnake()
     checkBombAndCutSnake()
+
+    grid.updateApplePositions()
+    println(hostSnake.body.head)
   }
 
   def turnSnake(snake: Snake = hostSnake, currentDirection: Direction): Unit = {
@@ -105,6 +119,11 @@ class GameController(val nrRows: Int,
   }
 
   def moveSnake(snake: Snake = hostSnake): Unit = {
+    if (snake.id == AiSnake()) {
+      grid.updateApplePositions()
+      snake.asInstanceOf[SnakeAI].turnAI(grid.applePositionsSet)
+    }
+
     val snakeHeadDir = getSnakeHeadDirection(snake)
     val moveSnakeTo: Direction => Unit = snakeHeadDir match {
       case East()  | West() => snake.move(nrColumns)
@@ -122,6 +141,8 @@ class GameController(val nrRows: Int,
       eraseSnakeTail()
     }
     snake.preDir = getSnakeHeadDirection(snake)
+
+    println(snake.body)
   }
 
   def placeApple(): Unit = {
@@ -156,6 +177,7 @@ class GameController(val nrRows: Int,
       case HostSnake() =>
         status.bombHitByNormalSnake = isBombHit
         status.appleEatenByNormalSnake = isAppleEaten
+      case _ =>
     }
     status.isSnakeCrashed = typeOfCurrentPosition match {
       case SnakeBody(_, 1) => status.isSnakeGrowing

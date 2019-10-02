@@ -15,7 +15,7 @@ products:
    src/main/scala/engine/random/ScalaRandomGen.scala -> build/classes/scala/main/engine/random/ScalaRandomGen.class
    src/main/scala/snake/components/Cell.scala -> build/classes/scala/main/snake/components/Cell$.class
    src/main/scala/snake/components/Cell.scala -> build/classes/scala/main/snake/components/Cell.class
-   src/main/scala/snake/components/Cell.scala -> build/classes/scala/main/snake/components/Coordinates.class
+   src/main/scala/snake/components/Coordinates.scala -> build/classes/scala/main/snake/components/Coordinates.class
    src/main/scala/snake/components/Direction.scala -> build/classes/scala/main/snake/components/Direction.class
    src/main/scala/snake/components/Direction.scala -> build/classes/scala/main/snake/components/East$.class
    src/main/scala/snake/components/Direction.scala -> build/classes/scala/main/snake/components/East.class
@@ -25,10 +25,10 @@ products:
    src/main/scala/snake/components/Direction.scala -> build/classes/scala/main/snake/components/South.class
    src/main/scala/snake/components/Direction.scala -> build/classes/scala/main/snake/components/West$.class
    src/main/scala/snake/components/Direction.scala -> build/classes/scala/main/snake/components/West.class
+   src/main/scala/snake/components/Grid.scala -> build/classes/scala/main/snake/components/ApplePosition$.class
+   src/main/scala/snake/components/Grid.scala -> build/classes/scala/main/snake/components/ApplePosition.class
    src/main/scala/snake/components/Grid.scala -> build/classes/scala/main/snake/components/Grid$$anon$1.class
    src/main/scala/snake/components/Grid.scala -> build/classes/scala/main/snake/components/Grid$.class
-   src/main/scala/snake/components/Grid.scala -> build/classes/scala/main/snake/components/Grid$Position$.class
-   src/main/scala/snake/components/Grid.scala -> build/classes/scala/main/snake/components/Grid$Position.class
    src/main/scala/snake/components/Grid.scala -> build/classes/scala/main/snake/components/Grid.class
    src/main/scala/snake/components/GridType.scala -> build/classes/scala/main/snake/components/Apple$.class
    src/main/scala/snake/components/GridType.scala -> build/classes/scala/main/snake/components/Apple.class
@@ -46,6 +46,11 @@ products:
    src/main/scala/snake/components/Snake.scala -> build/classes/scala/main/snake/components/Snake$$anon$1.class
    src/main/scala/snake/components/Snake.scala -> build/classes/scala/main/snake/components/Snake$.class
    src/main/scala/snake/components/Snake.scala -> build/classes/scala/main/snake/components/Snake.class
+   src/main/scala/snake/components/SnakeAI.scala -> build/classes/scala/main/snake/components/SnakeAI$$anon$1.class
+   src/main/scala/snake/components/SnakeAI.scala -> build/classes/scala/main/snake/components/SnakeAI$.class
+   src/main/scala/snake/components/SnakeAI.scala -> build/classes/scala/main/snake/components/SnakeAI.class
+   src/main/scala/snake/components/SnakeID.scala -> build/classes/scala/main/snake/components/AiSnake$.class
+   src/main/scala/snake/components/SnakeID.scala -> build/classes/scala/main/snake/components/AiSnake.class
    src/main/scala/snake/components/SnakeID.scala -> build/classes/scala/main/snake/components/HostSnake$.class
    src/main/scala/snake/components/SnakeID.scala -> build/classes/scala/main/snake/components/HostSnake.class
    src/main/scala/snake/components/SnakeID.scala -> build/classes/scala/main/snake/components/RivalSnake$.class
@@ -85,7 +90,6 @@ products:
    src/main/scala/snake/game/GameStatus.scala -> build/classes/scala/main/snake/game/GameStatus.class
    src/main/scala/snake/game/SnakeGame.scala -> build/classes/scala/main/snake/game/SnakeGame$.class
    src/main/scala/snake/game/SnakeGame.scala -> build/classes/scala/main/snake/game/SnakeGame.class
-   src/main/scala/snake/game/SnakeLogic.scala -> build/classes/scala/main/snake/game/SnakeLogic$$anon$1.class
    src/main/scala/snake/game/SnakeLogic.scala -> build/classes/scala/main/snake/game/SnakeLogic$.class
    src/main/scala/snake/game/SnakeLogic.scala -> build/classes/scala/main/snake/game/SnakeLogic.class
 binary dependencies:
@@ -108,6 +112,8 @@ binary dependencies:
    src/main/scala/engine/random/ScalaRandomGen.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/rt.jar
    src/main/scala/snake/components/Cell.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.13.0/e988ea597113786768900f1c260c694a2ae32a42/scala-library-2.13.0.jar
    src/main/scala/snake/components/Cell.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/rt.jar
+   src/main/scala/snake/components/Coordinates.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.13.0/e988ea597113786768900f1c260c694a2ae32a42/scala-library-2.13.0.jar
+   src/main/scala/snake/components/Coordinates.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/rt.jar
    src/main/scala/snake/components/Direction.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.13.0/e988ea597113786768900f1c260c694a2ae32a42/scala-library-2.13.0.jar
    src/main/scala/snake/components/Direction.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/rt.jar
    src/main/scala/snake/components/Grid.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.13.0/e988ea597113786768900f1c260c694a2ae32a42/scala-library-2.13.0.jar
@@ -116,6 +122,8 @@ binary dependencies:
    src/main/scala/snake/components/GridType.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/rt.jar
    src/main/scala/snake/components/Snake.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.13.0/e988ea597113786768900f1c260c694a2ae32a42/scala-library-2.13.0.jar
    src/main/scala/snake/components/Snake.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/rt.jar
+   src/main/scala/snake/components/SnakeAI.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.13.0/e988ea597113786768900f1c260c694a2ae32a42/scala-library-2.13.0.jar
+   src/main/scala/snake/components/SnakeAI.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/rt.jar
    src/main/scala/snake/components/SnakeID.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.13.0/e988ea597113786768900f1c260c694a2ae32a42/scala-library-2.13.0.jar
    src/main/scala/snake/components/SnakeID.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/rt.jar
    src/main/scala/snake/components/SnakeTrunk.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.13.0/e988ea597113786768900f1c260c694a2ae32a42/scala-library-2.13.0.jar
@@ -153,6 +161,7 @@ source dependencies:
    src/main/scala/snake/components/Cell.scala -> src/main/scala/snake/components/GridType.scala
    src/main/scala/snake/components/Cell.scala -> src/main/scala/snake/components/SnakeID.scala
    src/main/scala/snake/components/Grid.scala -> src/main/scala/snake/components/Cell.scala
+   src/main/scala/snake/components/Grid.scala -> src/main/scala/snake/components/Coordinates.scala
    src/main/scala/snake/components/Grid.scala -> src/main/scala/snake/components/GridType.scala
    src/main/scala/snake/components/Grid.scala -> src/main/scala/snake/components/SnakeTrunk.scala
    src/main/scala/snake/components/GridType.scala -> src/main/scala/snake/components/Direction.scala
@@ -162,6 +171,12 @@ source dependencies:
    src/main/scala/snake/components/Snake.scala -> src/main/scala/snake/components/GridType.scala
    src/main/scala/snake/components/Snake.scala -> src/main/scala/snake/components/SnakeID.scala
    src/main/scala/snake/components/Snake.scala -> src/main/scala/snake/components/SnakeTrunk.scala
+   src/main/scala/snake/components/SnakeAI.scala -> src/main/scala/snake/components/Direction.scala
+   src/main/scala/snake/components/SnakeAI.scala -> src/main/scala/snake/components/Grid.scala
+   src/main/scala/snake/components/SnakeAI.scala -> src/main/scala/snake/components/GridType.scala
+   src/main/scala/snake/components/SnakeAI.scala -> src/main/scala/snake/components/Snake.scala
+   src/main/scala/snake/components/SnakeAI.scala -> src/main/scala/snake/components/SnakeID.scala
+   src/main/scala/snake/components/SnakeAI.scala -> src/main/scala/snake/components/SnakeTrunk.scala
    src/main/scala/snake/components/SnakeTrunk.scala -> src/main/scala/snake/components/Cell.scala
    src/main/scala/snake/components/SnakeTrunk.scala -> src/main/scala/snake/components/GridType.scala
    src/main/scala/snake/components/StartPage.scala -> src/main/scala/snake/game/GameSetting.scala
@@ -172,6 +187,7 @@ source dependencies:
    src/main/scala/snake/game/GameController.scala -> src/main/scala/snake/components/Grid.scala
    src/main/scala/snake/game/GameController.scala -> src/main/scala/snake/components/GridType.scala
    src/main/scala/snake/game/GameController.scala -> src/main/scala/snake/components/Snake.scala
+   src/main/scala/snake/game/GameController.scala -> src/main/scala/snake/components/SnakeAI.scala
    src/main/scala/snake/game/GameController.scala -> src/main/scala/snake/components/SnakeID.scala
    src/main/scala/snake/game/GameController.scala -> src/main/scala/snake/components/SnakeTrunk.scala
    src/main/scala/snake/game/GameController.scala -> src/main/scala/snake/game/GameSetting.scala
@@ -193,6 +209,7 @@ source dependencies:
    src/main/scala/snake/game/SnakeLogic.scala -> src/main/scala/snake/components/Grid.scala
    src/main/scala/snake/game/SnakeLogic.scala -> src/main/scala/snake/components/GridType.scala
    src/main/scala/snake/game/SnakeLogic.scala -> src/main/scala/snake/components/Snake.scala
+   src/main/scala/snake/game/SnakeLogic.scala -> src/main/scala/snake/components/SnakeAI.scala
    src/main/scala/snake/game/SnakeLogic.scala -> src/main/scala/snake/components/SnakeID.scala
    src/main/scala/snake/game/SnakeLogic.scala -> src/main/scala/snake/game/GameController.scala
    src/main/scala/snake/game/SnakeLogic.scala -> src/main/scala/snake/game/GameSetting.scala
@@ -215,7 +232,7 @@ class names:
    src/main/scala/engine/random/ScalaRandomGen.scala -> engine.random.ScalaRandomGen$
    src/main/scala/snake/components/Cell.scala -> snake.components.Cell
    src/main/scala/snake/components/Cell.scala -> snake.components.Cell$
-   src/main/scala/snake/components/Cell.scala -> snake.components.Coordinates
+   src/main/scala/snake/components/Coordinates.scala -> snake.components.Coordinates
    src/main/scala/snake/components/Direction.scala -> snake.components.Direction
    src/main/scala/snake/components/Direction.scala -> snake.components.East
    src/main/scala/snake/components/Direction.scala -> snake.components.East$
@@ -225,11 +242,11 @@ class names:
    src/main/scala/snake/components/Direction.scala -> snake.components.South$
    src/main/scala/snake/components/Direction.scala -> snake.components.West
    src/main/scala/snake/components/Direction.scala -> snake.components.West$
+   src/main/scala/snake/components/Grid.scala -> snake.components.ApplePosition
+   src/main/scala/snake/components/Grid.scala -> snake.components.ApplePosition$
    src/main/scala/snake/components/Grid.scala -> snake.components.Grid
    src/main/scala/snake/components/Grid.scala -> snake.components.Grid$
    src/main/scala/snake/components/Grid.scala -> snake.components.Grid$$anon$1
-   src/main/scala/snake/components/Grid.scala -> snake.components.Grid$Position
-   src/main/scala/snake/components/Grid.scala -> snake.components.Grid$Position$
    src/main/scala/snake/components/GridType.scala -> snake.components.Apple
    src/main/scala/snake/components/GridType.scala -> snake.components.Apple$
    src/main/scala/snake/components/GridType.scala -> snake.components.Bomb
@@ -246,6 +263,11 @@ class names:
    src/main/scala/snake/components/Snake.scala -> snake.components.Snake
    src/main/scala/snake/components/Snake.scala -> snake.components.Snake$
    src/main/scala/snake/components/Snake.scala -> snake.components.Snake$$anon$1
+   src/main/scala/snake/components/SnakeAI.scala -> snake.components.SnakeAI
+   src/main/scala/snake/components/SnakeAI.scala -> snake.components.SnakeAI$
+   src/main/scala/snake/components/SnakeAI.scala -> snake.components.SnakeAI$$anon$1
+   src/main/scala/snake/components/SnakeID.scala -> snake.components.AiSnake
+   src/main/scala/snake/components/SnakeID.scala -> snake.components.AiSnake$
    src/main/scala/snake/components/SnakeID.scala -> snake.components.HostSnake
    src/main/scala/snake/components/SnakeID.scala -> snake.components.HostSnake$
    src/main/scala/snake/components/SnakeID.scala -> snake.components.RivalSnake
@@ -287,4 +309,3 @@ class names:
    src/main/scala/snake/game/SnakeGame.scala -> snake.game.SnakeGame$
    src/main/scala/snake/game/SnakeLogic.scala -> snake.game.SnakeLogic
    src/main/scala/snake/game/SnakeLogic.scala -> snake.game.SnakeLogic$
-   src/main/scala/snake/game/SnakeLogic.scala -> snake.game.SnakeLogic$$anon$1

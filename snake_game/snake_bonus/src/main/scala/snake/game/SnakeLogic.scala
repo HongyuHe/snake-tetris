@@ -3,7 +3,7 @@ package snake.game
 import snake.game.SnakeLogic._
 
 import scala.collection.mutable
-import snake.components.{Direction, GridType, SnakeID}
+import snake.components.{Apple, Direction, GridType, SnakeID}
 import engine.random.{RandomGenerator, ScalaRandomGen}
 
 class SnakeLogic(val randomGen: RandomGenerator,
@@ -12,7 +12,6 @@ class SnakeLogic(val randomGen: RandomGenerator,
                  val nrRows: Int) {
 
 //  def this() = this(new ScalaRandomGen(), setting,  DefaultColumns, DefaultRows)
-
   def getLooser: SnakeID = gameController.looser
   def isGameOver: Boolean = gameController.status.isGameOver
   def changeDir(d: Direction): Unit = gameController.turnSnake(gameController.hostSnake, d)
@@ -20,6 +19,7 @@ class SnakeLogic(val randomGen: RandomGenerator,
   def getGridTypeAt(x: Int, y: Int): GridType = gameController.grid.getCellType(y, x)
 
   def step(): Unit = {
+//    println("Grid Hashcode: " + gameController.grid.hashCode())
     if (isReversing  && gameHistory.nonEmpty)  reverseGameHistory()
     if (!isReversing && !gameController.status.isGameOver) { gameController.update(); saveGameHistory() }
   }
@@ -45,8 +45,6 @@ object SnakeLogic {
   val DefaultColumns = 40
   val DefaultRows = 40
 
-  def apply(setting: GameSetting): SnakeLogic = new SnakeLogic(new ScalaRandomGen(), setting,  DefaultColumns, DefaultRows) {
-//    this
-  }
+  def apply(setting: GameSetting): SnakeLogic = new SnakeLogic(new ScalaRandomGen(), setting,  DefaultColumns, DefaultRows)
 
 }
