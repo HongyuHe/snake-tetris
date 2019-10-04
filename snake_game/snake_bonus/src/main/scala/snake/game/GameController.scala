@@ -110,7 +110,7 @@ class GameController(val nrRows: Int,
     checkBombAndCutSnake()
 
     grid.updateApplePositions()
-    println(hostSnake.body.head)
+//    println(hostSnake.id + hostSnake.body.toString())
   }
 
   def turnSnake(snake: Snake = hostSnake, currentDirection: Direction): Unit = {
@@ -125,6 +125,7 @@ class GameController(val nrRows: Int,
     }
 
     val snakeHeadDir = getSnakeHeadDirection(snake)
+    println("Current direction: " + snakeHeadDir)
     val moveSnakeTo: Direction => Unit = snakeHeadDir match {
       case East()  | West() => snake.move(nrColumns)
       case North() | South() => snake.move(nrRows)
@@ -142,7 +143,7 @@ class GameController(val nrRows: Int,
     }
     snake.preDir = getSnakeHeadDirection(snake)
 
-    println(snake.body)
+//    println(snake.body)
   }
 
   def placeApple(): Unit = {

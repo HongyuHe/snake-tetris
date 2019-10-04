@@ -21,7 +21,7 @@ class SnakeLogic(val randomGen: RandomGenerator,
   }
 
   def setReverseTime(reverse: Boolean): Unit = {
-    if (!reverse && isReversing)          saveFrame()
+    if (!reverse && isReversing)           saveFrame()
     if (reverse  && frameHistory.nonEmpty) retrieveFrame()
     isReversing = reverse
   }

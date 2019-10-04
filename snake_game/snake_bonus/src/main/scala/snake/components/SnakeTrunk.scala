@@ -2,7 +2,7 @@ package snake.components
 
 case class SnakeTrunk(var x: Int = 0,
                       var y: Int = 0,
-                      `type`: GridType = Empty().asInstanceOf[GridType] )
+                      `type`: GridType = SnakeHead().asInstanceOf[GridType] )
   extends Cell(`type`) with Coordinates {
 
   override def toString: String = " [ (" + x + ", " + y + "), " + cellType.toString + " ] "

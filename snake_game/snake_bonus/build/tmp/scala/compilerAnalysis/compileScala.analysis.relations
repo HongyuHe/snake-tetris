@@ -178,7 +178,10 @@ source dependencies:
    src/main/scala/snake/components/SnakeAI.scala -> src/main/scala/snake/components/SnakeID.scala
    src/main/scala/snake/components/SnakeAI.scala -> src/main/scala/snake/components/SnakeTrunk.scala
    src/main/scala/snake/components/SnakeTrunk.scala -> src/main/scala/snake/components/Cell.scala
+   src/main/scala/snake/components/SnakeTrunk.scala -> src/main/scala/snake/components/Coordinates.scala
+   src/main/scala/snake/components/SnakeTrunk.scala -> src/main/scala/snake/components/Direction.scala
    src/main/scala/snake/components/SnakeTrunk.scala -> src/main/scala/snake/components/GridType.scala
+   src/main/scala/snake/components/SnakeTrunk.scala -> src/main/scala/snake/components/SnakeID.scala
    src/main/scala/snake/components/StartPage.scala -> src/main/scala/snake/game/GameSetting.scala
    src/main/scala/snake/game/GameController.scala -> src/main/scala/engine/random/RandomGenerator.scala
    src/main/scala/snake/game/GameController.scala -> src/main/scala/engine/random/ScalaRandomGen.scala
