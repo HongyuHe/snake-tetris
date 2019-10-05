@@ -25,10 +25,10 @@ class Snake {
       case South() => moveToSouth (gridBoundaryOfCurrentDir)
     }
     cutTail()
-    updateHeadAndBodyTypes(dir)
+    updateBodyWithHeadDir(dir)
   }
 
-  def updateHeadAndBodyTypes(headDir: Direction = East()): Unit = {
+  def updateBodyWithHeadDir(headDir: Direction = East()): Unit = {
     var interval = 1f / (body.length - 1)
     var distance = 0f
     body.tail.foreach { trunk =>
@@ -70,6 +70,6 @@ object Snake {
       body += SnakeTrunk(4, 2) += SnakeTrunk(4, 1) += SnakeTrunk(4, 0)
     }
     else body += SnakeTrunk(0, 2) += SnakeTrunk(0, 1) += SnakeTrunk()
-    updateHeadAndBodyTypes()
+    updateBodyWithHeadDir()
   }
 }

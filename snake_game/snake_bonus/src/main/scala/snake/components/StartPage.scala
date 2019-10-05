@@ -24,6 +24,7 @@ class StartPage extends JFXApp with Setting {
   var nrApples: Int = 1
   var nrBombs: Int = 0
   var twoPlayerMode: Boolean = false
+  var battleWithAI: Boolean = false
 
   stage = new PrimaryStage {
     title = "Snake Game - Hongyu"
@@ -40,6 +41,10 @@ class StartPage extends JFXApp with Setting {
       //      levelLabel.layoutY = 50
 
       val twoPlayerBox = new CheckBox("Two player mode")
+      val battleWithAiBox = new CheckBox("Battle with AI")
+
+//      val modeGroup = new ToggleGroup
+//      modeGroup.toggles = List(twoPlayerMode, aiBox)
 
       val appleLabel = new Label("Number of apples:")
       val appleSlider = new Slider(1, 5, 1)
@@ -52,18 +57,28 @@ class StartPage extends JFXApp with Setting {
       val startButton = new Button("Start")
 
       //-------------------------------- Action --------------------------------------//
-      easyButton.onAction = { even =>
+      easyButton.onAction = { _ =>
         if (easyButton.selected.apply()) gameLevel = 1
       }
-      normalButton.onAction = { even =>
+      normalButton.onAction = { _ =>
         if (normalButton.selected.apply()) gameLevel = 3
       }
-      hellButton.onAction = { even =>
+      hellButton.onAction = { _ =>
         if (hellButton.selected.apply()) gameLevel = 5
       }
 
-      twoPlayerBox.onAction = { even =>
+      twoPlayerBox.onAction = { _ =>
         twoPlayerMode = twoPlayerBox.selected.apply()
+        if (!twoPlayerMode) battleWithAiBox.selected = false
+//        battleWithAiBox.selected = !twoPlayerMode
+//        battleWithAI  = !twoPlayerMode
+      }
+      battleWithAiBox.onAction = { _ =>
+        if (!twoPlayerMode) battleWithAiBox.selected = false
+        else battleWithAI = battleWithAiBox.selected.apply()
+
+//        twoPlayerBox.selected = false
+//        twoPlayerMode = !battleWithAI
       }
 
       startButton.onAction = { even =>
@@ -85,7 +100,9 @@ class StartPage extends JFXApp with Setting {
                 prefWidth = 5
               },
               easyButton,
+              new HBox { prefWidth = 2 },
               normalButton,
+              new HBox { prefWidth = 2 },
               hellButton,
             )
           },
@@ -103,13 +120,21 @@ class StartPage extends JFXApp with Setting {
               speedSlider,
             )
           },
-          twoPlayerBox,
+          new HBox {
+            padding = Insets(10)
+            children = Seq(
+              new HBox { prefWidth = 5 },
+              twoPlayerBox,
+              new HBox { prefWidth = 15 },
+              battleWithAiBox,
+            )
+          },
           new VBox {
             prefHeight = 15
           },
           new SplitPane(),
           new VBox {
-            prefHeight = 20
+            prefHeight = 10
           },
           startButton
         )

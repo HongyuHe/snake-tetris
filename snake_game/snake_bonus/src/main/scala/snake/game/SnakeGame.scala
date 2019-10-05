@@ -18,7 +18,11 @@ class SnakeGame extends GameBase {
 
   var gameLogic = SnakeLogic(gameSetting)
   val updateTimer = new UpdateTimer(framesPerSecond)
+
   lazy val bgImage: PImage = loadImage("src/files/bg_img.jpg")
+  lazy val appleImage: PImage = loadImage("src/files/apple.png")
+  lazy val bombImage: PImage = loadImage("src/files/bomb.png")
+  lazy val snakeHeadImage: PImage = loadImage("src/files/snake_head.png")
 
   val widthInPixels: Int = WidthCellInPixels * gameLogic.nrColumns
   val heightInPixels: Int = HeightCellInPixels * gameLogic.nrRows
@@ -37,8 +41,7 @@ class SnakeGame extends GameBase {
       case RivalSnake() => "Green snake"
     }
     bgImage.loadPixels()
-    for(x <- Range(0, width);
-        y <- Range(0, height)) {
+    for(x <- Range(0, width); y <- Range(0, height)) {
       val loc = x + y * width
       val r = red(bgImage.pixels(loc))
       val g = green(bgImage.pixels(loc))
@@ -48,6 +51,7 @@ class SnakeGame extends GameBase {
       pixels(loc) = color(r*factor, g*factor, b*factor)
     }
     updatePixels()
+
     setFillColor(Red)
     if (gameSetting.twoPlayerMode)
       drawTextCentered(s"$winner Win!", 50, screenArea.center)
@@ -78,8 +82,11 @@ class SnakeGame extends GameBase {
     def drawCell(area: Rectangle, cell: GridType): Unit = {
       cell match {
         case SnakeHead(id, direction) if id == HostSnake() =>
-          setFillColor(Color.LawnGreen)
-          drawTriangle(getTriangleForDirection(direction, area))
+          imageMode(3)
+          image(snakeHeadImage, area.centerX, area.centerY, area.width*2f, area.height*2f)
+
+//          setFillColor(Color.LawnGreen)
+//          drawTriangle(getTriangleForDirection(direction, area))
         case SnakeBody(id, p) if id == HostSnake() =>
           val color = Color.LawnGreen.interpolate(p, Color.DarkGreen)
           setFillColor(color)
@@ -100,14 +107,20 @@ class SnakeGame extends GameBase {
           drawRectangle(area)
 
         case Apple() =>
-          setFillColor(Color.Red)
-          drawEllipse(area)
+//          setFillColor(Color.Red)
+//          drawEllipse(area)
+          imageMode(3)
+          image(appleImage, area.centerX, area.centerY, area.width*2f, area.height*2f)
+
         case Wall() =>
           setFillColor(Color.Gray)
           drawRectangle(area)
         case Bomb() =>
-          setFillColor(Color.Black)
-          drawEllipse(area)
+          imageMode(3)
+          image(bombImage, area.centerX, area.centerY, area.width*2f, area.height*2f)
+
+        //          setFillColor(Color.Black)
+//          drawEllipse(area)
         case Empty() => ()
       }
     }
@@ -179,14 +192,12 @@ class SnakeGame extends GameBase {
       updateTimer.advanceFrame()
     }
   }
-
 }
 
 
 object SnakeGame {
   val WidthCellInPixels: Int = 20 // -> pixel size
   val HeightCellInPixels: Int = WidthCellInPixels
-//  lazy var bgImage = 0
   var framesPerSecond: Int = 5 // -> this can change snake's speed
   var gameSetting = GameSetting()
 
@@ -197,11 +208,13 @@ object SnakeGame {
     println("Level: " + startPage.gameLevel)
     println("Sake speed: " + startPage.gameSpeed)
     println("Two player? " + startPage.twoPlayerMode)
+    println("AI? " + startPage.battleWithAI)
 
     framesPerSecond = startPage.gameSpeed
     gameSetting = GameSetting(startPage.gameLevel,
                               startPage.nrBombs,
                               startPage.nrApples,
+                              startPage.battleWithAI,
                               startPage.twoPlayerMode)
 
     // This is needed for Processing, using the name

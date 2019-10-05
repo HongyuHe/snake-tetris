@@ -13,9 +13,11 @@ class GameController(val nrRows: Int,
   val grid = Grid(nrRows, nrColumns)
   var status = GameStatus()
 
-//  val hostSnake = Snake()
-  val hostSnake = SnakeAI()
-  val rivalSnake = Snake(rivalMode = true)
+  val hostSnake = Snake()
+//  val hostSnake = SnakeAI()
+  var rivalSnake = Snake(rivalMode = true)
+  if (setting.battleWithAI) rivalSnake = SnakeAI()
+//  var rivalSnake = SnakeAI()
 
   var looser: SnakeID = HostSnake()
 //  var applePositionSet: Set[Cell]= Set()
@@ -115,7 +117,7 @@ class GameController(val nrRows: Int,
 
   def turnSnake(snake: Snake = hostSnake, currentDirection: Direction): Unit = {
     if (snake.preDir.opposite != currentDirection)
-      snake.updateHeadAndBodyTypes(headDir = currentDirection)
+      snake.updateBodyWithHeadDir(headDir = currentDirection)
   }
 
   def moveSnake(snake: Snake = hostSnake): Unit = {
@@ -125,7 +127,7 @@ class GameController(val nrRows: Int,
     }
 
     val snakeHeadDir = getSnakeHeadDirection(snake)
-    println("Current direction: " + snakeHeadDir)
+//    println("Current direction: " + snakeHeadDir)
     val moveSnakeTo: Direction => Unit = snakeHeadDir match {
       case East()  | West() => snake.move(nrColumns)
       case North() | South() => snake.move(nrRows)
@@ -172,7 +174,7 @@ class GameController(val nrRows: Int,
     status.hasEnoughApples = grid.getItemAmount(Apple()) == setting.appleNumber
 
     snake.id match {
-      case RivalSnake()  =>
+      case RivalSnake() | AiSnake() =>
         status.bombHitByRivalSnake = isBombHit
         status.appleEatenByRivalSnake  = isAppleEaten
       case HostSnake() =>
