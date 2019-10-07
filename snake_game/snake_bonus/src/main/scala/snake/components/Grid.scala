@@ -4,7 +4,7 @@ import scala.collection.mutable
 
 case class ApplePosition(var x: Int = 0, var y: Int = 0) extends Coordinates
 
-class Grid(nrRows: Int, nrColumns: Int) {
+class Grid(val nrRows: Int, val nrColumns: Int) {
   var nrFreeSpots = 0
   var applePositionsSet: Set[ApplePosition] = Set()
 

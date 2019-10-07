@@ -74,8 +74,12 @@ class StartPage extends JFXApp with Setting {
 //        battleWithAI  = !twoPlayerMode
       }
       battleWithAiBox.onAction = { _ =>
-        if (!twoPlayerMode) battleWithAiBox.selected = false
-        else battleWithAI = battleWithAiBox.selected.apply()
+        if (!twoPlayerMode) {
+          twoPlayerBox.selected = true
+          twoPlayerMode = true
+        }
+        battleWithAI = battleWithAiBox.selected.apply()
+//        else battleWithAI = battleWithAiBox.selected.apply()
 
 //        twoPlayerBox.selected = false
 //        twoPlayerMode = !battleWithAI

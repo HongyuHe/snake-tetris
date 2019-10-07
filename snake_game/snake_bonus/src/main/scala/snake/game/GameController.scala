@@ -3,6 +3,7 @@ package snake.game
 
 import engine.random.{RandomGenerator, ScalaRandomGen}
 import snake.components._
+import snake.components.SnakeAI._
 
 
 class GameController(val nrRows: Int,
@@ -122,8 +123,9 @@ class GameController(val nrRows: Int,
 
   def moveSnake(snake: Snake = hostSnake): Unit = {
     if (snake.id == AiSnake()) {
-      grid.updateApplePositions()
-      snake.asInstanceOf[SnakeAI].turnAI(grid.applePositionsSet)
+//      grid.updateApplePositions()
+
+      snake.asInstanceOf[SnakeAI].driveAI(grid)
     }
 
     val snakeHeadDir = getSnakeHeadDirection(snake)
