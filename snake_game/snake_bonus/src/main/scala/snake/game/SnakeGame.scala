@@ -19,10 +19,10 @@ class SnakeGame extends GameBase {
   var gameLogic = SnakeLogic(gameSetting)
   val updateTimer = new UpdateTimer(framesPerSecond)
 
-  lazy val bgImage: PImage = loadImage("src/files/bg_img.jpg")
-  lazy val appleImage: PImage = loadImage("src/files/apple.png")
-  lazy val bombImage: PImage = loadImage("src/files/bomb.png")
-  lazy val snakeHeadImage: PImage = loadImage("src/files/snake_head.png")
+  lazy val bgImage: PImage = loadImage("src/resources/bg_img.jpg")
+  lazy val appleImage: PImage = loadImage("src/resources/apple.png")
+  lazy val bombImage: PImage = loadImage("src/resources/bomb.png")
+  lazy val snakeHeadImage: PImage = loadImage("src/resources/snake_head_east.png")
 
   val widthInPixels: Int = WidthCellInPixels * gameLogic.nrColumns
   val heightInPixels: Int = HeightCellInPixels * gameLogic.nrRows
@@ -82,6 +82,8 @@ class SnakeGame extends GameBase {
     def drawCell(area: Rectangle, cell: GridType): Unit = {
       cell match {
         case SnakeHead(id, direction) if id == HostSnake() =>
+//          PConstants.PI
+          
           imageMode(3)
           image(snakeHeadImage, area.centerX, area.centerY, area.width*2f, area.height*2f)
 

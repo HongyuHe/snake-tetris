@@ -29,10 +29,10 @@ class SnakeAI () extends Snake() {
 
   def overviewGrid(grid: Grid): Unit = {
     vision = Map()
+    vision += (West()  -> grid.getCellType(body.head.x, if (body.head.y - 1 < 0) grid.nrColumns - 1 else body.head.y - 1))
     vision += (North() -> grid.getCellType(if (body.head.x - 1 < 0) grid.nrRows - 1 else body.head.x - 1, body.head.y))
     vision += (South() -> grid.getCellType((body.head.x + 1) % grid.nrColumns, body.head.y))
     vision += (East()  -> grid.getCellType(body.head.x, (body.head.y + 1) % grid.nrColumns))
-    vision += (West()  -> grid.getCellType(body.head.x, if (body.head.y - 1 < 0) grid.nrColumns - 1 else body.head.y - 1))
 
     println(vision)
   }

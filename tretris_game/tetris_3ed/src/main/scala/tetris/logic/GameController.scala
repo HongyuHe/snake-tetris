@@ -9,8 +9,7 @@ import scala.collection.mutable
 class GameController(val randomGen: RandomGenerator,
                      val nrColumns: Int,
                      val nrRows: Int,
-                     var board: Seq[Seq[TetrisBlock]]
-                ) {
+                     var board: Seq[Seq[TetrisBlock]] ) {
   var isGameOver = false
 
   def letBlock (action: BlockAction): Unit = {
@@ -33,33 +32,33 @@ class GameController(val randomGen: RandomGenerator,
   def init(): Unit = {
     for (row <- 0 until nrRows; col <- 0 until nrColumns) {
       if (board(row)(col) != Empty) { dockedTiles = dockedTiles + Tuple2(Coordinates(row, col), board(row)(col)) }
-      baseLine += Coordinates(nrRows, col)
+      boardBottomLine += Coordinates(nrRows, col)
     };drawBoard()
   }
 
-/* =================================================== Implementation ================================================================ */
+
   private[this] var block: Block = generateNewBlock
 
   private[this] var previousBlock = Block()
   private[this] var previousBoard = board.transpose.transpose
 
-  private[this] var baseLine:    Set[Coordinates] = Set()
+  private[this] var boardBottomLine: Set[Coordinates] = Set()
   private[this] var dockedTiles: Set[(Coordinates, TetrisBlock)] = Set()
 
-  private[this] def saveCurrentBoard(): Unit = previousBoard = board.transpose.transpose
   private[this] def saveCurrentBlock(): Unit = previousBlock = Block makeDeepCopy block
+  private[this] def saveCurrentBoard(): Unit = previousBoard = board.transpose.transpose
 
-  private[this] def retrievePreviousBlock(): Unit = block = Block makeDeepCopy previousBlock
   private[this] def retrievePreviousBoard(): Unit = board = previousBoard
+  private[this] def retrievePreviousBlock(): Unit = block = Block makeDeepCopy previousBlock
+
+  private[this] def generateNewBlockCenter: Coordinates = Coordinates(1, (nrColumns - 1) / 2)
+  private[this] def generateNewBlock: Block = Block(generateNewBlockCenter, BlockTypes(randomGen.randomInt(BlockTypes.length)))
 
   private[this] def drawBlock(block: Block, tetrisBlock: TetrisBlock): Unit = block.getTilesOfTheBlock.foreach { tile => updateBoard(tile, tetrisBlock) }
   private[this] def drawTiles(tiles: Set[(Coordinates, TetrisBlock)]): Unit = tiles.foreach { tile => updateBoard(tile._1, tile._2)}
   private[this] def drawTiles(tiles: Set[(Coordinates, TetrisBlock)], tetrisBlock: TetrisBlock): Unit = tiles.foreach { tile => updateBoard(tile._1, tetrisBlock)}
 
-  private[this] def generateNewBlockCenter: Coordinates = Coordinates(1, (nrColumns - 1) / 2)
-  private[this] def generateNewBlock: Block = Block(generateNewBlockCenter, BlockTypes(randomGen.randomInt(BlockTypes.length)))
   private[this] def updateBoard (coordinates: Coordinates, tetrisBlock: TetrisBlock): Unit = board = board.updated(coordinates.y, board(coordinates.y).updated(coordinates.x, tetrisBlock))
-
   private[this] def drawBoard(): Unit = {
     if (isGameOver) return
 
@@ -83,9 +82,8 @@ class GameController(val randomGen: RandomGenerator,
   }
 
   private[this] def checkGameOver(): Unit = if (isCrashedIntoDockedTails) { isGameOver = true }
-  private[this] def checkValidationAndDrawCurrentBlock (): Unit = {
-    val tiles = block.getTilesOfTheBlock
-    breakable { tiles.foreach { tile =>
+  private[this] def checkValidationAndDrawCurrentBlock (): Unit =
+    breakable { block.getTilesOfTheBlock.foreach { tile =>
       if ( isCoordinatesValid(tile) ) { updateBoard(tile, block.blockType) }
       else {
         retrievePreviousBoard()
@@ -93,11 +91,10 @@ class GameController(val randomGen: RandomGenerator,
         break
       }
     }}
-  }
 
   private[this] def isCrashedIntoDockedTails: Boolean = {
-    block.getTilesOfTheBlock.foreach { tile => if (baseLine.contains(tile)) { return true }
-      dockedTiles.foreach { dockedTile => if (tile == dockedTile._1)            return true } }
+    block.getTilesOfTheBlock.foreach { tile => if (boardBottomLine.contains(tile)) { return true }
+      dockedTiles.foreach { dockedTile => if (tile == dockedTile._1)          return true } }
     false
   }
 
@@ -115,16 +112,13 @@ class GameController(val randomGen: RandomGenerator,
     def deleteFullRow: Int => Unit = row => dockedTiles = dockedTiles.filter(_._1.y != row)
     drawTiles(dockedTiles, Empty)
 
-    for (row <- 0 until nrRows)
-      if (isRollFull(row)) { fullRows :+= row; deleteFullRow(row) }
-
-    dockedTiles.foreach { tile => fullRows.foreach { fullRow =>
+    for (row <- 0 until nrRows) if (isRollFull(row)) { fullRows :+= row; deleteFullRow(row) }
+    dockedTiles.foreach { tile => fullRows.foreach   { fullRow =>
       var offset = 0
       if (tile._1.y < fullRow) { offset += 1 }
-      tile._1.y += offset // move the tiles that above the removed line down by offset lines
+      tile._1.y += offset // pull the tiles that above the deleted line downwards by #offset lines
     } }
   }
-
 }
 
 object GameController {

@@ -1,177 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="test.tetris.TetrisTestSuite" tests="43" skipped="0" failures="0" errors="0" timestamp="2019-09-23T15:14:11" hostname="Ada" time="0.3">
+<testsuite name="test.tetris.TetrisTestSuite" tests="43" skipped="0" failures="0" errors="0" timestamp="2019-10-10T22:51:55" hostname="Ada" time="0.449">
   <properties/>
-  <testcase name="testPlacementI" classname="test.tetris.TetrisTestSuite" time="0.021"/>
-  <testcase name="testPlacementIEven" classname="test.tetris.TetrisTestSuite" time="0.001"/>
-  <testcase name="testPlacementJ" classname="test.tetris.TetrisTestSuite" time="0.001"/>
-  <testcase name="testPlacementL" classname="test.tetris.TetrisTestSuite" time="0.002"/>
-  <testcase name="testPlacementOEven" classname="test.tetris.TetrisTestSuite" time="0.002"/>
+  <testcase name="testPlacementI" classname="test.tetris.TetrisTestSuite" time="0.026"/>
+  <testcase name="testPlacementIEven" classname="test.tetris.TetrisTestSuite" time="0.002"/>
+  <testcase name="testPlacementJ" classname="test.tetris.TetrisTestSuite" time="0.002"/>
+  <testcase name="testPlacementL" classname="test.tetris.TetrisTestSuite" time="0.001"/>
+  <testcase name="testPlacementOEven" classname="test.tetris.TetrisTestSuite" time="0.001"/>
   <testcase name="testPlacementO" classname="test.tetris.TetrisTestSuite" time="0.001"/>
   <testcase name="testPlacementS" classname="test.tetris.TetrisTestSuite" time="0.001"/>
-  <testcase name="testPlacementT" classname="test.tetris.TetrisTestSuite" time="0.002"/>
+  <testcase name="testPlacementT" classname="test.tetris.TetrisTestSuite" time="0.001"/>
   <testcase name="testPlacementZ" classname="test.tetris.TetrisTestSuite" time="0.001"/>
   <testcase name="testIRotations" classname="test.tetris.TetrisTestSuite" time="0.003"/>
-  <testcase name="testJRotations" classname="test.tetris.TetrisTestSuite" time="0.003"/>
-  <testcase name="testLRotations" classname="test.tetris.TetrisTestSuite" time="0.002"/>
-  <testcase name="testORotations" classname="test.tetris.TetrisTestSuite" time="0.002"/>
+  <testcase name="testJRotations" classname="test.tetris.TetrisTestSuite" time="0.007"/>
+  <testcase name="testLRotations" classname="test.tetris.TetrisTestSuite" time="0.003"/>
+  <testcase name="testORotations" classname="test.tetris.TetrisTestSuite" time="0.003"/>
   <testcase name="testSRotations" classname="test.tetris.TetrisTestSuite" time="0.003"/>
   <testcase name="testTRotations" classname="test.tetris.TetrisTestSuite" time="0.003"/>
-  <testcase name="testZRotations" classname="test.tetris.TetrisTestSuite" time="0.004"/>
-  <testcase name="testRotate360" classname="test.tetris.TetrisTestSuite" time="0.003"/>
-  <testcase name="testRotate360CC" classname="test.tetris.TetrisTestSuite" time="0.003"/>
-  <testcase name="testRotateLeftRight" classname="test.tetris.TetrisTestSuite" time="0.004"/>
-  <testcase name="testRotateRightLeft" classname="test.tetris.TetrisTestSuite" time="0.003"/>
-  <testcase name="testMovement" classname="test.tetris.TetrisTestSuite" time="0.005"/>
+  <testcase name="testZRotations" classname="test.tetris.TetrisTestSuite" time="0.006"/>
+  <testcase name="testRotate360" classname="test.tetris.TetrisTestSuite" time="0.002"/>
+  <testcase name="testRotate360CC" classname="test.tetris.TetrisTestSuite" time="0.002"/>
+  <testcase name="testRotateLeftRight" classname="test.tetris.TetrisTestSuite" time="0.005"/>
+  <testcase name="testRotateRightLeft" classname="test.tetris.TetrisTestSuite" time="0.009"/>
+  <testcase name="testMovement" classname="test.tetris.TetrisTestSuite" time="0.008"/>
   <testcase name="testMovement2" classname="test.tetris.TetrisTestSuite" time="0.006"/>
-  <testcase name="testMoveOutLeft" classname="test.tetris.TetrisTestSuite" time="0.002"/>
-  <testcase name="testMoveOutRight" classname="test.tetris.TetrisTestSuite" time="0.002"/>
-  <testcase name="testBlockedByBlocksLeft" classname="test.tetris.TetrisTestSuite" time="0.004"/>
-  <testcase name="testBlockedByBlocksRight" classname="test.tetris.TetrisTestSuite" time="0.002"/>
+  <testcase name="testMoveOutLeft" classname="test.tetris.TetrisTestSuite" time="0.003"/>
+  <testcase name="testMoveOutRight" classname="test.tetris.TetrisTestSuite" time="0.004"/>
+  <testcase name="testBlockedByBlocksLeft" classname="test.tetris.TetrisTestSuite" time="0.001"/>
+  <testcase name="testBlockedByBlocksRight" classname="test.tetris.TetrisTestSuite" time="0.001"/>
   <testcase name="testBlockedByBlocksRotateLeft" classname="test.tetris.TetrisTestSuite" time="0.001"/>
   <testcase name="testBlockedByBlocksRotateRight" classname="test.tetris.TetrisTestSuite" time="0.002"/>
   <testcase name="testSpawn" classname="test.tetris.TetrisTestSuite" time="0.003"/>
-  <testcase name="testGameOver" classname="test.tetris.TetrisTestSuite" time="0.004"/>
-  <testcase name="testNoEscapeGameOver" classname="test.tetris.TetrisTestSuite" time="0.001"/>
-  <testcase name="testNoEscapeGameOver2" classname="test.tetris.TetrisTestSuite" time="0.004"/>
-  <testcase name="testDrop" classname="test.tetris.TetrisTestSuite" time="0.005"/>
-  <testcase name="testClear1Line" classname="test.tetris.TetrisTestSuite" time="0.002"/>
-  <testcase name="testClear1LineMiddle" classname="test.tetris.TetrisTestSuite" time="0.002"/>
+  <testcase name="testGameOver" classname="test.tetris.TetrisTestSuite" time="0.003"/>
+  <testcase name="testNoEscapeGameOver" classname="test.tetris.TetrisTestSuite" time="0.004"/>
+  <testcase name="testNoEscapeGameOver2" classname="test.tetris.TetrisTestSuite" time="0.002"/>
+  <testcase name="testDrop" classname="test.tetris.TetrisTestSuite" time="0.007"/>
+  <testcase name="testClear1Line" classname="test.tetris.TetrisTestSuite" time="0.001"/>
+  <testcase name="testClear1LineMiddle" classname="test.tetris.TetrisTestSuite" time="0.009"/>
   <testcase name="testClear2Lines" classname="test.tetris.TetrisTestSuite" time="0.002"/>
-  <testcase name="testClear3Lines" classname="test.tetris.TetrisTestSuite" time="0.006"/>
-  <testcase name="testClear4Lines" classname="test.tetris.TetrisTestSuite" time="0.012"/>
-  <testcase name="testGame5x9" classname="test.tetris.TetrisTestSuite" time="0.026"/>
-  <testcase name="testGame8x11" classname="test.tetris.TetrisTestSuite" time="0.088"/>
-  <testcase name="test6x10" classname="test.tetris.TetrisTestSuite" time="0.023"/>
-  <testcase name="testInterleave5x9and8x11" classname="test.tetris.TetrisTestSuite" time="0.005"/>
-  <testcase name="testInterleave8x11and6x10" classname="test.tetris.TetrisTestSuite" time="0.001"/>
-  <system-out><![CDATA[true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-true
-Passed 43/43 tests
+  <testcase name="testClear3Lines" classname="test.tetris.TetrisTestSuite" time="0.002"/>
+  <testcase name="testClear4Lines" classname="test.tetris.TetrisTestSuite" time="0.007"/>
+  <testcase name="testGame5x9" classname="test.tetris.TetrisTestSuite" time="0.053"/>
+  <testcase name="testGame8x11" classname="test.tetris.TetrisTestSuite" time="0.18"/>
+  <testcase name="test6x10" classname="test.tetris.TetrisTestSuite" time="0.031"/>
+  <testcase name="testInterleave5x9and8x11" classname="test.tetris.TetrisTestSuite" time="0.004"/>
+  <testcase name="testInterleave8x11and6x10" classname="test.tetris.TetrisTestSuite" time="0.003"/>
+  <system-out><![CDATA[Passed 43/43 tests
 ================================================
 Total Functionality Points : 4.00/4.00 [100.00%]
 ================================================
