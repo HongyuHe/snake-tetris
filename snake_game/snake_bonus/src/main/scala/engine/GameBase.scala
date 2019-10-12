@@ -64,5 +64,4 @@ class GameBase   extends PApplet {
 
   def setBackground(c: Color): Unit =
     background(c.red, c.green, c.blue, c.alpha)
-
 }

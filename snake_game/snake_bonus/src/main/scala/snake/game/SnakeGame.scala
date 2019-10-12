@@ -22,7 +22,12 @@ class SnakeGame extends GameBase {
   lazy val bgImage: PImage = loadImage("src/resources/bg_img.jpg")
   lazy val appleImage: PImage = loadImage("src/resources/apple.png")
   lazy val bombImage: PImage = loadImage("src/resources/bomb.png")
-  lazy val snakeHeadImage: PImage = loadImage("src/resources/snake_head_east.png")
+  lazy val wallImage: PImage = loadImage("src/resources/wall.jpg")
+
+  lazy val eastHeadImage: PImage = loadImage("src/resources/snake_head_east.png")
+  lazy val northHeadImage: PImage = loadImage("src/resources/snake_head_north.png")
+  lazy val southHeadImage: PImage = loadImage("src/resources/snake_head_south.png")
+  lazy val westHeadImage: PImage = loadImage("src/resources/snake_head_west.png")
 
   val widthInPixels: Int = WidthCellInPixels * gameLogic.nrColumns
   val heightInPixels: Int = HeightCellInPixels * gameLogic.nrRows
@@ -36,9 +41,10 @@ class SnakeGame extends GameBase {
   }
 
   def drawGameOverScreen(): Unit = {
-    val winner = gameLogic.getLooser match {
-      case HostSnake()  => "Yellow snake"
-      case RivalSnake() => "Green snake"
+    val looser = gameLogic.getLooser match {
+      case HostSnake()  => "Green  snake"
+      case RivalSnake() => "Yellow snake"
+      case AiSnake()    => "AI"
     }
     bgImage.loadPixels()
     for(x <- Range(0, width); y <- Range(0, height)) {
@@ -48,16 +54,50 @@ class SnakeGame extends GameBase {
       val b = blue(bgImage.pixels(loc))
       val distance = PApplet.dist(width/2, height/2, x, y)
       val factor = PApplet.map(distance, 0, 200, 2, 0)
+//      println("Factor:" + factor)
       pixels(loc) = color(r*factor, g*factor, b*factor)
     }
     updatePixels()
 
     setFillColor(Red)
     if (gameSetting.twoPlayerMode)
-      drawTextCentered(s"$winner Win!", 50, screenArea.center)
+      drawTextCentered(s"$looser is defeated!", 50, screenArea.center)
     else
       drawTextCentered("Game Over !!!", 50, screenArea.center)
   }
+
+  def drawSnakeHead(direction: Direction, area: Rectangle): Unit = {
+    val headImage: PImage = direction match {
+      case West()  => westHeadImage
+      case North() => northHeadImage
+      case East()  => eastHeadImage
+      case South() => southHeadImage
+    }
+    imageMode(3)
+    image(headImage, area.centerX, area.centerY, area.width*1.3f, area.height*1.3f)
+  }
+  def drawSnakeBody(r: Rectangle, dis: Float): Unit = {
+    if (dis == 0) {
+      ellipse(r.centerX, r.centerY, r.width, r.height)
+      return
+    }
+    if (dis == 1) {
+      quad(r.centerLeft.x,r.centerLeft.y, r.centerUp.x, r.centerUp.y,
+        r.centerRight.x, r.centerRight.y, r.centerDown.x, r.centerDown.y)
+      return
+    }
+    val factor = 0.5f
+    ellipse(r.leftUp.x, r.leftUp.y, r.width*factor, r.height*factor)
+    ellipse(r.leftDown.x, r.leftDown.y, r.width*factor, r.height*factor)
+    ellipse(r.rightUp.x, r.rightUp.y, r.width*factor, r.height*factor)
+    ellipse(r.rightDown.x, r.rightDown.y, r.width*factor, r.height*factor)
+    ellipse(r.centerX, r.centerY, r.width, r.height)
+    ellipse(r.centerUp.x, r.centerUp.y, r.width*factor, r.height*factor)
+    ellipse(r.centerDown.x, r.centerDown.y, r.width*factor, r.height*factor)
+    ellipse(r.centerLeft.x, r.centerLeft.y, r.width*factor, r.height*factor)
+    ellipse(r.centerRight.x, r.centerRight.y, r.width*factor, r.height*factor)
+  }
+
 
   def drawGrid(): Unit = {
 
@@ -83,28 +123,37 @@ class SnakeGame extends GameBase {
       cell match {
         case SnakeHead(id, direction) if id == HostSnake() =>
 //          PConstants.PI
-          
-          imageMode(3)
-          image(snakeHeadImage, area.centerX, area.centerY, area.width*2f, area.height*2f)
+          tint(124, 252,   0)
+          drawSnakeHead(direction, area)
+//          imageMode(3)
+//          image(eastHeadImage, area.centerX, area.centerY, area.width*1.5f, area.height*1.5f)
 
-//          setFillColor(Color.LawnGreen)
+          setFillColor(Color.LawnGreen)
 //          drawTriangle(getTriangleForDirection(direction, area))
         case SnakeBody(id, p) if id == HostSnake() =>
           val color = Color.LawnGreen.interpolate(p, Color.DarkGreen)
           setFillColor(color)
-          drawRectangle(area)
+          drawSnakeBody(area, p)
+//          drawEllipse(area)
+//          drawRectangle(area)
+
         case SnakeHead(id, direction) if id == RivalSnake() =>
-          setFillColor(Color.Yellow)
-          drawTriangle(getTriangleForDirection(direction, area))
+          tint(255, 255,   0)
+          drawSnakeHead(direction, area)
+
+//          setFillColor(Color.Yellow)
+//          drawTriangle(getTriangleForDirection(direction, area))
         case SnakeBody(id, p) if id == RivalSnake() =>
           val color = Color.Yellow.interpolate(p, Color.Orange)
           setFillColor(color)
-          drawRectangle(area)
+//          drawRectangle(area)
+          drawSnakeBody(area, p)
+
         case SnakeHead(id, direction) if id == AiSnake() =>
-          setFillColor(Color.Purple)
+          setFillColor(Color.Gray)
           drawTriangle(getTriangleForDirection(direction, area))
         case SnakeBody(id, p) if id == AiSnake() =>
-          val color = Color.Purple.interpolate(p, Color.DarkGreen)
+          val color = Color.Gray.interpolate(p, Color.Black)
           setFillColor(color)
           drawRectangle(area)
 
@@ -112,14 +161,19 @@ class SnakeGame extends GameBase {
 //          setFillColor(Color.Red)
 //          drawEllipse(area)
           imageMode(3)
-          image(appleImage, area.centerX, area.centerY, area.width*2f, area.height*2f)
+          tint(255, 255)
+          image(appleImage, area.centerX, area.centerY, area.width*1.2f, area.height*1.2f)
 
         case Wall() =>
-          setFillColor(Color.Gray)
-          drawRectangle(area)
-        case Bomb() =>
+//          setFillColor(Color.Gray)
+//          drawRectangle(area)
+          tint(255, 255)
           imageMode(3)
-          image(bombImage, area.centerX, area.centerY, area.width*2f, area.height*2f)
+          image(wallImage, area.centerX, area.centerY, area.width*1.2f, area.height*1.2f)
+        case Bomb() =>
+          tint(255, 255)
+          imageMode(3)
+          image(bombImage, area.centerX, area.centerY, area.width*1.2f, area.height*1.2f)
 
         //          setFillColor(Color.Black)
 //          drawEllipse(area)
@@ -127,7 +181,9 @@ class SnakeGame extends GameBase {
       }
     }
 
-//    setFillColor(White)
+
+
+    //    setFillColor(White)
 //    drawRectangle(screenArea)
     background(bgImage)
 

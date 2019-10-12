@@ -38,7 +38,7 @@ class Grid(val nrRows: Int, val nrColumns: Int) {
         applePositionsSet = applePositionsSet + ApplePosition(x, y)
       }
     }
-    println("Apple Positions: " + applePositionsSet.toString())
+//    println("Apple Positions: " + applePositionsSet.toString())
   }
 
   def printGridWithApple (): Unit = {

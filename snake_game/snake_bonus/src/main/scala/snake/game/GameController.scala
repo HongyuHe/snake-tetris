@@ -241,7 +241,7 @@ class GameController(val nrRows: Int,
       status.isGameOver = true
       if (hostSnake.body.isEmpty || grid.getCellType(hostSnake.body.head) == Wall())
         looser = HostSnake()
-      else looser = RivalSnake()
+      else looser = rivalSnake.id
     }
 
 }

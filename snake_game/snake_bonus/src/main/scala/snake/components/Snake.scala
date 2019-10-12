@@ -32,8 +32,8 @@ class Snake {
     var interval = 1f / (body.length - 1)
     var distance = 0f
     body.tail.foreach { trunk =>
-      distance += interval
       trunk.cellType = SnakeBody(id, distance)
+      distance += interval
     }
     body.last.cellType = SnakeBody(id,1)
     body.head.cellType = SnakeHead(id, headDir)
