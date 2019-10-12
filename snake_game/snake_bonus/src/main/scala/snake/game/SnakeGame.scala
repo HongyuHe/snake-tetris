@@ -19,7 +19,7 @@ class SnakeGame extends GameBase {
   var gameLogic = SnakeLogic(gameSetting)
   val updateTimer = new UpdateTimer(framesPerSecond)
 
-  lazy val bgImage: PImage = loadImage("src/resources/bg_img.jpg")
+  lazy val bgImage: PImage = loadImage("src/resources/snake_bg.jpg")
   lazy val appleImage: PImage = loadImage("src/resources/apple.png")
   lazy val bombImage: PImage = loadImage("src/resources/bomb.png")
   lazy val wallImage: PImage = loadImage("src/resources/wall.jpg")
@@ -43,7 +43,7 @@ class SnakeGame extends GameBase {
   def drawGameOverScreen(): Unit = {
     val looser = gameLogic.getLooser match {
       case HostSnake()  => "Green  snake"
-      case RivalSnake() => "Yellow snake"
+      case RivalSnake() => "Blue  snake"
       case AiSnake()    => "AI"
     }
     bgImage.loadPixels()
@@ -77,10 +77,10 @@ class SnakeGame extends GameBase {
     image(headImage, area.centerX, area.centerY, area.width*1.3f, area.height*1.3f)
   }
   def drawSnakeBody(r: Rectangle, dis: Float): Unit = {
-    if (dis == 0) {
-      ellipse(r.centerX, r.centerY, r.width, r.height)
-      return
-    }
+//    if (dis == 0) {
+//      ellipse(r.centerX, r.centerY, r.width, r.height)
+//      return
+//    }
     if (dis == 1) {
       quad(r.centerLeft.x,r.centerLeft.y, r.centerUp.x, r.centerUp.y,
         r.centerRight.x, r.centerRight.y, r.centerDown.x, r.centerDown.y)
@@ -91,11 +91,11 @@ class SnakeGame extends GameBase {
     ellipse(r.leftDown.x, r.leftDown.y, r.width*factor, r.height*factor)
     ellipse(r.rightUp.x, r.rightUp.y, r.width*factor, r.height*factor)
     ellipse(r.rightDown.x, r.rightDown.y, r.width*factor, r.height*factor)
-    ellipse(r.centerX, r.centerY, r.width, r.height)
     ellipse(r.centerUp.x, r.centerUp.y, r.width*factor, r.height*factor)
     ellipse(r.centerDown.x, r.centerDown.y, r.width*factor, r.height*factor)
     ellipse(r.centerLeft.x, r.centerLeft.y, r.width*factor, r.height*factor)
     ellipse(r.centerRight.x, r.centerRight.y, r.width*factor, r.height*factor)
+    ellipse(r.centerX, r.centerY, r.width, r.height)
   }
 
 
@@ -123,7 +123,7 @@ class SnakeGame extends GameBase {
       cell match {
         case SnakeHead(id, direction) if id == HostSnake() =>
 //          PConstants.PI
-          tint(124, 252,   0)
+          tint(255, 255)
           drawSnakeHead(direction, area)
 //          imageMode(3)
 //          image(eastHeadImage, area.centerX, area.centerY, area.width*1.5f, area.height*1.5f)
@@ -138,22 +138,22 @@ class SnakeGame extends GameBase {
 //          drawRectangle(area)
 
         case SnakeHead(id, direction) if id == RivalSnake() =>
-          tint(255, 255,   0)
+          tint(0, 200, 255)
           drawSnakeHead(direction, area)
 
 //          setFillColor(Color.Yellow)
 //          drawTriangle(getTriangleForDirection(direction, area))
         case SnakeBody(id, p) if id == RivalSnake() =>
-          val color = Color.Yellow.interpolate(p, Color.Orange)
+          val color = Color.SkyBlue.interpolate(p, Color.DarkBlue)
           setFillColor(color)
 //          drawRectangle(area)
           drawSnakeBody(area, p)
 
         case SnakeHead(id, direction) if id == AiSnake() =>
-          setFillColor(Color.Gray)
+          setFillColor(Color.SkyBlue)
           drawTriangle(getTriangleForDirection(direction, area))
         case SnakeBody(id, p) if id == AiSnake() =>
-          val color = Color.Gray.interpolate(p, Color.Black)
+          val color = Color.SkyBlue.interpolate(p, Color.DarkBlue)
           setFillColor(color)
           drawRectangle(area)
 
@@ -254,7 +254,7 @@ class SnakeGame extends GameBase {
 
 
 object SnakeGame {
-  val WidthCellInPixels: Int = 20 // -> pixel size
+  val WidthCellInPixels: Int = 25 // -> pixel size
   val HeightCellInPixels: Int = WidthCellInPixels
   var framesPerSecond: Int = 5 // -> this can change snake's speed
   var gameSetting = GameSetting()

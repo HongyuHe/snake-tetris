@@ -33,9 +33,12 @@ object Color {
   val Red       = Color(255,   0,   0)
   val White     = Color(255, 255, 255)
   val LightBlue = Color(173, 216, 230)
-  val Yellow    = Color(255, 255,   0)
+  val Yellow    = Color(247, 207,   5)
+  val DarkYellow= Color(100, 100,   0)
   val Orange    = Color(255, 165,   0)
   val Blue      = Color(  0,   0, 255)
+  val SkyBlue   = Color( 95, 209, 222)
+  val DarkBlue  = Color(  0,  0,  100)
   val Green     = Color(  0, 255,   0)
   val Purple    = Color(128,   0, 128)
 

@@ -14,6 +14,7 @@ class Grid(val nrRows: Int, val nrColumns: Int) {
   def getFreeCell(cellIndex: Int): Cell = hashTableOfFreeCell(cellIndex)
 
   def getCellType(x: Int, y: Int):    GridType = cells(x)(y).cellType
+  def getCellType(coor:(Int, Int)):   GridType = cells(coor._1)(coor._2).cellType
   def getCellType(trunk: SnakeTrunk): GridType = cells(trunk.x)(trunk.y).cellType
 
   def setCellType(cell: Cell, cellType: GridType):        Unit = cell.cellType = cellType
@@ -58,6 +59,12 @@ class Grid(val nrRows: Int, val nrColumns: Int) {
       } } }
     counter
   }
+
+
+  def westDirIndexWrapper(x: Int, y: Int): (Int, Int) = (x, if (y < 0) nrColumns - 1 else y)
+  def northDirIndexWrapper(x: Int, y: Int): (Int, Int) = (if (x < 0) nrRows - 1 else x, y)
+  def southDirIndexWrapper(x: Int, y: Int): (Int, Int) = (x % nrRows, y)
+  def eastDirIndexWrapper(x: Int, y: Int): (Int, Int) = (x, y % nrColumns)
 
   def copyTo(that: Grid): Unit = {
     that.nrFreeSpots = this.nrFreeSpots

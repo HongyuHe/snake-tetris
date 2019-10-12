@@ -41,7 +41,7 @@ class SnakeLogic(val randomGen: RandomGenerator,
 }
 
 object SnakeLogic {
-
+// 1000 x 700
   val DefaultColumns = 40
   val DefaultRows = 40
 

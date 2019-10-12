@@ -124,8 +124,9 @@ class GameController(val nrRows: Int,
   def moveSnake(snake: Snake = hostSnake): Unit = {
     if (snake.id == AiSnake()) {
 //      grid.updateApplePositions()
-
-      snake.asInstanceOf[SnakeAI].driveAI(grid)
+      var g = Grid(nrRows, nrColumns)
+      grid copyTo g
+      snake.asInstanceOf[SnakeAI].driveAI(g)
     }
 
     val snakeHeadDir = getSnakeHeadDirection(snake)
