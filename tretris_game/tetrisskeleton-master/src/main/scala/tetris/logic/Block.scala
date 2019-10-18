@@ -10,15 +10,10 @@ case class Block (center: Coordinates = Coordinates(),
                   var blockShape: BlockShape = LeftmostShape) {
   var shapeIndex = 0
 
-  def shapeRightRotate(): Unit = blockShape = BlockShapes(indexWrapper({shapeIndex += 1; shapeIndex}))
-  def shapeLeftRotate():  Unit = blockShape = BlockShapes(indexWrapper({shapeIndex -= 1; shapeIndex}))
+  def setRightRotateShape(): Unit = blockShape = BlockShapes(indexWrapper({shapeIndex += 1; shapeIndex}))
+  def setLeftRotateShape():  Unit = blockShape = BlockShapes(indexWrapper({shapeIndex -= 1; shapeIndex}))
 
-  def getTilesOfTheBlock: Seq[Coordinates] = if (blockType != Empty) blockShape match {
-      case shape @ LeftmostShape    => shape.getCoors(blockType, center)
-      case shape @ MiddleLeftShape  => shape.getCoors(blockType, center)
-      case shape @ MiddleRightShape => shape.getCoors(blockType, center)
-      case shape @ RightmostShape   => shape.getCoors(blockType, center)
-    } else { Seq() }
+  def getAllTilesOfTheBlock: Seq[Coordinates] = if (blockType != Empty) blockShape.getCoorsFromCenter(blockType, center) else Seq()
 
   private[this] def indexWrapper(i: Int): Int = {
     val modulo = i % BlockShapes.length

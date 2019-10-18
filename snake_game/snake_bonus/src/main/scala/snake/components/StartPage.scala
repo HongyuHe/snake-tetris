@@ -40,7 +40,7 @@ class StartPage extends JFXApp with Setting {
       //      levelLabel.layoutX = 20
       //      levelLabel.layoutY = 50
 
-      val twoPlayerBox = new CheckBox("Two player mode")
+      val twoPlayerBox = new CheckBox("Two-player mode")
       val battleWithAiBox = new CheckBox("Battle with AI")
 
 //      val modeGroup = new ToggleGroup

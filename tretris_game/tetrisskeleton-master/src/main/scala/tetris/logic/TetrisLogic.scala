@@ -9,12 +9,12 @@ class TetrisLogic(val randomGen: RandomGenerator,
                   val nrRows: Int,
                   val initialBoard: Seq[Seq[TetrisBlock]]) {
 
-  def rotateLeft():   Unit = controller letBlock RotateLeft
-  def rotateRight():  Unit = controller letBlock RotateRight
-  def moveLeft():     Unit = controller letBlock MoveLeft
-  def moveRight():    Unit = controller letBlock MoveRight
-  def moveDown():     Unit = controller letBlock MoveDown
-  def doHardDrop():   Unit = controller letBlock HardDrop
+  def rotateRight():  Unit = controller invokeBlockAction RotateRight
+  def rotateLeft():   Unit = controller invokeBlockAction RotateLeft
+  def moveRight():    Unit = controller invokeBlockAction MoveRight
+  def moveLeft():     Unit = controller invokeBlockAction MoveLeft
+  def moveDown():     Unit = controller invokeBlockAction MoveDown
+  def doHardDrop():   Unit = controller invokeBlockAction HardDrop
 
   def isGameOver:  Boolean = controller isGameOver
   def getBlockAt(x: Int, y: Int): TetrisBlock = controller.board(y)(x)

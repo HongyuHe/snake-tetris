@@ -4,7 +4,7 @@ import tetris.game._
 trait BlockShape {
   type Offsets = Seq[(Int, Int)]
   val ShapeCoors: Map[TetrisBlock, Offsets]
-  def getCoors(tetrisBlock: TetrisBlock, center: Coordinates): Seq[Coordinates] =
+  def getCoorsFromCenter(tetrisBlock: TetrisBlock, center: Coordinates): Seq[Coordinates] =
     ShapeCoors(tetrisBlock).map(offset => Coordinates(center.y + offset._1, center.x + offset._2))
 }
 
