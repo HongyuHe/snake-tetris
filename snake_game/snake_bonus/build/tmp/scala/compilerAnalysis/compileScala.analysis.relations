@@ -58,16 +58,22 @@ products:
    src/main/scala/snake/components/SnakeID.scala -> build/classes/scala/main/snake/components/SnakeID.class
    src/main/scala/snake/components/SnakeTrunk.scala -> build/classes/scala/main/snake/components/SnakeTrunk$.class
    src/main/scala/snake/components/SnakeTrunk.scala -> build/classes/scala/main/snake/components/SnakeTrunk.class
-   src/main/scala/snake/components/StartPage.scala -> build/classes/scala/main/snake/components/StartPage$$anon$1$$anon$2$$anon$3$$anon$12.class
-   src/main/scala/snake/components/StartPage.scala -> build/classes/scala/main/snake/components/StartPage$$anon$1$$anon$2$$anon$3$$anon$13.class
+   src/main/scala/snake/components/StartPage.scala -> build/classes/scala/main/snake/components/StartPage$$anon$1$$anon$2$$anon$3$$anon$15$$anon$16.class
+   src/main/scala/snake/components/StartPage.scala -> build/classes/scala/main/snake/components/StartPage$$anon$1$$anon$2$$anon$3$$anon$15$$anon$17.class
+   src/main/scala/snake/components/StartPage.scala -> build/classes/scala/main/snake/components/StartPage$$anon$1$$anon$2$$anon$3$$anon$15.class
+   src/main/scala/snake/components/StartPage.scala -> build/classes/scala/main/snake/components/StartPage$$anon$1$$anon$2$$anon$3$$anon$18.class
+   src/main/scala/snake/components/StartPage.scala -> build/classes/scala/main/snake/components/StartPage$$anon$1$$anon$2$$anon$3$$anon$19.class
    src/main/scala/snake/components/StartPage.scala -> build/classes/scala/main/snake/components/StartPage$$anon$1$$anon$2$$anon$3$$anon$4$$anon$5.class
    src/main/scala/snake/components/StartPage.scala -> build/classes/scala/main/snake/components/StartPage$$anon$1$$anon$2$$anon$3$$anon$4$$anon$6.class
    src/main/scala/snake/components/StartPage.scala -> build/classes/scala/main/snake/components/StartPage$$anon$1$$anon$2$$anon$3$$anon$4$$anon$7.class
    src/main/scala/snake/components/StartPage.scala -> build/classes/scala/main/snake/components/StartPage$$anon$1$$anon$2$$anon$3$$anon$4.class
+   src/main/scala/snake/components/StartPage.scala -> build/classes/scala/main/snake/components/StartPage$$anon$1$$anon$2$$anon$3$$anon$8$$anon$11$$anon$12.class
+   src/main/scala/snake/components/StartPage.scala -> build/classes/scala/main/snake/components/StartPage$$anon$1$$anon$2$$anon$3$$anon$8$$anon$11.class
+   src/main/scala/snake/components/StartPage.scala -> build/classes/scala/main/snake/components/StartPage$$anon$1$$anon$2$$anon$3$$anon$8$$anon$13$$anon$14.class
+   src/main/scala/snake/components/StartPage.scala -> build/classes/scala/main/snake/components/StartPage$$anon$1$$anon$2$$anon$3$$anon$8$$anon$13.class
+   src/main/scala/snake/components/StartPage.scala -> build/classes/scala/main/snake/components/StartPage$$anon$1$$anon$2$$anon$3$$anon$8$$anon$9$$anon$10.class
+   src/main/scala/snake/components/StartPage.scala -> build/classes/scala/main/snake/components/StartPage$$anon$1$$anon$2$$anon$3$$anon$8$$anon$9.class
    src/main/scala/snake/components/StartPage.scala -> build/classes/scala/main/snake/components/StartPage$$anon$1$$anon$2$$anon$3$$anon$8.class
-   src/main/scala/snake/components/StartPage.scala -> build/classes/scala/main/snake/components/StartPage$$anon$1$$anon$2$$anon$3$$anon$9$$anon$10.class
-   src/main/scala/snake/components/StartPage.scala -> build/classes/scala/main/snake/components/StartPage$$anon$1$$anon$2$$anon$3$$anon$9$$anon$11.class
-   src/main/scala/snake/components/StartPage.scala -> build/classes/scala/main/snake/components/StartPage$$anon$1$$anon$2$$anon$3$$anon$9.class
    src/main/scala/snake/components/StartPage.scala -> build/classes/scala/main/snake/components/StartPage$$anon$1$$anon$2$$anon$3.class
    src/main/scala/snake/components/StartPage.scala -> build/classes/scala/main/snake/components/StartPage$$anon$1$$anon$2.class
    src/main/scala/snake/components/StartPage.scala -> build/classes/scala/main/snake/components/StartPage$$anon$1.class
@@ -88,6 +94,8 @@ products:
    src/main/scala/snake/game/GameController.scala -> build/classes/scala/main/snake/game/GameController$$anon$1.class
    src/main/scala/snake/game/GameController.scala -> build/classes/scala/main/snake/game/GameController$.class
    src/main/scala/snake/game/GameController.scala -> build/classes/scala/main/snake/game/GameController.class
+   src/main/scala/snake/game/GameController.scala -> build/classes/scala/main/snake/game/GameResult$.class
+   src/main/scala/snake/game/GameController.scala -> build/classes/scala/main/snake/game/GameResult.class
    src/main/scala/snake/game/GameSetting.scala -> build/classes/scala/main/snake/game/GameSetting$.class
    src/main/scala/snake/game/GameSetting.scala -> build/classes/scala/main/snake/game/GameSetting.class
    src/main/scala/snake/game/GameSetting.scala -> build/classes/scala/main/snake/game/Setting.class
@@ -210,6 +218,7 @@ source dependencies:
    src/main/scala/snake/game/SnakeGame.scala -> src/main/scala/snake/components/GridType.scala
    src/main/scala/snake/game/SnakeGame.scala -> src/main/scala/snake/components/SnakeID.scala
    src/main/scala/snake/game/SnakeGame.scala -> src/main/scala/snake/components/StartPage.scala
+   src/main/scala/snake/game/SnakeGame.scala -> src/main/scala/snake/game/GameController.scala
    src/main/scala/snake/game/SnakeGame.scala -> src/main/scala/snake/game/GameSetting.scala
    src/main/scala/snake/game/SnakeGame.scala -> src/main/scala/snake/game/SnakeLogic.scala
    src/main/scala/snake/game/SnakeLogic.scala -> src/main/scala/engine/random/RandomGenerator.scala
@@ -287,16 +296,22 @@ class names:
    src/main/scala/snake/components/StartPage.scala -> snake.components.StartPage$$anon$1
    src/main/scala/snake/components/StartPage.scala -> snake.components.StartPage$$anon$1$$anon$2
    src/main/scala/snake/components/StartPage.scala -> snake.components.StartPage$$anon$1$$anon$2$$anon$3
-   src/main/scala/snake/components/StartPage.scala -> snake.components.StartPage$$anon$1$$anon$2$$anon$3$$anon$12
-   src/main/scala/snake/components/StartPage.scala -> snake.components.StartPage$$anon$1$$anon$2$$anon$3$$anon$13
+   src/main/scala/snake/components/StartPage.scala -> snake.components.StartPage$$anon$1$$anon$2$$anon$3$$anon$15
+   src/main/scala/snake/components/StartPage.scala -> snake.components.StartPage$$anon$1$$anon$2$$anon$3$$anon$15$$anon$16
+   src/main/scala/snake/components/StartPage.scala -> snake.components.StartPage$$anon$1$$anon$2$$anon$3$$anon$15$$anon$17
+   src/main/scala/snake/components/StartPage.scala -> snake.components.StartPage$$anon$1$$anon$2$$anon$3$$anon$18
+   src/main/scala/snake/components/StartPage.scala -> snake.components.StartPage$$anon$1$$anon$2$$anon$3$$anon$19
    src/main/scala/snake/components/StartPage.scala -> snake.components.StartPage$$anon$1$$anon$2$$anon$3$$anon$4
    src/main/scala/snake/components/StartPage.scala -> snake.components.StartPage$$anon$1$$anon$2$$anon$3$$anon$4$$anon$5
    src/main/scala/snake/components/StartPage.scala -> snake.components.StartPage$$anon$1$$anon$2$$anon$3$$anon$4$$anon$6
    src/main/scala/snake/components/StartPage.scala -> snake.components.StartPage$$anon$1$$anon$2$$anon$3$$anon$4$$anon$7
    src/main/scala/snake/components/StartPage.scala -> snake.components.StartPage$$anon$1$$anon$2$$anon$3$$anon$8
-   src/main/scala/snake/components/StartPage.scala -> snake.components.StartPage$$anon$1$$anon$2$$anon$3$$anon$9
-   src/main/scala/snake/components/StartPage.scala -> snake.components.StartPage$$anon$1$$anon$2$$anon$3$$anon$9$$anon$10
-   src/main/scala/snake/components/StartPage.scala -> snake.components.StartPage$$anon$1$$anon$2$$anon$3$$anon$9$$anon$11
+   src/main/scala/snake/components/StartPage.scala -> snake.components.StartPage$$anon$1$$anon$2$$anon$3$$anon$8$$anon$11
+   src/main/scala/snake/components/StartPage.scala -> snake.components.StartPage$$anon$1$$anon$2$$anon$3$$anon$8$$anon$11$$anon$12
+   src/main/scala/snake/components/StartPage.scala -> snake.components.StartPage$$anon$1$$anon$2$$anon$3$$anon$8$$anon$13
+   src/main/scala/snake/components/StartPage.scala -> snake.components.StartPage$$anon$1$$anon$2$$anon$3$$anon$8$$anon$13$$anon$14
+   src/main/scala/snake/components/StartPage.scala -> snake.components.StartPage$$anon$1$$anon$2$$anon$3$$anon$8$$anon$9
+   src/main/scala/snake/components/StartPage.scala -> snake.components.StartPage$$anon$1$$anon$2$$anon$3$$anon$8$$anon$9$$anon$10
    src/main/scala/snake/components/StartPage.scala -> snake.components.StartPage$delayedInit$body
    src/main/scala/snake/components/SwUI.scala -> snake.components.SwUI
    src/main/scala/snake/components/SwUI.scala -> snake.components.SwUI$$anon$1
@@ -313,6 +328,8 @@ class names:
    src/main/scala/snake/game/GameController.scala -> snake.game.GameController
    src/main/scala/snake/game/GameController.scala -> snake.game.GameController$
    src/main/scala/snake/game/GameController.scala -> snake.game.GameController$$anon$1
+   src/main/scala/snake/game/GameController.scala -> snake.game.GameResult
+   src/main/scala/snake/game/GameController.scala -> snake.game.GameResult$
    src/main/scala/snake/game/GameSetting.scala -> snake.game.GameSetting
    src/main/scala/snake/game/GameSetting.scala -> snake.game.GameSetting$
    src/main/scala/snake/game/GameSetting.scala -> snake.game.Setting

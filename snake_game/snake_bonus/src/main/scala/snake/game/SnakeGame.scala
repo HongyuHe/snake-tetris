@@ -18,8 +18,10 @@ class SnakeGame extends GameBase {
 
   var gameLogic = SnakeLogic(gameSetting)
   val updateTimer = new UpdateTimer(framesPerSecond)
+  var startTime: Int = 0
+  var timeOut: Boolean = false
 
-  lazy val bgImage: PImage = loadImage("src/resources/snake_bg.jpg")
+  lazy val bgImage: PImage = loadImage("src/resources/snake_bg_small.jpg")
   lazy val appleImage: PImage = loadImage("src/resources/apple.png")
   lazy val bombImage: PImage = loadImage("src/resources/bomb.png")
   lazy val wallImage: PImage = loadImage("src/resources/wall.jpg")
@@ -30,40 +32,57 @@ class SnakeGame extends GameBase {
   lazy val westHeadImage: PImage = loadImage("src/resources/snake_head_west.png")
 
   val widthInPixels: Int = WidthCellInPixels * gameLogic.nrColumns
-  val heightInPixels: Int = HeightCellInPixels * gameLogic.nrRows
+  val heightInPixels: Int = HeightCellInPixels * (gameLogic.nrRows + TimerSpaceHieghtInPixels)
   val screenArea: Rectangle = Rectangle(Point(0, 0), widthInPixels, heightInPixels)
 
   override def draw(): Unit = {
+    val isTimeOut = (currentTime() - startTime) / 1000 >= TimeLimitInSecond
+    if (isTimeOut && !gameLogic.isGameOver) {
+      timeOut = true
+      gameLogic.terminateGame()
+    }
     loadPixels()
     updateState()
     drawGrid()
-    if (gameLogic.isGameOver) drawGameOverScreen()
+    if (!gameLogic.isGameOver) drawTimer()
+    if (gameLogic.isGameOver || timeOut) drawGameOverScreen()
+
+//    println("Timer: " + (TimeLimitInSecond - (currentTime()-startTime)/1000))
   }
 
   def drawGameOverScreen(): Unit = {
-    val looser = gameLogic.getLooser match {
+    def drawFog(): Unit = {
+      bgImage.loadPixels()
+      for(x <- Range(0, width); y <- Range(0, height)) {
+        val loc = x + y * width
+        val r = red(bgImage.pixels(loc))
+        val g = green(bgImage.pixels(loc))
+        val b = blue(bgImage.pixels(loc))
+        val distance = PApplet.dist(width/2, height/2, x, y)
+        val factor = PApplet.map(distance, 0, 200, 2, 0)
+        pixels(loc) = color(r*factor, g*factor, b*factor)
+      }
+      updatePixels()
+    }
+
+    val result = gameLogic.getGameResult
+    val looserOrWinner = (if (timeOut) result.winner else gameLogic.getLooser) match {
       case HostSnake()  => "Green  snake"
       case RivalSnake() => "Blue  snake"
       case AiSnake()    => "AI"
     }
-    bgImage.loadPixels()
-    for(x <- Range(0, width); y <- Range(0, height)) {
-      val loc = x + y * width
-      val r = red(bgImage.pixels(loc))
-      val g = green(bgImage.pixels(loc))
-      val b = blue(bgImage.pixels(loc))
-      val distance = PApplet.dist(width/2, height/2, x, y)
-      val factor = PApplet.map(distance, 0, 200, 2, 0)
-//      println("Factor:" + factor)
-      pixels(loc) = color(r*factor, g*factor, b*factor)
-    }
-    updatePixels()
 
     setFillColor(Red)
-    if (gameSetting.twoPlayerMode)
-      drawTextCentered(s"$looser is defeated!", 50, screenArea.center)
-    else
-      drawTextCentered("Game Over !!!", 50, screenArea.center)
+    val finalMsg = (gameSetting.twoPlayerMode, timeOut) match {
+      case (true, true) => s"$looserOrWinner Win !\n[ Winner Score: ${result.score} ]"
+      case (false, true) => s"Score: ${result.score} !!!"
+      case (true, false) => s"$looserOrWinner Die !\n[ Winner Score: ${result.score} ]"
+      case (false, false) =>s"Game Over / Score: ${result.score} !!!"
+    }
+    drawTextCentered(finalMsg, 50, screenArea.center)
+
+    drawFog()
+//    noLoop()
   }
 
   def drawSnakeHead(direction: Direction, area: Rectangle): Unit = {
@@ -77,10 +96,6 @@ class SnakeGame extends GameBase {
     image(headImage, area.centerX, area.centerY, area.width*1.3f, area.height*1.3f)
   }
   def drawSnakeBody(r: Rectangle, dis: Float): Unit = {
-//    if (dis == 0) {
-//      ellipse(r.centerX, r.centerY, r.width, r.height)
-//      return
-//    }
     if (dis == 1) {
       quad(r.centerLeft.x,r.centerLeft.y, r.centerUp.x, r.centerUp.y,
         r.centerRight.x, r.centerRight.y, r.centerDown.x, r.centerDown.y)
@@ -98,11 +113,20 @@ class SnakeGame extends GameBase {
     ellipse(r.centerX, r.centerY, r.width, r.height)
   }
 
+  def drawTimer(): Unit = {
+    val timerArea: Rectangle = Rectangle(Point(0, widthInPixels), widthInPixels, heightInPixels-widthInPixels)
+
+    if (timeOut) return
+    setFillColor(Black)
+    drawRectangle(timerArea)
+    setFillColor(Red)
+    textSize(40)
+    text(s"Timer: ${TimeLimitInSecond - (currentTime()-startTime)/1000}", 275, 815)
+  }
 
   def drawGrid(): Unit = {
-
     val widthPerCell = screenArea.width / gameLogic.nrColumns
-    val heightPerCell = screenArea.height / gameLogic.nrRows
+    val heightPerCell = screenArea.height / (gameLogic.nrRows + TimerSpaceHieghtInPixels)
 
     def getCell(colIndex: Int, rowIndex: Int): Rectangle = {
       val leftUp = Point(screenArea.left + colIndex * widthPerCell,
@@ -122,7 +146,6 @@ class SnakeGame extends GameBase {
     def drawCell(area: Rectangle, cell: GridType): Unit = {
       cell match {
         case SnakeHead(id, direction) if id == HostSnake() =>
-//          PConstants.PI
           tint(255, 255)
           drawSnakeHead(direction, area)
 //          imageMode(3)
@@ -134,15 +157,10 @@ class SnakeGame extends GameBase {
           val color = Color.LawnGreen.interpolate(p, Color.DarkGreen)
           setFillColor(color)
           drawSnakeBody(area, p)
-//          drawEllipse(area)
-//          drawRectangle(area)
 
         case SnakeHead(id, direction) if id == RivalSnake() =>
           tint(0, 200, 255)
           drawSnakeHead(direction, area)
-
-//          setFillColor(Color.Yellow)
-//          drawTriangle(getTriangleForDirection(direction, area))
         case SnakeBody(id, p) if id == RivalSnake() =>
           val color = Color.SkyBlue.interpolate(p, Color.DarkBlue)
           setFillColor(color)
@@ -158,15 +176,10 @@ class SnakeGame extends GameBase {
           drawRectangle(area)
 
         case Apple() =>
-//          setFillColor(Color.Red)
-//          drawEllipse(area)
           imageMode(3)
           tint(255, 255)
           image(appleImage, area.centerX, area.centerY, area.width*1.2f, area.height*1.2f)
-
         case Wall() =>
-//          setFillColor(Color.Gray)
-//          drawRectangle(area)
           tint(255, 255)
           imageMode(3)
           image(wallImage, area.centerX, area.centerY, area.width*1.2f, area.height*1.2f)
@@ -174,32 +187,18 @@ class SnakeGame extends GameBase {
           tint(255, 255)
           imageMode(3)
           image(bombImage, area.centerX, area.centerY, area.width*1.2f, area.height*1.2f)
-
-        //          setFillColor(Color.Black)
-//          drawEllipse(area)
         case Empty() => ()
       }
     }
 
-
-
-    //    setFillColor(White)
-//    drawRectangle(screenArea)
     background(bgImage)
 
     for (y <- 0 until gameLogic.nrRows;
          x <- 0 until gameLogic.nrColumns) {
       drawCell(getCell(x, y), gameLogic.getGridTypeAt(x, y))
     }
-
   }
 
-  /** Method that calls handlers for different key press events.
-    * You may add extra functionality for other keys here.
-    * See [[event.KeyEvent]] for all defined keycodes.
-    *
-    * @param event The key press event to handle
-    */
   override def keyPressed(event: KeyEvent): Unit = {
 
     def changeDir(dir: Direction): Unit = gameLogic.changeDir(dir)
@@ -240,6 +239,7 @@ class SnakeGame extends GameBase {
     // This should be called last, since the game
     // clock is officially ticking at this point
     updateTimer.init()
+    startTime = currentTime()
 //    noLoop() // stop draw() from the beginning
   }
 
@@ -254,8 +254,11 @@ class SnakeGame extends GameBase {
 
 
 object SnakeGame {
+//  25*30 × (25+4)*30 => 750 × 850
   val WidthCellInPixels: Int = 25 // -> pixel size
   val HeightCellInPixels: Int = WidthCellInPixels
+  val TimeLimitInSecond: Int = 16
+  val TimerSpaceHieghtInPixels: Int = 4
   var framesPerSecond: Int = 5 // -> this can change snake's speed
   var gameSetting = GameSetting()
 
@@ -272,12 +275,14 @@ object SnakeGame {
     gameSetting = GameSetting(startPage.gameLevel,
                               startPage.nrBombs,
                               startPage.nrApples,
+                              startPage.startFlag,
                               startPage.battleWithAI,
                               startPage.twoPlayerMode)
 
     // This is needed for Processing, using the name
     // of the class in a string is not very beautiful...
-    PApplet.main("snake.game.SnakeGame")
+    if (startPage.startFlag)
+      PApplet.main("snake.game.SnakeGame")
   }
 
 }

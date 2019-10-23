@@ -5,6 +5,7 @@ import engine.random.{RandomGenerator, ScalaRandomGen}
 import snake.components._
 import snake.components.SnakeAI._
 
+case class GameResult(var winner: SnakeID, var score: Int = 0)
 
 class GameController(val nrRows: Int,
                      val nrColumns: Int,
@@ -23,13 +24,17 @@ class GameController(val nrRows: Int,
   var looser: SnakeID = HostSnake()
 //  var applePositionSet: Set[Cell]= Set()
 
-  def printGridWithApple (): Unit = {
-    for (row <- 0 until nrRows; col <- 0 until nrColumns) {
-      if (col == nrColumns-1) print("\n")
-      if (grid.cells(row)(col).cellType == Apple()) print(" A")
-      else print(" _")
+
+  def getResult: GameResult = {
+    val result = GameResult(hostSnake.id)
+    if (setting.twoPlayerMode) {
+      val winner = if (hostSnake.body.length >= rivalSnake.body.length) hostSnake else rivalSnake
+      result.winner = winner.id
+      result.score  = winner.body.length
+    } else {
+      result.score = hostSnake.body.length
     }
-    println("$" * 100)
+    result
   }
 
   def init(): Unit = {
@@ -94,6 +99,10 @@ class GameController(val nrRows: Int,
   def isSnakeBlowUp : Boolean = hostSnake.body.isEmpty || rivalSnake.body.isEmpty
 
   def isSnakeHitWall: Boolean = grid.getCellType(hostSnake.body.head) == Wall() || grid.getCellType(rivalSnake.body.head) == Wall()
+
+
+
+
   //////////////////////////////////////////////////////////////////////
   def update(): Unit = {
 //    printGridWithApple()

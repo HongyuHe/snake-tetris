@@ -9,12 +9,12 @@ class TetrisLogic(val randomGen: RandomGenerator,
                   val nrRows: Int,
                   val initialBoard: Seq[Seq[TetrisBlock]]) {
 
-  def rotateRight():  Unit = controller invokeBlockAction RotateRight
-  def rotateLeft():   Unit = controller invokeBlockAction RotateLeft
-  def moveRight():    Unit = controller invokeBlockAction MoveRight
-  def moveLeft():     Unit = controller invokeBlockAction MoveLeft
-  def moveDown():     Unit = controller invokeBlockAction MoveDown
-  def doHardDrop():   Unit = controller invokeBlockAction HardDrop
+  def rotateRight():  Unit = controller invokeTetrominoAction RotateRight
+  def rotateLeft():   Unit = controller invokeTetrominoAction RotateLeft
+  def moveRight():    Unit = controller invokeTetrominoAction MoveRight
+  def moveLeft():     Unit = controller invokeTetrominoAction MoveLeft
+  def moveDown():     Unit = controller invokeTetrominoAction MoveDown
+  def doHardDrop():   Unit = controller invokeTetrominoAction HardDrop
 
   def isGameOver:  Boolean = controller isGameOver
   def getBlockAt(x: Int, y: Int): TetrisBlock = controller.board(y)(x)
@@ -26,11 +26,9 @@ class TetrisLogic(val randomGen: RandomGenerator,
 }
 
 object TetrisLogic {
-
   val DefaultWidth: Int = 10
   val DefaultHeight: Int = 20
 
   def makeEmptyBoard(nrColumns: Int, nrRows: Int): Seq[Seq[TetrisBlock]] = Seq.fill(nrRows, nrColumns)(Empty)
-
   def apply() = new TetrisLogic(new ScalaRandomGen(), DefaultWidth, DefaultHeight, makeEmptyBoard(DefaultWidth, DefaultHeight))
 }

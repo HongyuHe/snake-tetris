@@ -1,18 +1,19 @@
 package snake.components
 
 import javafx.collections.ObservableList
-import scalafx.application.JFXApp
-import scalafx.application.JFXApp.PrimaryStage
+import scalafx.application.{JFXApp, Platform}
 import scalafx.geometry.Insets
 import scalafx.scene.Scene
-import scalafx.scene.control.{Button, CheckBox, Label, RadioButton, Slider, SplitPane, ToggleGroup}
-import scalafx.scene.layout.{BorderPane, HBox, VBox}
+import scalafx.scene.control._
+import scalafx.scene.layout._
 import scalafx.application.JFXApp
-import scalafx.application.JFXApp.PrimaryStage
+import scalafx.application.JFXApp._
 import scalafx.beans.Observable
 import scalafx.event.ActionEvent
 import scalafx.geometry.Insets
 import scalafx.scene.Scene
+import scalafx.scene.control.Alert.AlertType
+import scalafx.scene.control.ButtonBar.ButtonData
 import scalafx.scene.effect.DropShadow
 import scalafx.scene.paint.Color._
 import scalafx.scene.paint.{LinearGradient, Stops}
@@ -20,15 +21,18 @@ import scalafx.scene.text.Text
 import snake.game.Setting
 
 class StartPage extends JFXApp with Setting {
+//  new Alert(AlertType.Information, "Hello Dialogs!!!").showAndWait()
+
   var gameLevel: Int = 0
   var nrApples: Int = 1
   var nrBombs: Int = 0
   var twoPlayerMode: Boolean = false
   var battleWithAI: Boolean = false
+  var startFlag: Boolean = false
 
   stage = new PrimaryStage {
     title = "Snake Game - Hongyu"
-    scene = new Scene(400, 300) {
+    scene = new Scene(500, 500) {
 
       val levelLabel = new Label("Set level:")
       val easyButton = new RadioButton("Easy")
@@ -47,10 +51,15 @@ class StartPage extends JFXApp with Setting {
 //      modeGroup.toggles = List(twoPlayerMode, aiBox)
 
       val appleLabel = new Label("Number of apples:")
-      val appleSlider = new Slider(1, 5, 1)
+      val appleNum = new Label("1")
+      val appleSlider = new Slider(1, 10, 1)
+
       val bombLabel = new Label("Number of Bombs:")
+      val bombNum = new Label("0")
       val bombSlider = new Slider(0, 10, 0)
+
       val speedLabel = new Label("Set snake speed:")
+      val speedValue = new Label("5")
       val speedSlider = new Slider(1, 10, 5)
 
 
@@ -65,6 +74,27 @@ class StartPage extends JFXApp with Setting {
       }
       hellButton.onAction = { _ =>
         if (hellButton.selected.apply()) gameLevel = 5
+      }
+
+      appleSlider.onMouseDragged = { _ =>
+//        println("Dragged")
+        appleNum.setText(appleSlider.getValue.toInt.toString)
+      }
+      appleSlider.onMouseClicked = { _ =>
+//        println("Click")
+        appleNum.setText(appleSlider.getValue.toInt.toString)
+      }
+      bombSlider.onMouseDragged = { _ =>
+        bombNum.setText(bombSlider.getValue.toInt.toString)
+      }
+      bombSlider.onMouseClicked = { _ =>
+        bombNum.setText(bombSlider.getValue.toInt.toString)
+      }
+      speedSlider.onMouseDragged = { _ =>
+        speedValue.setText(speedSlider.getValue.toInt.toString)
+      }
+      speedSlider.onMouseClicked = { _ =>
+        speedValue.setText(speedSlider.getValue.toInt.toString)
       }
 
       twoPlayerBox.onAction = { _ =>
@@ -85,60 +115,85 @@ class StartPage extends JFXApp with Setting {
 //        twoPlayerMode = !battleWithAI
       }
 
-      startButton.onAction = { even =>
+      startButton.onAction = { _ =>
         gameSpeed = speedSlider.getValue.toInt
         nrApples = appleSlider.getValue.toInt
         nrBombs = bombSlider.getValue.toInt
+        startFlag = true
         println("Start!!!")
         close()
       }
       //-------------------------------- Content --------------------------------------//
       content = new VBox {
-        padding = Insets(25)
+        padding = Insets(50)
         children = Seq(
           levelLabel,
           new HBox {
-            padding = Insets(10)
+            padding = Insets(20)
             children = Seq(
               new HBox {
                 prefWidth = 5
               },
               easyButton,
-              new HBox { prefWidth = 2 },
+              new HBox { prefWidth = 5 },
               normalButton,
-              new HBox { prefWidth = 2 },
+              new HBox { prefWidth = 5 },
               hellButton,
             )
           },
 
           new SplitPane(),
           new VBox {
-            prefHeight = 75
+            prefHeight = 70
             padding = Insets(10)
             children = Seq(
-              appleLabel,
+
+              new HBox {
+                padding = Insets(5)
+                children = Seq(
+                  appleLabel,
+                  new HBox { prefWidth = 10 },
+                  appleNum
+                )
+              },
               appleSlider,
-              bombLabel,
+
+              new HBox {
+                padding = Insets(5)
+                children = Seq(
+                  bombLabel,
+                  new HBox { prefWidth = 10 },
+                  bombNum
+                )
+              },
               bombSlider,
-              speedLabel,
+
+              new HBox {
+                padding = Insets(5)
+                children = Seq(
+                  speedLabel,
+                  new HBox { prefWidth = 10 },
+                  speedValue
+                )
+              },
               speedSlider,
             )
           },
           new HBox {
-            padding = Insets(10)
+            padding = Insets(30)
             children = Seq(
-              new HBox { prefWidth = 5 },
+              new HBox { prefWidth = 10 },
               twoPlayerBox,
-              new HBox { prefWidth = 15 },
+              new HBox { prefWidth = 20 },
               battleWithAiBox,
             )
           },
           new VBox {
-            prefHeight = 15
+            prefHeight = 25
           },
           new SplitPane(),
           new VBox {
-            prefHeight = 10
+            prefHeight = 20
           },
           startButton
         )
