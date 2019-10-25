@@ -43,46 +43,46 @@ products:
    src/main/scala/snake/components/GridType.scala -> build/classes/scala/main/snake/components/SnakeHead.class
    src/main/scala/snake/components/GridType.scala -> build/classes/scala/main/snake/components/Wall$.class
    src/main/scala/snake/components/GridType.scala -> build/classes/scala/main/snake/components/Wall.class
-   src/main/scala/snake/components/ManualPage.scala -> build/classes/scala/main/snake/components/ManualPage$$anon$1$$anon$2$$anon$3$$anon$19$$anon$20$$anon$21.class
-   src/main/scala/snake/components/ManualPage.scala -> build/classes/scala/main/snake/components/ManualPage$$anon$1$$anon$2$$anon$3$$anon$19$$anon$20$$anon$22.class
-   src/main/scala/snake/components/ManualPage.scala -> build/classes/scala/main/snake/components/ManualPage$$anon$1$$anon$2$$anon$3$$anon$19$$anon$20.class
-   src/main/scala/snake/components/ManualPage.scala -> build/classes/scala/main/snake/components/ManualPage$$anon$1$$anon$2$$anon$3$$anon$19$$anon$23$$anon$24.class
-   src/main/scala/snake/components/ManualPage.scala -> build/classes/scala/main/snake/components/ManualPage$$anon$1$$anon$2$$anon$3$$anon$19$$anon$23$$anon$25.class
-   src/main/scala/snake/components/ManualPage.scala -> build/classes/scala/main/snake/components/ManualPage$$anon$1$$anon$2$$anon$3$$anon$19$$anon$23.class
-   src/main/scala/snake/components/ManualPage.scala -> build/classes/scala/main/snake/components/ManualPage$$anon$1$$anon$2$$anon$3$$anon$19$$anon$26$$anon$27.class
-   src/main/scala/snake/components/ManualPage.scala -> build/classes/scala/main/snake/components/ManualPage$$anon$1$$anon$2$$anon$3$$anon$19$$anon$26$$anon$28.class
-   src/main/scala/snake/components/ManualPage.scala -> build/classes/scala/main/snake/components/ManualPage$$anon$1$$anon$2$$anon$3$$anon$19$$anon$26.class
-   src/main/scala/snake/components/ManualPage.scala -> build/classes/scala/main/snake/components/ManualPage$$anon$1$$anon$2$$anon$3$$anon$19$$anon$29$$anon$30.class
-   src/main/scala/snake/components/ManualPage.scala -> build/classes/scala/main/snake/components/ManualPage$$anon$1$$anon$2$$anon$3$$anon$19$$anon$29$$anon$31.class
-   src/main/scala/snake/components/ManualPage.scala -> build/classes/scala/main/snake/components/ManualPage$$anon$1$$anon$2$$anon$3$$anon$19$$anon$29.class
-   src/main/scala/snake/components/ManualPage.scala -> build/classes/scala/main/snake/components/ManualPage$$anon$1$$anon$2$$anon$3$$anon$19.class
-   src/main/scala/snake/components/ManualPage.scala -> build/classes/scala/main/snake/components/ManualPage$$anon$1$$anon$2$$anon$3$$anon$32$$anon$33.class
-   src/main/scala/snake/components/ManualPage.scala -> build/classes/scala/main/snake/components/ManualPage$$anon$1$$anon$2$$anon$3$$anon$32$$anon$34.class
-   src/main/scala/snake/components/ManualPage.scala -> build/classes/scala/main/snake/components/ManualPage$$anon$1$$anon$2$$anon$3$$anon$32$$anon$35.class
-   src/main/scala/snake/components/ManualPage.scala -> build/classes/scala/main/snake/components/ManualPage$$anon$1$$anon$2$$anon$3$$anon$32$$anon$36.class
-   src/main/scala/snake/components/ManualPage.scala -> build/classes/scala/main/snake/components/ManualPage$$anon$1$$anon$2$$anon$3$$anon$32.class
-   src/main/scala/snake/components/ManualPage.scala -> build/classes/scala/main/snake/components/ManualPage$$anon$1$$anon$2$$anon$3$$anon$37.class
-   src/main/scala/snake/components/ManualPage.scala -> build/classes/scala/main/snake/components/ManualPage$$anon$1$$anon$2$$anon$3$$anon$38.class
-   src/main/scala/snake/components/ManualPage.scala -> build/classes/scala/main/snake/components/ManualPage$$anon$1$$anon$2$$anon$3$$anon$4.class
-   src/main/scala/snake/components/ManualPage.scala -> build/classes/scala/main/snake/components/ManualPage$$anon$1$$anon$2$$anon$3$$anon$5$$anon$6.class
-   src/main/scala/snake/components/ManualPage.scala -> build/classes/scala/main/snake/components/ManualPage$$anon$1$$anon$2$$anon$3$$anon$5.class
-   src/main/scala/snake/components/ManualPage.scala -> build/classes/scala/main/snake/components/ManualPage$$anon$1$$anon$2$$anon$3$$anon$7.class
-   src/main/scala/snake/components/ManualPage.scala -> build/classes/scala/main/snake/components/ManualPage$$anon$1$$anon$2$$anon$3$$anon$8.class
-   src/main/scala/snake/components/ManualPage.scala -> build/classes/scala/main/snake/components/ManualPage$$anon$1$$anon$2$$anon$3$$anon$9$$anon$10.class
-   src/main/scala/snake/components/ManualPage.scala -> build/classes/scala/main/snake/components/ManualPage$$anon$1$$anon$2$$anon$3$$anon$9$$anon$11.class
-   src/main/scala/snake/components/ManualPage.scala -> build/classes/scala/main/snake/components/ManualPage$$anon$1$$anon$2$$anon$3$$anon$9$$anon$12.class
-   src/main/scala/snake/components/ManualPage.scala -> build/classes/scala/main/snake/components/ManualPage$$anon$1$$anon$2$$anon$3$$anon$9$$anon$13.class
-   src/main/scala/snake/components/ManualPage.scala -> build/classes/scala/main/snake/components/ManualPage$$anon$1$$anon$2$$anon$3$$anon$9$$anon$14.class
-   src/main/scala/snake/components/ManualPage.scala -> build/classes/scala/main/snake/components/ManualPage$$anon$1$$anon$2$$anon$3$$anon$9$$anon$15.class
-   src/main/scala/snake/components/ManualPage.scala -> build/classes/scala/main/snake/components/ManualPage$$anon$1$$anon$2$$anon$3$$anon$9$$anon$16.class
-   src/main/scala/snake/components/ManualPage.scala -> build/classes/scala/main/snake/components/ManualPage$$anon$1$$anon$2$$anon$3$$anon$9$$anon$17.class
-   src/main/scala/snake/components/ManualPage.scala -> build/classes/scala/main/snake/components/ManualPage$$anon$1$$anon$2$$anon$3$$anon$9$$anon$18.class
-   src/main/scala/snake/components/ManualPage.scala -> build/classes/scala/main/snake/components/ManualPage$$anon$1$$anon$2$$anon$3$$anon$9.class
-   src/main/scala/snake/components/ManualPage.scala -> build/classes/scala/main/snake/components/ManualPage$$anon$1$$anon$2$$anon$3.class
-   src/main/scala/snake/components/ManualPage.scala -> build/classes/scala/main/snake/components/ManualPage$$anon$1$$anon$2.class
-   src/main/scala/snake/components/ManualPage.scala -> build/classes/scala/main/snake/components/ManualPage$$anon$1.class
-   src/main/scala/snake/components/ManualPage.scala -> build/classes/scala/main/snake/components/ManualPage$delayedInit$body.class
-   src/main/scala/snake/components/ManualPage.scala -> build/classes/scala/main/snake/components/ManualPage.class
+   src/main/scala/snake/components/MenuPage.scala -> build/classes/scala/main/snake/components/MenuPage$$anon$1$$anon$2$$anon$3$$anon$19$$anon$20$$anon$21.class
+   src/main/scala/snake/components/MenuPage.scala -> build/classes/scala/main/snake/components/MenuPage$$anon$1$$anon$2$$anon$3$$anon$19$$anon$20$$anon$22.class
+   src/main/scala/snake/components/MenuPage.scala -> build/classes/scala/main/snake/components/MenuPage$$anon$1$$anon$2$$anon$3$$anon$19$$anon$20.class
+   src/main/scala/snake/components/MenuPage.scala -> build/classes/scala/main/snake/components/MenuPage$$anon$1$$anon$2$$anon$3$$anon$19$$anon$23$$anon$24.class
+   src/main/scala/snake/components/MenuPage.scala -> build/classes/scala/main/snake/components/MenuPage$$anon$1$$anon$2$$anon$3$$anon$19$$anon$23$$anon$25.class
+   src/main/scala/snake/components/MenuPage.scala -> build/classes/scala/main/snake/components/MenuPage$$anon$1$$anon$2$$anon$3$$anon$19$$anon$23.class
+   src/main/scala/snake/components/MenuPage.scala -> build/classes/scala/main/snake/components/MenuPage$$anon$1$$anon$2$$anon$3$$anon$19$$anon$26$$anon$27.class
+   src/main/scala/snake/components/MenuPage.scala -> build/classes/scala/main/snake/components/MenuPage$$anon$1$$anon$2$$anon$3$$anon$19$$anon$26$$anon$28.class
+   src/main/scala/snake/components/MenuPage.scala -> build/classes/scala/main/snake/components/MenuPage$$anon$1$$anon$2$$anon$3$$anon$19$$anon$26.class
+   src/main/scala/snake/components/MenuPage.scala -> build/classes/scala/main/snake/components/MenuPage$$anon$1$$anon$2$$anon$3$$anon$19$$anon$29$$anon$30.class
+   src/main/scala/snake/components/MenuPage.scala -> build/classes/scala/main/snake/components/MenuPage$$anon$1$$anon$2$$anon$3$$anon$19$$anon$29$$anon$31.class
+   src/main/scala/snake/components/MenuPage.scala -> build/classes/scala/main/snake/components/MenuPage$$anon$1$$anon$2$$anon$3$$anon$19$$anon$29.class
+   src/main/scala/snake/components/MenuPage.scala -> build/classes/scala/main/snake/components/MenuPage$$anon$1$$anon$2$$anon$3$$anon$19.class
+   src/main/scala/snake/components/MenuPage.scala -> build/classes/scala/main/snake/components/MenuPage$$anon$1$$anon$2$$anon$3$$anon$32$$anon$33.class
+   src/main/scala/snake/components/MenuPage.scala -> build/classes/scala/main/snake/components/MenuPage$$anon$1$$anon$2$$anon$3$$anon$32$$anon$34.class
+   src/main/scala/snake/components/MenuPage.scala -> build/classes/scala/main/snake/components/MenuPage$$anon$1$$anon$2$$anon$3$$anon$32$$anon$35.class
+   src/main/scala/snake/components/MenuPage.scala -> build/classes/scala/main/snake/components/MenuPage$$anon$1$$anon$2$$anon$3$$anon$32$$anon$36.class
+   src/main/scala/snake/components/MenuPage.scala -> build/classes/scala/main/snake/components/MenuPage$$anon$1$$anon$2$$anon$3$$anon$32.class
+   src/main/scala/snake/components/MenuPage.scala -> build/classes/scala/main/snake/components/MenuPage$$anon$1$$anon$2$$anon$3$$anon$37.class
+   src/main/scala/snake/components/MenuPage.scala -> build/classes/scala/main/snake/components/MenuPage$$anon$1$$anon$2$$anon$3$$anon$38.class
+   src/main/scala/snake/components/MenuPage.scala -> build/classes/scala/main/snake/components/MenuPage$$anon$1$$anon$2$$anon$3$$anon$4.class
+   src/main/scala/snake/components/MenuPage.scala -> build/classes/scala/main/snake/components/MenuPage$$anon$1$$anon$2$$anon$3$$anon$5$$anon$6.class
+   src/main/scala/snake/components/MenuPage.scala -> build/classes/scala/main/snake/components/MenuPage$$anon$1$$anon$2$$anon$3$$anon$5.class
+   src/main/scala/snake/components/MenuPage.scala -> build/classes/scala/main/snake/components/MenuPage$$anon$1$$anon$2$$anon$3$$anon$7.class
+   src/main/scala/snake/components/MenuPage.scala -> build/classes/scala/main/snake/components/MenuPage$$anon$1$$anon$2$$anon$3$$anon$8.class
+   src/main/scala/snake/components/MenuPage.scala -> build/classes/scala/main/snake/components/MenuPage$$anon$1$$anon$2$$anon$3$$anon$9$$anon$10.class
+   src/main/scala/snake/components/MenuPage.scala -> build/classes/scala/main/snake/components/MenuPage$$anon$1$$anon$2$$anon$3$$anon$9$$anon$11.class
+   src/main/scala/snake/components/MenuPage.scala -> build/classes/scala/main/snake/components/MenuPage$$anon$1$$anon$2$$anon$3$$anon$9$$anon$12.class
+   src/main/scala/snake/components/MenuPage.scala -> build/classes/scala/main/snake/components/MenuPage$$anon$1$$anon$2$$anon$3$$anon$9$$anon$13.class
+   src/main/scala/snake/components/MenuPage.scala -> build/classes/scala/main/snake/components/MenuPage$$anon$1$$anon$2$$anon$3$$anon$9$$anon$14.class
+   src/main/scala/snake/components/MenuPage.scala -> build/classes/scala/main/snake/components/MenuPage$$anon$1$$anon$2$$anon$3$$anon$9$$anon$15.class
+   src/main/scala/snake/components/MenuPage.scala -> build/classes/scala/main/snake/components/MenuPage$$anon$1$$anon$2$$anon$3$$anon$9$$anon$16.class
+   src/main/scala/snake/components/MenuPage.scala -> build/classes/scala/main/snake/components/MenuPage$$anon$1$$anon$2$$anon$3$$anon$9$$anon$17.class
+   src/main/scala/snake/components/MenuPage.scala -> build/classes/scala/main/snake/components/MenuPage$$anon$1$$anon$2$$anon$3$$anon$9$$anon$18.class
+   src/main/scala/snake/components/MenuPage.scala -> build/classes/scala/main/snake/components/MenuPage$$anon$1$$anon$2$$anon$3$$anon$9.class
+   src/main/scala/snake/components/MenuPage.scala -> build/classes/scala/main/snake/components/MenuPage$$anon$1$$anon$2$$anon$3.class
+   src/main/scala/snake/components/MenuPage.scala -> build/classes/scala/main/snake/components/MenuPage$$anon$1$$anon$2.class
+   src/main/scala/snake/components/MenuPage.scala -> build/classes/scala/main/snake/components/MenuPage$$anon$1.class
+   src/main/scala/snake/components/MenuPage.scala -> build/classes/scala/main/snake/components/MenuPage$delayedInit$body.class
+   src/main/scala/snake/components/MenuPage.scala -> build/classes/scala/main/snake/components/MenuPage.class
    src/main/scala/snake/components/Snake.scala -> build/classes/scala/main/snake/components/Snake$$anon$1.class
    src/main/scala/snake/components/Snake.scala -> build/classes/scala/main/snake/components/Snake$.class
    src/main/scala/snake/components/Snake.scala -> build/classes/scala/main/snake/components/Snake.class
@@ -140,10 +140,10 @@ binary dependencies:
    src/main/scala/snake/components/Grid.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/rt.jar
    src/main/scala/snake/components/GridType.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.13.0/e988ea597113786768900f1c260c694a2ae32a42/scala-library-2.13.0.jar
    src/main/scala/snake/components/GridType.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/rt.jar
-   src/main/scala/snake/components/ManualPage.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.13.0/e988ea597113786768900f1c260c694a2ae32a42/scala-library-2.13.0.jar
-   src/main/scala/snake/components/ManualPage.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scalafx/scalafx_2.13/12.0.2-R18/36ff91587f623098240ca785265d526f8b381a61/scalafx_2.13-12.0.2-R18.jar
-   src/main/scala/snake/components/ManualPage.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/ext/jfxrt.jar
-   src/main/scala/snake/components/ManualPage.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/rt.jar
+   src/main/scala/snake/components/MenuPage.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.13.0/e988ea597113786768900f1c260c694a2ae32a42/scala-library-2.13.0.jar
+   src/main/scala/snake/components/MenuPage.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scalafx/scalafx_2.13/12.0.2-R18/36ff91587f623098240ca785265d526f8b381a61/scalafx_2.13-12.0.2-R18.jar
+   src/main/scala/snake/components/MenuPage.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/ext/jfxrt.jar
+   src/main/scala/snake/components/MenuPage.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/rt.jar
    src/main/scala/snake/components/Snake.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.13.0/e988ea597113786768900f1c260c694a2ae32a42/scala-library-2.13.0.jar
    src/main/scala/snake/components/Snake.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/rt.jar
    src/main/scala/snake/components/SnakeAI.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.13.0/e988ea597113786768900f1c260c694a2ae32a42/scala-library-2.13.0.jar
@@ -183,7 +183,7 @@ source dependencies:
    src/main/scala/snake/components/Grid.scala -> src/main/scala/snake/components/SnakeTrunk.scala
    src/main/scala/snake/components/GridType.scala -> src/main/scala/snake/components/Direction.scala
    src/main/scala/snake/components/GridType.scala -> src/main/scala/snake/components/SnakeID.scala
-   src/main/scala/snake/components/ManualPage.scala -> src/main/scala/snake/game/GameSetting.scala
+   src/main/scala/snake/components/MenuPage.scala -> src/main/scala/snake/game/GameSetting.scala
    src/main/scala/snake/components/Snake.scala -> src/main/scala/snake/components/Cell.scala
    src/main/scala/snake/components/Snake.scala -> src/main/scala/snake/components/Direction.scala
    src/main/scala/snake/components/Snake.scala -> src/main/scala/snake/components/GridType.scala
@@ -220,7 +220,7 @@ source dependencies:
    src/main/scala/snake/game/SnakeGame.scala -> src/main/scala/engine/graphics/Triangle.scala
    src/main/scala/snake/game/SnakeGame.scala -> src/main/scala/snake/components/Direction.scala
    src/main/scala/snake/game/SnakeGame.scala -> src/main/scala/snake/components/GridType.scala
-   src/main/scala/snake/game/SnakeGame.scala -> src/main/scala/snake/components/ManualPage.scala
+   src/main/scala/snake/game/SnakeGame.scala -> src/main/scala/snake/components/MenuPage.scala
    src/main/scala/snake/game/SnakeGame.scala -> src/main/scala/snake/components/SnakeID.scala
    src/main/scala/snake/game/SnakeGame.scala -> src/main/scala/snake/game/GameController.scala
    src/main/scala/snake/game/SnakeGame.scala -> src/main/scala/snake/game/GameSetting.scala
@@ -281,46 +281,46 @@ class names:
    src/main/scala/snake/components/GridType.scala -> snake.components.SnakeHead$
    src/main/scala/snake/components/GridType.scala -> snake.components.Wall
    src/main/scala/snake/components/GridType.scala -> snake.components.Wall$
-   src/main/scala/snake/components/ManualPage.scala -> snake.components.ManualPage
-   src/main/scala/snake/components/ManualPage.scala -> snake.components.ManualPage$$anon$1
-   src/main/scala/snake/components/ManualPage.scala -> snake.components.ManualPage$$anon$1$$anon$2
-   src/main/scala/snake/components/ManualPage.scala -> snake.components.ManualPage$$anon$1$$anon$2$$anon$3
-   src/main/scala/snake/components/ManualPage.scala -> snake.components.ManualPage$$anon$1$$anon$2$$anon$3$$anon$19
-   src/main/scala/snake/components/ManualPage.scala -> snake.components.ManualPage$$anon$1$$anon$2$$anon$3$$anon$19$$anon$20
-   src/main/scala/snake/components/ManualPage.scala -> snake.components.ManualPage$$anon$1$$anon$2$$anon$3$$anon$19$$anon$20$$anon$21
-   src/main/scala/snake/components/ManualPage.scala -> snake.components.ManualPage$$anon$1$$anon$2$$anon$3$$anon$19$$anon$20$$anon$22
-   src/main/scala/snake/components/ManualPage.scala -> snake.components.ManualPage$$anon$1$$anon$2$$anon$3$$anon$19$$anon$23
-   src/main/scala/snake/components/ManualPage.scala -> snake.components.ManualPage$$anon$1$$anon$2$$anon$3$$anon$19$$anon$23$$anon$24
-   src/main/scala/snake/components/ManualPage.scala -> snake.components.ManualPage$$anon$1$$anon$2$$anon$3$$anon$19$$anon$23$$anon$25
-   src/main/scala/snake/components/ManualPage.scala -> snake.components.ManualPage$$anon$1$$anon$2$$anon$3$$anon$19$$anon$26
-   src/main/scala/snake/components/ManualPage.scala -> snake.components.ManualPage$$anon$1$$anon$2$$anon$3$$anon$19$$anon$26$$anon$27
-   src/main/scala/snake/components/ManualPage.scala -> snake.components.ManualPage$$anon$1$$anon$2$$anon$3$$anon$19$$anon$26$$anon$28
-   src/main/scala/snake/components/ManualPage.scala -> snake.components.ManualPage$$anon$1$$anon$2$$anon$3$$anon$19$$anon$29
-   src/main/scala/snake/components/ManualPage.scala -> snake.components.ManualPage$$anon$1$$anon$2$$anon$3$$anon$19$$anon$29$$anon$30
-   src/main/scala/snake/components/ManualPage.scala -> snake.components.ManualPage$$anon$1$$anon$2$$anon$3$$anon$19$$anon$29$$anon$31
-   src/main/scala/snake/components/ManualPage.scala -> snake.components.ManualPage$$anon$1$$anon$2$$anon$3$$anon$32
-   src/main/scala/snake/components/ManualPage.scala -> snake.components.ManualPage$$anon$1$$anon$2$$anon$3$$anon$32$$anon$33
-   src/main/scala/snake/components/ManualPage.scala -> snake.components.ManualPage$$anon$1$$anon$2$$anon$3$$anon$32$$anon$34
-   src/main/scala/snake/components/ManualPage.scala -> snake.components.ManualPage$$anon$1$$anon$2$$anon$3$$anon$32$$anon$35
-   src/main/scala/snake/components/ManualPage.scala -> snake.components.ManualPage$$anon$1$$anon$2$$anon$3$$anon$32$$anon$36
-   src/main/scala/snake/components/ManualPage.scala -> snake.components.ManualPage$$anon$1$$anon$2$$anon$3$$anon$37
-   src/main/scala/snake/components/ManualPage.scala -> snake.components.ManualPage$$anon$1$$anon$2$$anon$3$$anon$38
-   src/main/scala/snake/components/ManualPage.scala -> snake.components.ManualPage$$anon$1$$anon$2$$anon$3$$anon$4
-   src/main/scala/snake/components/ManualPage.scala -> snake.components.ManualPage$$anon$1$$anon$2$$anon$3$$anon$5
-   src/main/scala/snake/components/ManualPage.scala -> snake.components.ManualPage$$anon$1$$anon$2$$anon$3$$anon$5$$anon$6
-   src/main/scala/snake/components/ManualPage.scala -> snake.components.ManualPage$$anon$1$$anon$2$$anon$3$$anon$7
-   src/main/scala/snake/components/ManualPage.scala -> snake.components.ManualPage$$anon$1$$anon$2$$anon$3$$anon$8
-   src/main/scala/snake/components/ManualPage.scala -> snake.components.ManualPage$$anon$1$$anon$2$$anon$3$$anon$9
-   src/main/scala/snake/components/ManualPage.scala -> snake.components.ManualPage$$anon$1$$anon$2$$anon$3$$anon$9$$anon$10
-   src/main/scala/snake/components/ManualPage.scala -> snake.components.ManualPage$$anon$1$$anon$2$$anon$3$$anon$9$$anon$11
-   src/main/scala/snake/components/ManualPage.scala -> snake.components.ManualPage$$anon$1$$anon$2$$anon$3$$anon$9$$anon$12
-   src/main/scala/snake/components/ManualPage.scala -> snake.components.ManualPage$$anon$1$$anon$2$$anon$3$$anon$9$$anon$13
-   src/main/scala/snake/components/ManualPage.scala -> snake.components.ManualPage$$anon$1$$anon$2$$anon$3$$anon$9$$anon$14
-   src/main/scala/snake/components/ManualPage.scala -> snake.components.ManualPage$$anon$1$$anon$2$$anon$3$$anon$9$$anon$15
-   src/main/scala/snake/components/ManualPage.scala -> snake.components.ManualPage$$anon$1$$anon$2$$anon$3$$anon$9$$anon$16
-   src/main/scala/snake/components/ManualPage.scala -> snake.components.ManualPage$$anon$1$$anon$2$$anon$3$$anon$9$$anon$17
-   src/main/scala/snake/components/ManualPage.scala -> snake.components.ManualPage$$anon$1$$anon$2$$anon$3$$anon$9$$anon$18
-   src/main/scala/snake/components/ManualPage.scala -> snake.components.ManualPage$delayedInit$body
+   src/main/scala/snake/components/MenuPage.scala -> snake.components.MenuPage
+   src/main/scala/snake/components/MenuPage.scala -> snake.components.MenuPage$$anon$1
+   src/main/scala/snake/components/MenuPage.scala -> snake.components.MenuPage$$anon$1$$anon$2
+   src/main/scala/snake/components/MenuPage.scala -> snake.components.MenuPage$$anon$1$$anon$2$$anon$3
+   src/main/scala/snake/components/MenuPage.scala -> snake.components.MenuPage$$anon$1$$anon$2$$anon$3$$anon$19
+   src/main/scala/snake/components/MenuPage.scala -> snake.components.MenuPage$$anon$1$$anon$2$$anon$3$$anon$19$$anon$20
+   src/main/scala/snake/components/MenuPage.scala -> snake.components.MenuPage$$anon$1$$anon$2$$anon$3$$anon$19$$anon$20$$anon$21
+   src/main/scala/snake/components/MenuPage.scala -> snake.components.MenuPage$$anon$1$$anon$2$$anon$3$$anon$19$$anon$20$$anon$22
+   src/main/scala/snake/components/MenuPage.scala -> snake.components.MenuPage$$anon$1$$anon$2$$anon$3$$anon$19$$anon$23
+   src/main/scala/snake/components/MenuPage.scala -> snake.components.MenuPage$$anon$1$$anon$2$$anon$3$$anon$19$$anon$23$$anon$24
+   src/main/scala/snake/components/MenuPage.scala -> snake.components.MenuPage$$anon$1$$anon$2$$anon$3$$anon$19$$anon$23$$anon$25
+   src/main/scala/snake/components/MenuPage.scala -> snake.components.MenuPage$$anon$1$$anon$2$$anon$3$$anon$19$$anon$26
+   src/main/scala/snake/components/MenuPage.scala -> snake.components.MenuPage$$anon$1$$anon$2$$anon$3$$anon$19$$anon$26$$anon$27
+   src/main/scala/snake/components/MenuPage.scala -> snake.components.MenuPage$$anon$1$$anon$2$$anon$3$$anon$19$$anon$26$$anon$28
+   src/main/scala/snake/components/MenuPage.scala -> snake.components.MenuPage$$anon$1$$anon$2$$anon$3$$anon$19$$anon$29
+   src/main/scala/snake/components/MenuPage.scala -> snake.components.MenuPage$$anon$1$$anon$2$$anon$3$$anon$19$$anon$29$$anon$30
+   src/main/scala/snake/components/MenuPage.scala -> snake.components.MenuPage$$anon$1$$anon$2$$anon$3$$anon$19$$anon$29$$anon$31
+   src/main/scala/snake/components/MenuPage.scala -> snake.components.MenuPage$$anon$1$$anon$2$$anon$3$$anon$32
+   src/main/scala/snake/components/MenuPage.scala -> snake.components.MenuPage$$anon$1$$anon$2$$anon$3$$anon$32$$anon$33
+   src/main/scala/snake/components/MenuPage.scala -> snake.components.MenuPage$$anon$1$$anon$2$$anon$3$$anon$32$$anon$34
+   src/main/scala/snake/components/MenuPage.scala -> snake.components.MenuPage$$anon$1$$anon$2$$anon$3$$anon$32$$anon$35
+   src/main/scala/snake/components/MenuPage.scala -> snake.components.MenuPage$$anon$1$$anon$2$$anon$3$$anon$32$$anon$36
+   src/main/scala/snake/components/MenuPage.scala -> snake.components.MenuPage$$anon$1$$anon$2$$anon$3$$anon$37
+   src/main/scala/snake/components/MenuPage.scala -> snake.components.MenuPage$$anon$1$$anon$2$$anon$3$$anon$38
+   src/main/scala/snake/components/MenuPage.scala -> snake.components.MenuPage$$anon$1$$anon$2$$anon$3$$anon$4
+   src/main/scala/snake/components/MenuPage.scala -> snake.components.MenuPage$$anon$1$$anon$2$$anon$3$$anon$5
+   src/main/scala/snake/components/MenuPage.scala -> snake.components.MenuPage$$anon$1$$anon$2$$anon$3$$anon$5$$anon$6
+   src/main/scala/snake/components/MenuPage.scala -> snake.components.MenuPage$$anon$1$$anon$2$$anon$3$$anon$7
+   src/main/scala/snake/components/MenuPage.scala -> snake.components.MenuPage$$anon$1$$anon$2$$anon$3$$anon$8
+   src/main/scala/snake/components/MenuPage.scala -> snake.components.MenuPage$$anon$1$$anon$2$$anon$3$$anon$9
+   src/main/scala/snake/components/MenuPage.scala -> snake.components.MenuPage$$anon$1$$anon$2$$anon$3$$anon$9$$anon$10
+   src/main/scala/snake/components/MenuPage.scala -> snake.components.MenuPage$$anon$1$$anon$2$$anon$3$$anon$9$$anon$11
+   src/main/scala/snake/components/MenuPage.scala -> snake.components.MenuPage$$anon$1$$anon$2$$anon$3$$anon$9$$anon$12
+   src/main/scala/snake/components/MenuPage.scala -> snake.components.MenuPage$$anon$1$$anon$2$$anon$3$$anon$9$$anon$13
+   src/main/scala/snake/components/MenuPage.scala -> snake.components.MenuPage$$anon$1$$anon$2$$anon$3$$anon$9$$anon$14
+   src/main/scala/snake/components/MenuPage.scala -> snake.components.MenuPage$$anon$1$$anon$2$$anon$3$$anon$9$$anon$15
+   src/main/scala/snake/components/MenuPage.scala -> snake.components.MenuPage$$anon$1$$anon$2$$anon$3$$anon$9$$anon$16
+   src/main/scala/snake/components/MenuPage.scala -> snake.components.MenuPage$$anon$1$$anon$2$$anon$3$$anon$9$$anon$17
+   src/main/scala/snake/components/MenuPage.scala -> snake.components.MenuPage$$anon$1$$anon$2$$anon$3$$anon$9$$anon$18
+   src/main/scala/snake/components/MenuPage.scala -> snake.components.MenuPage$delayedInit$body
    src/main/scala/snake/components/Snake.scala -> snake.components.Snake
    src/main/scala/snake/components/Snake.scala -> snake.components.Snake$
    src/main/scala/snake/components/Snake.scala -> snake.components.Snake$$anon$1

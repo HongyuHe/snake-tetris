@@ -170,8 +170,8 @@ object TetrisGame {
   val InfoAreaWidthInCells: Int = 6
 
   def main(args:Array[String]): Unit = {
-    val manual = new ManualPage
-    manual.main(args)
+    val menu = new MenuPage
+    menu.main(args)
 
     PApplet.main("tetris.game.TetrisGame")
   }

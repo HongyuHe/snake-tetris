@@ -264,23 +264,23 @@ object SnakeGame {
 
   def main(args: Array[String]): Unit = {
 
-    val manual = new ManualPage
-    manual.main(args)
-    println("Level: " + manual.gameLevel)
-    println("Sake speed: " + manual.gameSpeed)
-    println("Two player? " + manual.twoPlayerMode)
-    println("AI? " + manual.battleWithAI)
+    val menu = new MenuPage
+    menu.main(args)
+    println("Level: " + menu.gameLevel)
+    println("Sake speed: " + menu.gameSpeed)
+    println("Two player? " + menu.twoPlayerMode)
+    println("AI? " + menu.battleWithAI)
 
-    timeLimitInSecond = manual.timer
-    framesPerSecond   = manual.gameSpeed
-    gameSetting = GameSetting(manual.gameLevel,
-                              manual.nrBombs,
-                              manual.nrApples,
-                              manual.startFlag,
-                              manual.battleWithAI,
-                              manual.twoPlayerMode)
+    timeLimitInSecond = menu.timer
+    framesPerSecond   = menu.gameSpeed
+    gameSetting = GameSetting(menu.gameLevel,
+                              menu.nrBombs,
+                              menu.nrApples,
+                              menu.startFlag,
+                              menu.battleWithAI,
+                              menu.twoPlayerMode)
 
-    if (manual.startFlag)
+    if (menu.startFlag)
       PApplet.main("snake.game.SnakeGame")
   }
 }
