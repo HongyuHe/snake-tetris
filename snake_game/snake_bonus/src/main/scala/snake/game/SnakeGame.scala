@@ -36,7 +36,7 @@ class SnakeGame extends GameBase {
   val screenArea: Rectangle = Rectangle(Point(0, 0), widthInPixels, heightInPixels)
 
   override def draw(): Unit = {
-    val isTimeOut = (currentTime() - startTime) / 1000 >= TimeLimitInSecond
+    val isTimeOut = (currentTime() - startTime) / 1000 >= timeLimitInSecond
     if (isTimeOut && !gameLogic.isGameOver) {
       timeOut = true
       gameLogic.terminateGame()
@@ -66,7 +66,7 @@ class SnakeGame extends GameBase {
     }
 
     val result = gameLogic.getGameResult
-    val looserOrWinner = (if (timeOut) result.winner else gameLogic.getLooser) match {
+    val loserOrWinner = (if (timeOut) result.winner else gameLogic.getloser) match {
       case HostSnake()  => "Green  snake"
       case RivalSnake() => "Blue  snake"
       case AiSnake()    => "AI"
@@ -74,9 +74,9 @@ class SnakeGame extends GameBase {
 
     setFillColor(Red)
     val finalMsg = (gameSetting.twoPlayerMode, timeOut) match {
-      case (true, true) => s"$looserOrWinner Win !\n[ Winner Score: ${result.score} ]"
+      case (true, true) => s"$loserOrWinner Win !\n[ Winner Score: ${result.score} ]"
       case (false, true) => s"Score: ${result.score} !!!"
-      case (true, false) => s"$looserOrWinner Die !\n[ Winner Score: ${result.score} ]"
+      case (true, false) => s"$loserOrWinner Die !\n[ Winner Score: ${result.score} ]"
       case (false, false) =>s"Game Over / Score: ${result.score} !!!"
     }
     drawTextCentered(finalMsg, 50, screenArea.center)
@@ -119,9 +119,9 @@ class SnakeGame extends GameBase {
     if (timeOut) return
     setFillColor(Black)
     drawRectangle(timerArea)
-    setFillColor(Red)
+    setFillColor(LightYellow)
     textSize(40)
-    text(s"Timer: ${TimeLimitInSecond - (currentTime()-startTime)/1000}", 275, 815)
+    text(s"Timer: ${timeLimitInSecond - (currentTime()-startTime)/1000}", 275, 815)
   }
 
   def drawGrid(): Unit = {
@@ -257,34 +257,32 @@ object SnakeGame {
 //  25*30 × (25+4)*30 => 750 × 850
   val WidthCellInPixels: Int = 25 // -> pixel size
   val HeightCellInPixels: Int = WidthCellInPixels
-  val TimeLimitInSecond: Int = 16
+  var timeLimitInSecond: Int = 16
   val TimerSpaceHieghtInPixels: Int = 4
   var framesPerSecond: Int = 5 // -> this can change snake's speed
   var gameSetting = GameSetting()
 
   def main(args: Array[String]): Unit = {
 
-    var startPage = new StartPage
-    startPage.main(args)
-    println("Level: " + startPage.gameLevel)
-    println("Sake speed: " + startPage.gameSpeed)
-    println("Two player? " + startPage.twoPlayerMode)
-    println("AI? " + startPage.battleWithAI)
+    val manual = new ManualPage
+    manual.main(args)
+    println("Level: " + manual.gameLevel)
+    println("Sake speed: " + manual.gameSpeed)
+    println("Two player? " + manual.twoPlayerMode)
+    println("AI? " + manual.battleWithAI)
 
-    framesPerSecond = startPage.gameSpeed
-    gameSetting = GameSetting(startPage.gameLevel,
-                              startPage.nrBombs,
-                              startPage.nrApples,
-                              startPage.startFlag,
-                              startPage.battleWithAI,
-                              startPage.twoPlayerMode)
+    timeLimitInSecond = manual.timer
+    framesPerSecond   = manual.gameSpeed
+    gameSetting = GameSetting(manual.gameLevel,
+                              manual.nrBombs,
+                              manual.nrApples,
+                              manual.startFlag,
+                              manual.battleWithAI,
+                              manual.twoPlayerMode)
 
-    // This is needed for Processing, using the name
-    // of the class in a string is not very beautiful...
-    if (startPage.startFlag)
+    if (manual.startFlag)
       PApplet.main("snake.game.SnakeGame")
   }
-
 }
 
 

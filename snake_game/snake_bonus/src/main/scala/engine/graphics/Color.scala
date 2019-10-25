@@ -41,5 +41,5 @@ object Color {
   val DarkBlue  = Color(  0,  0,  100)
   val Green     = Color(  0, 255,   0)
   val Purple    = Color(128,   0, 128)
-
+  val LightYellow = Color(248, 252, 3)
 }

@@ -12,6 +12,19 @@ products:
    src/main/scala/engine/random/ListRandomGen.scala -> build/classes/scala/main/engine/random/ListRandomGen.class
    src/main/scala/engine/random/RandomGenerator.scala -> build/classes/scala/main/engine/random/RandomGenerator.class
    src/main/scala/engine/random/ScalaRandomGen.scala -> build/classes/scala/main/engine/random/ScalaRandomGen.class
+   src/main/scala/tetris/game/ManualPage.scala -> build/classes/scala/main/tetris/game/ManualPage$$anon$1$$anon$2$$anon$3$$anon$11.class
+   src/main/scala/tetris/game/ManualPage.scala -> build/classes/scala/main/tetris/game/ManualPage$$anon$1$$anon$2$$anon$3$$anon$4.class
+   src/main/scala/tetris/game/ManualPage.scala -> build/classes/scala/main/tetris/game/ManualPage$$anon$1$$anon$2$$anon$3$$anon$5$$anon$6.class
+   src/main/scala/tetris/game/ManualPage.scala -> build/classes/scala/main/tetris/game/ManualPage$$anon$1$$anon$2$$anon$3$$anon$5.class
+   src/main/scala/tetris/game/ManualPage.scala -> build/classes/scala/main/tetris/game/ManualPage$$anon$1$$anon$2$$anon$3$$anon$7.class
+   src/main/scala/tetris/game/ManualPage.scala -> build/classes/scala/main/tetris/game/ManualPage$$anon$1$$anon$2$$anon$3$$anon$8.class
+   src/main/scala/tetris/game/ManualPage.scala -> build/classes/scala/main/tetris/game/ManualPage$$anon$1$$anon$2$$anon$3$$anon$9$$anon$10.class
+   src/main/scala/tetris/game/ManualPage.scala -> build/classes/scala/main/tetris/game/ManualPage$$anon$1$$anon$2$$anon$3$$anon$9.class
+   src/main/scala/tetris/game/ManualPage.scala -> build/classes/scala/main/tetris/game/ManualPage$$anon$1$$anon$2$$anon$3.class
+   src/main/scala/tetris/game/ManualPage.scala -> build/classes/scala/main/tetris/game/ManualPage$$anon$1$$anon$2.class
+   src/main/scala/tetris/game/ManualPage.scala -> build/classes/scala/main/tetris/game/ManualPage$$anon$1.class
+   src/main/scala/tetris/game/ManualPage.scala -> build/classes/scala/main/tetris/game/ManualPage$delayedInit$body.class
+   src/main/scala/tetris/game/ManualPage.scala -> build/classes/scala/main/tetris/game/ManualPage.class
    src/main/scala/tetris/game/TetrisBlock.scala -> build/classes/scala/main/tetris/game/Empty$.class
    src/main/scala/tetris/game/TetrisBlock.scala -> build/classes/scala/main/tetris/game/Empty.class
    src/main/scala/tetris/game/TetrisBlock.scala -> build/classes/scala/main/tetris/game/IBlock$.class
@@ -68,37 +81,42 @@ products:
    src/main/scala/tetris/logic/TetrominoOrientation.scala -> build/classes/scala/main/tetris/logic/Rightmost.class
    src/main/scala/tetris/logic/TetrominoOrientation.scala -> build/classes/scala/main/tetris/logic/TetrominoOrientation.class
 binary dependencies:
-   src/main/scala/engine/GameBase.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.12.8/36b234834d8f842cdde963c8591efae6cf413e3f/scala-library-2.12.8.jar
+   src/main/scala/engine/GameBase.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.13.0/e988ea597113786768900f1c260c694a2ae32a42/scala-library-2.13.0.jar
    src/main/scala/engine/GameBase.scala -> lib/core.jar
    src/main/scala/engine/GameBase.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/rt.jar
-   src/main/scala/engine/graphics/Color.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.12.8/36b234834d8f842cdde963c8591efae6cf413e3f/scala-library-2.12.8.jar
+   src/main/scala/engine/graphics/Color.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.13.0/e988ea597113786768900f1c260c694a2ae32a42/scala-library-2.13.0.jar
    src/main/scala/engine/graphics/Color.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/rt.jar
-   src/main/scala/engine/graphics/Point.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.12.8/36b234834d8f842cdde963c8591efae6cf413e3f/scala-library-2.12.8.jar
+   src/main/scala/engine/graphics/Point.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.13.0/e988ea597113786768900f1c260c694a2ae32a42/scala-library-2.13.0.jar
    src/main/scala/engine/graphics/Point.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/rt.jar
-   src/main/scala/engine/graphics/Rectangle.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.12.8/36b234834d8f842cdde963c8591efae6cf413e3f/scala-library-2.12.8.jar
+   src/main/scala/engine/graphics/Rectangle.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.13.0/e988ea597113786768900f1c260c694a2ae32a42/scala-library-2.13.0.jar
    src/main/scala/engine/graphics/Rectangle.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/rt.jar
-   src/main/scala/engine/graphics/Triangle.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.12.8/36b234834d8f842cdde963c8591efae6cf413e3f/scala-library-2.12.8.jar
+   src/main/scala/engine/graphics/Triangle.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.13.0/e988ea597113786768900f1c260c694a2ae32a42/scala-library-2.13.0.jar
    src/main/scala/engine/graphics/Triangle.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/rt.jar
-   src/main/scala/engine/random/ListRandomGen.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.12.8/36b234834d8f842cdde963c8591efae6cf413e3f/scala-library-2.12.8.jar
+   src/main/scala/engine/random/ListRandomGen.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.13.0/e988ea597113786768900f1c260c694a2ae32a42/scala-library-2.13.0.jar
    src/main/scala/engine/random/ListRandomGen.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/rt.jar
-   src/main/scala/engine/random/RandomGenerator.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.12.8/36b234834d8f842cdde963c8591efae6cf413e3f/scala-library-2.12.8.jar
+   src/main/scala/engine/random/RandomGenerator.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.13.0/e988ea597113786768900f1c260c694a2ae32a42/scala-library-2.13.0.jar
    src/main/scala/engine/random/RandomGenerator.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/rt.jar
-   src/main/scala/engine/random/ScalaRandomGen.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.12.8/36b234834d8f842cdde963c8591efae6cf413e3f/scala-library-2.12.8.jar
+   src/main/scala/engine/random/ScalaRandomGen.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.13.0/e988ea597113786768900f1c260c694a2ae32a42/scala-library-2.13.0.jar
    src/main/scala/engine/random/ScalaRandomGen.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/rt.jar
-   src/main/scala/tetris/game/TetrisBlock.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.12.8/36b234834d8f842cdde963c8591efae6cf413e3f/scala-library-2.12.8.jar
+   src/main/scala/tetris/game/ManualPage.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.13.0/e988ea597113786768900f1c260c694a2ae32a42/scala-library-2.13.0.jar
+   src/main/scala/tetris/game/ManualPage.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scalafx/scalafx_2.13/12.0.2-R18/36ff91587f623098240ca785265d526f8b381a61/scalafx_2.13-12.0.2-R18.jar
+   src/main/scala/tetris/game/ManualPage.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/ext/jfxrt.jar
+   src/main/scala/tetris/game/ManualPage.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/rt.jar
+   src/main/scala/tetris/game/TetrisBlock.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.13.0/e988ea597113786768900f1c260c694a2ae32a42/scala-library-2.13.0.jar
    src/main/scala/tetris/game/TetrisBlock.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/rt.jar
-   src/main/scala/tetris/game/TetrisGame.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.12.8/36b234834d8f842cdde963c8591efae6cf413e3f/scala-library-2.12.8.jar
+   src/main/scala/tetris/game/TetrisGame.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.13.0/e988ea597113786768900f1c260c694a2ae32a42/scala-library-2.13.0.jar
+   src/main/scala/tetris/game/TetrisGame.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scalafx/scalafx_2.13/12.0.2-R18/36ff91587f623098240ca785265d526f8b381a61/scalafx_2.13-12.0.2-R18.jar
    src/main/scala/tetris/game/TetrisGame.scala -> lib/core.jar
    src/main/scala/tetris/game/TetrisGame.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/rt.jar
-   src/main/scala/tetris/logic/GameController.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.12.8/36b234834d8f842cdde963c8591efae6cf413e3f/scala-library-2.12.8.jar
+   src/main/scala/tetris/logic/GameController.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.13.0/e988ea597113786768900f1c260c694a2ae32a42/scala-library-2.13.0.jar
    src/main/scala/tetris/logic/GameController.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/rt.jar
-   src/main/scala/tetris/logic/TetrisLogic.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.12.8/36b234834d8f842cdde963c8591efae6cf413e3f/scala-library-2.12.8.jar
+   src/main/scala/tetris/logic/TetrisLogic.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.13.0/e988ea597113786768900f1c260c694a2ae32a42/scala-library-2.13.0.jar
    src/main/scala/tetris/logic/TetrisLogic.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/rt.jar
-   src/main/scala/tetris/logic/Tetromino.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.12.8/36b234834d8f842cdde963c8591efae6cf413e3f/scala-library-2.12.8.jar
+   src/main/scala/tetris/logic/Tetromino.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.13.0/e988ea597113786768900f1c260c694a2ae32a42/scala-library-2.13.0.jar
    src/main/scala/tetris/logic/Tetromino.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/rt.jar
-   src/main/scala/tetris/logic/TetrominoAction.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.12.8/36b234834d8f842cdde963c8591efae6cf413e3f/scala-library-2.12.8.jar
+   src/main/scala/tetris/logic/TetrominoAction.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.13.0/e988ea597113786768900f1c260c694a2ae32a42/scala-library-2.13.0.jar
    src/main/scala/tetris/logic/TetrominoAction.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/rt.jar
-   src/main/scala/tetris/logic/TetrominoOrientation.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.12.8/36b234834d8f842cdde963c8591efae6cf413e3f/scala-library-2.12.8.jar
+   src/main/scala/tetris/logic/TetrominoOrientation.scala -> /home/hongyu/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.13.0/e988ea597113786768900f1c260c694a2ae32a42/scala-library-2.13.0.jar
    src/main/scala/tetris/logic/TetrominoOrientation.scala -> /usr/lib/jvm/jdk1.8.0_221/jre/lib/rt.jar
 source dependencies:
    src/main/scala/engine/GameBase.scala -> src/main/scala/engine/graphics/Color.scala
@@ -114,6 +132,7 @@ source dependencies:
    src/main/scala/tetris/game/TetrisGame.scala -> src/main/scala/engine/graphics/Color.scala
    src/main/scala/tetris/game/TetrisGame.scala -> src/main/scala/engine/graphics/Point.scala
    src/main/scala/tetris/game/TetrisGame.scala -> src/main/scala/engine/graphics/Rectangle.scala
+   src/main/scala/tetris/game/TetrisGame.scala -> src/main/scala/tetris/game/ManualPage.scala
    src/main/scala/tetris/game/TetrisGame.scala -> src/main/scala/tetris/game/TetrisBlock.scala
    src/main/scala/tetris/game/TetrisGame.scala -> src/main/scala/tetris/logic/TetrisLogic.scala
    src/main/scala/tetris/game/TetrisGame.scala -> src/main/scala/tetris/logic/Tetromino.scala
@@ -147,6 +166,19 @@ class names:
    src/main/scala/engine/random/ListRandomGen.scala -> engine.random.ListRandomGen
    src/main/scala/engine/random/RandomGenerator.scala -> engine.random.RandomGenerator
    src/main/scala/engine/random/ScalaRandomGen.scala -> engine.random.ScalaRandomGen
+   src/main/scala/tetris/game/ManualPage.scala -> tetris.game.ManualPage
+   src/main/scala/tetris/game/ManualPage.scala -> tetris.game.ManualPage$$anon$1
+   src/main/scala/tetris/game/ManualPage.scala -> tetris.game.ManualPage$$anon$1$$anon$2
+   src/main/scala/tetris/game/ManualPage.scala -> tetris.game.ManualPage$$anon$1$$anon$2$$anon$3
+   src/main/scala/tetris/game/ManualPage.scala -> tetris.game.ManualPage$$anon$1$$anon$2$$anon$3$$anon$11
+   src/main/scala/tetris/game/ManualPage.scala -> tetris.game.ManualPage$$anon$1$$anon$2$$anon$3$$anon$4
+   src/main/scala/tetris/game/ManualPage.scala -> tetris.game.ManualPage$$anon$1$$anon$2$$anon$3$$anon$5
+   src/main/scala/tetris/game/ManualPage.scala -> tetris.game.ManualPage$$anon$1$$anon$2$$anon$3$$anon$5$$anon$6
+   src/main/scala/tetris/game/ManualPage.scala -> tetris.game.ManualPage$$anon$1$$anon$2$$anon$3$$anon$7
+   src/main/scala/tetris/game/ManualPage.scala -> tetris.game.ManualPage$$anon$1$$anon$2$$anon$3$$anon$8
+   src/main/scala/tetris/game/ManualPage.scala -> tetris.game.ManualPage$$anon$1$$anon$2$$anon$3$$anon$9
+   src/main/scala/tetris/game/ManualPage.scala -> tetris.game.ManualPage$$anon$1$$anon$2$$anon$3$$anon$9$$anon$10
+   src/main/scala/tetris/game/ManualPage.scala -> tetris.game.ManualPage$delayedInit$body
    src/main/scala/tetris/game/TetrisBlock.scala -> tetris.game.Empty
    src/main/scala/tetris/game/TetrisBlock.scala -> tetris.game.Empty$
    src/main/scala/tetris/game/TetrisBlock.scala -> tetris.game.IBlock

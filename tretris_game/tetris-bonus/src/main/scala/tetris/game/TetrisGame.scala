@@ -80,7 +80,7 @@ class TetrisGame extends GameBase {
     def drawNextTetrominos(): Unit = {
       setFillColor(Color.LightGreen)
       textSize(26)
-      text(s" NEXT", 14*WidthCellInPixels, 35)
+      text(s" NEXT", 14*WidthCellInPixels, 33)
       val x = 16
       var y = 4
       for (tetroType <- gameLogic.getNextTetrominos) {
@@ -94,15 +94,13 @@ class TetrisGame extends GameBase {
     def drawHoldedTetromino(): Unit = {
       setFillColor(Color.LightGreen)
       textSize(26)
-      text(s" HOLD", 14*WidthCellInPixels, 17*HeightCellInPixels)
+      text(s" HOLD", 14*WidthCellInPixels, 16*HeightCellInPixels)
 
       val tetroType = gameLogic.getHoldedTetro
-      Tetromino(Coordinates(19, 16), tetroType).getAllBlocksOfTetromino.foreach { blockCoor =>
+      Tetromino(Coordinates(18, 16), tetroType).getAllBlocksOfTetromino.foreach { blockCoor =>
         drawCell(getCell(blockCoor.x, blockCoor.y), tetroType)
       }
     }
-
-
   }
 
   /** Method that calls handlers for different key press events.
@@ -172,6 +170,9 @@ object TetrisGame {
   val InfoAreaWidthInCells: Int = 6
 
   def main(args:Array[String]): Unit = {
+    val manual = new ManualPage
+    manual.main(args)
+
     PApplet.main("tetris.game.TetrisGame")
   }
 

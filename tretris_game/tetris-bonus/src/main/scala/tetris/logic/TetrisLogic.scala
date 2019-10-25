@@ -17,7 +17,7 @@ class TetrisLogic(val randomGen: RandomGenerator,
   def doHardDrop():   Unit = controller invokeTetrominoAction HardDrop
   def hold():         Unit = controller invokeTetrominoAction Hold
 
-  def isGameOver:  Boolean = controller isGameOver
+  def isGameOver:  Boolean = controller.isGameOver
   def getBlockAt(x: Int, y: Int): TetrisBlock = controller.board(y)(x)
   def getNextTetrominos: Vector[TetrisBlock] = controller.getNextTetroQueue
   def getHoldedTetro: TetrisBlock = controller.getHoldedTetromino

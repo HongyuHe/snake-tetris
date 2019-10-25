@@ -6,6 +6,7 @@ trait Setting {
   var battleWithAI: Boolean
   var startFlag: Boolean
   var gameSpeed = 0
+  var timer = 0
 }
 
 case class GameSetting(var gameLevel: Int = 0,

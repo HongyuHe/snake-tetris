@@ -12,7 +12,7 @@ class SnakeLogic(val randomGen: RandomGenerator,
                  val nrRows: Int) {
 
 //  def this() = this(new ScalaRandomGen(), setting,  DefaultColumns, DefaultRows)
-  def getLooser:    SnakeID = gameController.looser
+  def getloser:    SnakeID = gameController.loser
   def getGameResult: GameResult = gameController.getResult
   def isGameOver:   Boolean = gameController.status.isGameOver
   def terminateGame(): Unit = gameController.status.isGameOver = true

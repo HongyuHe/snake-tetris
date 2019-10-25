@@ -21,7 +21,7 @@ class GameController(val nrRows: Int,
   if (setting.battleWithAI) rivalSnake = SnakeAI()
 //  var rivalSnake = SnakeAI()
 
-  var looser: SnakeID = HostSnake()
+  var loser: SnakeID = HostSnake()
 //  var applePositionSet: Set[Cell]= Set()
 
 
@@ -200,7 +200,7 @@ class GameController(val nrRows: Int,
       // BUG: green snake can collide with its self!
       case _ => false
     }
-    if (status.isSnakeCrashed) { looser = snake.id }
+    if (status.isSnakeCrashed) { loser = snake.id }
   }
 
   def checkAppleAndGrowSnake(): Unit = {
@@ -250,8 +250,8 @@ class GameController(val nrRows: Int,
     if (isSnakeBlowUp || isSnakeHitWall || (!status.hasEnoughApples && status.isGridFull && status.isSnakeGrowing) || status.isSnakeCrashed) {
       status.isGameOver = true
       if (hostSnake.body.isEmpty || grid.getCellType(hostSnake.body.head) == Wall())
-        looser = HostSnake()
-      else looser = rivalSnake.id
+        loser = HostSnake()
+      else loser = rivalSnake.id
     }
 
 }
