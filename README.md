@@ -120,7 +120,7 @@ _( If no level is chosen, then no wall will be placed whatsoever (the Default le
 
 
 
-### ** Run the project from CLI**
+### **Run the project from CLI**
 
 
 ```
