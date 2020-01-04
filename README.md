@@ -1,6 +1,6 @@
 <!-- # Two old-school games with fancy features and GUI -->
 
-# **Features in the snake-game**
+# **1 Features in the snake-game**
 Welcome page           |  game interface
 :-------------------------:|:-------------------------:
 ![](/img/snake-1.png "snake-1")  | ![](/img/snake-2.png "snake-2")
@@ -131,7 +131,7 @@ $ gradle run
 
 
 
-# **Features in the tetris-game**
+# **2 Features in the tetris-game**
 Welcome page           |  game interface
 :-------------------------:|:-------------------------:
 ![](/img/tetris-1.png "tetris-1")  | ![](/img/tetris-2.png "tetris-2")
