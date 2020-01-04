@@ -1,7 +1,10 @@
 # Two old-school games with fancy features and GUI in Scala
 
 ## **@ Features in the snake-game**
-![](/img/snake-1.png "snake-1") ![](/img/snake-2.png "snake-2")
+Welcome page           |  game interface
+:-------------------------:|:-------------------------:
+![](/img/snake-1.png "snake-1")  | ![](/img/snake-2.png "snake-2")
+<!-- ![](/img/snake-1.png "snake-1") ![](/img/snake-2.png "snake-2") -->
 ### **1. Levels in the snake**
 
 *   The game sets levels by placing several walls on the grids. In this game, there are three types of wall:
@@ -77,7 +80,7 @@ _( If no level is chosen, then no wall will be placed whatsoever (the Default le
 
 
 
-## **@ Updated features of the snake-game**
+## ** Updated features of the snake-game**
 
 
 ### **1. Variable number of apples**
@@ -117,7 +120,7 @@ _( If no level is chosen, then no wall will be placed whatsoever (the Default le
 
 
 
-## **@ Run the project from CLI**
+### ** Run the project from CLI**
 
 
 ```
@@ -129,7 +132,11 @@ $ gradle run
 
 
 ## **@ Features in the tetris-game**
-![](/img/tetris-1.png "snake-1") ![](/img/tetris-2.png "snake-2")
+Welcome page           |  game interface
+:-------------------------:|:-------------------------:
+![](/img/tetris-1.png "tetris-1")  | ![](/img/tetris-2.png "tetris-2")
+<!-- 
+![](/img/tetris-2.png "tetris-1") ![](/img/tetris-2.png "snake-2") -->
 
 ### **1. Hold tetromino**
 
