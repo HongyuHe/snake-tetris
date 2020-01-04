@@ -1,4 +1,4 @@
-# Two old-school games with fancy features and GUI
+<!-- # Two old-school games with fancy features and GUI -->
 
 ## **@ Features in the snake-game**
 Welcome page           |  game interface
