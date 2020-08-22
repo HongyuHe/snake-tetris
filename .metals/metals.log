@@ -1,2 +1,6 @@
 INFO  time: initialize in 0.35s
 WARN  no build tool detected in workspace '/home/hongyu/Desktop/University/second-year/P1/AdvancedProgramming/scala-games-dev-repo'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.08.23 00:07:57 INFO  started: Metals version 0.9.3 in workspace '/media/hongyu/_dde_data/Projects/snake-tetris' for client vscode.
+2020.08.23 00:07:58 INFO  time: initialize in 0.41s
+2020.08.23 00:08:02 WARN  resetting database: /media/hongyu/_dde_data/Projects/snake-tetris/.metals/metals.h2.db
+2020.08.23 00:08:02 WARN  no build tool detected in workspace '/media/hongyu/_dde_data/Projects/snake-tetris'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 

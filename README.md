@@ -1,11 +1,12 @@
 <!-- # Two old-school games with fancy features and GUI -->
 
-# **1 Snake-game with an AI bot**
-Welcome page           |  game interface
-:-------------------------:|:-------------------------:
-![](/img/snake-1.png "snake-1")  | ![](/img/snake-2.png "snake-2")
-<!-- ![](/img/snake-1.png "snake-1") ![](/img/snake-2.png "snake-2") -->
-### **1. Levels in the snake**
+# Snake game with an AI bot
+| welcome page           |  game interface |
+|:-------------------------:|:-------------------------:|
+|![](img/snake-1.png "snake-1")  | ![](img/snake-2.png "snake-2")|
+<!-- ![](img/snake-1.png "snake-1") ![](img/snake-2.png "snake-2") -->
+
+## Levels in the snake game
 
 *   The game sets levels by placing several walls on the grids. In this game, there are three types of wall:
     *   Vertical
@@ -23,8 +24,7 @@ Welcome page           |  game interface
 _( If no level is chosen, then no wall will be placed whatsoever (the Default level) )_
 
 
-### **2. Two-player snake**
-
+## Two-player mode
 
 
 *   Before the game started, players can use the game menu to choose the "Two-player mode" option to add another player;
@@ -32,7 +32,7 @@ _( If no level is chosen, then no wall will be placed whatsoever (the Default le
 *   In the game, the two snakes can only collide with itself but not with each other.
 
 
-### **3. Snake AI**
+## Snake AI
 
 
 
@@ -47,7 +47,7 @@ _( If no level is chosen, then no wall will be placed whatsoever (the Default le
     *   as a result, the AI is able to grow as fast as possible and, avoid walls, bombs (described below) and its body (most of the time).
 
 
-### **4. Game menu**
+## Game menu
 
 
 
@@ -62,7 +62,7 @@ _( If no level is chosen, then no wall will be placed whatsoever (the Default le
     *   get started by clicking the start button (cancel by closing the menu window right away);
 
 
-### **5. Nicer Snake graphics**
+## Nicer Snake graphics
 
 
 
@@ -76,21 +76,17 @@ _( If no level is chosen, then no wall will be placed whatsoever (the Default le
 
 
 
----
+## Updated features of the snake game
 
 
-
-## **Updated features of the snake-game**
-
-
-### **1. Variable number of apples**
+### Variable number of apples
 
 
 
 *   In the beginning, players are able to choose the number of apples, from 1 (default) to 5 (adjustable), that maintained during the game;
 
 
-### **2. Variable number of bombs**
+### Variable number of bombs
 
 
 
@@ -98,7 +94,7 @@ _( If no level is chosen, then no wall will be placed whatsoever (the Default le
 *   Each bomb will cause the snake to loose one trunk of its body. The game will end when any snake with only head remains hits the bomb.
 
 
-### **3. A race against time**
+### A race against time
 
 
 
@@ -106,53 +102,46 @@ _( If no level is chosen, then no wall will be placed whatsoever (the Default le
 *   When time out occurs, the snake with a longer body wins. 
 
 
-### **4. Maintain Reversibly**
+### Maintain Reversibly
 
 
 
 *   All game options ( two-player mode, AI mode, multi-items, etc.) are reversible;
 
-    
 
 
-
----
-
+### Run the project from CLI
 
 
-### **Run the project from CLI**
-
-
-```
+```sh
 $ source /etc/profile.d/gradle.sh
 $ gradle run
 ```
-**********
 
+************
 
-
-# **2 Tetris-game**
-Welcome page           |  game interface
-:-------------------------:|:-------------------------:
-![](/img/tetris-1.png "tetris-1")  | ![](/img/tetris-2.png "tetris-2")
+# Tetris game
+| welcome page           |  game interface |
+|:-------------------------:|:-------------------------:|
+|![](img/tetris-1.png "tetris-1")  | ![](img/tetris-2.png "tetris-2")|
 <!-- 
 ![](/img/tetris-2.png "tetris-1") ![](/img/tetris-2.png "snake-2") -->
 
-### **1. Hold tetromino**
+## Hold tetromino
 
 
 
 *   Users can use W-key to hold the current tetromino. As most of the Tetris games, this option will be disabled until the newly generated tetromino properly land. 
 
 
-### **2. Display next blocks**
+## Display next blocks
 
 
 
 *   The next 3 tetrominoes will be displayed on the right-hand side of the board.
 
 
-### **3. Nicer Tetris graphics**
+## Better Tetris graphics
 
 
 
@@ -160,22 +149,17 @@ Welcome page           |  game interface
 *   The finish screen has been improved.
 
 
-## **@ Upated features of the tetris-game**
+## Upated features
 
 
 
 *   A welcome GUI with keyboard control instruction is added.
 
 
-
----
-
+## Run the project from CLI
 
 
-## **@ Run the project from CLI**
-
-
-```
+```sh
 $ source /etc/profile.d/gradle.sh
 $ gradle run
 ```
